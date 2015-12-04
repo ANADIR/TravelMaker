@@ -1,0 +1,333 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B4344911C1174E600400E8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344901C1174E600400E8A /* main.m */; };
+		8B4344941C1174E600400E8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344931C1174E600400E8A /* AppDelegate.m */; };
+		8B4344971C1174E600400E8A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344961C1174E600400E8A /* ViewController.m */; };
+		8B43449A1C1174E600400E8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4344981C1174E600400E8A /* Main.storyboard */; };
+		8B43449D1C1174E600400E8A /* travelmaker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B43449B1C1174E600400E8A /* travelmaker.xcdatamodeld */; };
+		8B43449F1C1174E600400E8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B43449E1C1174E600400E8A /* Assets.xcassets */; };
+		8B4344A21C1174E600400E8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4344A01C1174E600400E8A /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8B43448C1C1174E600400E8A /* Travel Maker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Maker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B4344901C1174E600400E8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8B4344921C1174E600400E8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8B4344931C1174E600400E8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8B4344951C1174E600400E8A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8B4344961C1174E600400E8A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8B4344991C1174E600400E8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8B43449C1C1174E600400E8A /* travelmaker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = travelmaker.xcdatamodel; sourceTree = "<group>"; };
+		8B43449E1C1174E600400E8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B4344A11C1174E600400E8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8B4344A31C1174E600400E8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B4344891C1174E600400E8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B4344831C1174E600400E8A = {
+			isa = PBXGroup;
+			children = (
+				8B43448E1C1174E600400E8A /* travelmaker */,
+				8B43448D1C1174E600400E8A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8B43448D1C1174E600400E8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B43448C1C1174E600400E8A /* Travel Maker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B43448E1C1174E600400E8A /* travelmaker */ = {
+			isa = PBXGroup;
+			children = (
+				8B4344921C1174E600400E8A /* AppDelegate.h */,
+				8B4344931C1174E600400E8A /* AppDelegate.m */,
+				8B4344951C1174E600400E8A /* ViewController.h */,
+				8B4344961C1174E600400E8A /* ViewController.m */,
+				8B4344981C1174E600400E8A /* Main.storyboard */,
+				8B43449E1C1174E600400E8A /* Assets.xcassets */,
+				8B4344A01C1174E600400E8A /* LaunchScreen.storyboard */,
+				8B4344A31C1174E600400E8A /* Info.plist */,
+				8B43449B1C1174E600400E8A /* travelmaker.xcdatamodeld */,
+				8B43448F1C1174E600400E8A /* Supporting Files */,
+			);
+			path = travelmaker;
+			sourceTree = "<group>";
+		};
+		8B43448F1C1174E600400E8A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B4344901C1174E600400E8A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B43448B1C1174E600400E8A /* Travel Maker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B4344A61C1174E700400E8A /* Build configuration list for PBXNativeTarget "Travel Maker" */;
+			buildPhases = (
+				8B4344881C1174E600400E8A /* Sources */,
+				8B4344891C1174E600400E8A /* Frameworks */,
+				8B43448A1C1174E600400E8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Travel Maker";
+			productName = travelmaker;
+			productReference = 8B43448C1C1174E600400E8A /* Travel Maker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B4344841C1174E600400E8A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = developer;
+				TargetAttributes = {
+					8B43448B1C1174E600400E8A = {
+						CreatedOnToolsVersion = 7.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 8B4344871C1174E600400E8A /* Build configuration list for PBXProject "Travel Maker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8B4344831C1174E600400E8A;
+			productRefGroup = 8B43448D1C1174E600400E8A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B43448B1C1174E600400E8A /* Travel Maker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B43448A1C1174E600400E8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B4344A21C1174E600400E8A /* LaunchScreen.storyboard in Resources */,
+				8B43449F1C1174E600400E8A /* Assets.xcassets in Resources */,
+				8B43449A1C1174E600400E8A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B4344881C1174E600400E8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B4344971C1174E600400E8A /* ViewController.m in Sources */,
+				8B4344941C1174E600400E8A /* AppDelegate.m in Sources */,
+				8B43449D1C1174E600400E8A /* travelmaker.xcdatamodeld in Sources */,
+				8B4344911C1174E600400E8A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8B4344981C1174E600400E8A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B4344991C1174E600400E8A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8B4344A01C1174E600400E8A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B4344A11C1174E600400E8A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8B4344A41C1174E600400E8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8B4344A51C1174E600400E8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B4344A71C1174E700400E8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Amit Nadir (K3B5699EA6)";
+				INFOPLIST_FILE = travelmaker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiwiz.travelmaker;
+				PRODUCT_NAME = "Travel Maker";
+				PROVISIONING_PROFILE = "3bdad2d7-2e73-4faf-8576-a21a20a4d916";
+			};
+			name = Debug;
+		};
+		8B4344A81C1174E700400E8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Amit Nadir (M72ZRB7GL2)";
+				INFOPLIST_FILE = travelmaker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiwiz.travelmaker;
+				PRODUCT_NAME = "Travel Maker";
+				PROVISIONING_PROFILE = "d4b90013-accb-4adc-8570-c10a198446c4";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B4344871C1174E600400E8A /* Build configuration list for PBXProject "Travel Maker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B4344A41C1174E600400E8A /* Debug */,
+				8B4344A51C1174E600400E8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B4344A61C1174E700400E8A /* Build configuration list for PBXNativeTarget "Travel Maker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B4344A71C1174E700400E8A /* Debug */,
+				8B4344A81C1174E700400E8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8B43449B1C1174E600400E8A /* travelmaker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8B43449C1C1174E600400E8A /* travelmaker.xcdatamodel */,
+			);
+			currentVersion = 8B43449C1C1174E600400E8A /* travelmaker.xcdatamodel */;
+			path = travelmaker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8B4344841C1174E600400E8A /* Project object */;
+}
