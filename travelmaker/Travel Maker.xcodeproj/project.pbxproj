@@ -16,6 +16,9 @@
 		8B4344AF1C1187D200400E8A /* SuperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344AE1C1187D200400E8A /* SuperViewController.m */; };
 		8B4344B21C1190CD00400E8A /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344B11C1190CD00400E8A /* LoginController.m */; };
 		8B4344B51C11922000400E8A /* TutorialController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344B41C11922000400E8A /* TutorialController.m */; };
+		8B4344BD1C11D38E00400E8A /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344BA1C11D38E00400E8A /* NSString+MD5Addition.m */; };
+		8B4344BE1C11D38E00400E8A /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344BC1C11D38E00400E8A /* UIDevice+IdentifierAddition.m */; };
+		8B4344C11C11D39700400E8A /* DCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344C01C11D39700400E8A /* DCDefines.m */; };
 		DBFC9FFE25489B546EC484A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 931D7C9D48A7962FAD3442DF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +40,12 @@
 		8B4344B11C1190CD00400E8A /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = Classes/Controller/LoginController.m; sourceTree = "<group>"; };
 		8B4344B31C11922000400E8A /* TutorialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialController.h; path = Classes/Controller/TutorialController.h; sourceTree = "<group>"; };
 		8B4344B41C11922000400E8A /* TutorialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialController.m; path = Classes/Controller/TutorialController.m; sourceTree = "<group>"; };
+		8B4344B91C11D38E00400E8A /* NSString+MD5Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5Addition.h"; path = "Classes/External/UIDeviceUniqueIdentifier/NSString+MD5Addition.h"; sourceTree = "<group>"; };
+		8B4344BA1C11D38E00400E8A /* NSString+MD5Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5Addition.m"; path = "Classes/External/UIDeviceUniqueIdentifier/NSString+MD5Addition.m"; sourceTree = "<group>"; };
+		8B4344BB1C11D38E00400E8A /* UIDevice+IdentifierAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+IdentifierAddition.h"; path = "Classes/External/UIDeviceUniqueIdentifier/UIDevice+IdentifierAddition.h"; sourceTree = "<group>"; };
+		8B4344BC1C11D38E00400E8A /* UIDevice+IdentifierAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+IdentifierAddition.m"; path = "Classes/External/UIDeviceUniqueIdentifier/UIDevice+IdentifierAddition.m"; sourceTree = "<group>"; };
+		8B4344BF1C11D39700400E8A /* DCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCDefines.h; path = Classes/External/HTTP_Communication/DCDefines.h; sourceTree = "<group>"; };
+		8B4344C01C11D39700400E8A /* DCDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCDefines.m; path = Classes/External/HTTP_Communication/DCDefines.m; sourceTree = "<group>"; };
 		931D7C9D48A7962FAD3442DF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -106,6 +115,7 @@
 		8B4344A91C11878200400E8A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8B4344B61C11D36200400E8A /* External */,
 				8B4344AC1C1187BB00400E8A /* View */,
 				8B4344AB1C1187B700400E8A /* Model */,
 				8B4344AA1C1187B100400E8A /* Controller */,
@@ -138,6 +148,35 @@
 			children = (
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		8B4344B61C11D36200400E8A /* External */ = {
+			isa = PBXGroup;
+			children = (
+				8B4344B81C11D37700400E8A /* UIDeviceUniqueIdentifier */,
+				8B4344B71C11D36800400E8A /* HTTP_Communication */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		8B4344B71C11D36800400E8A /* HTTP_Communication */ = {
+			isa = PBXGroup;
+			children = (
+				8B4344BF1C11D39700400E8A /* DCDefines.h */,
+				8B4344C01C11D39700400E8A /* DCDefines.m */,
+			);
+			name = HTTP_Communication;
+			sourceTree = "<group>";
+		};
+		8B4344B81C11D37700400E8A /* UIDeviceUniqueIdentifier */ = {
+			isa = PBXGroup;
+			children = (
+				8B4344B91C11D38E00400E8A /* NSString+MD5Addition.h */,
+				8B4344BA1C11D38E00400E8A /* NSString+MD5Addition.m */,
+				8B4344BB1C11D38E00400E8A /* UIDevice+IdentifierAddition.h */,
+				8B4344BC1C11D38E00400E8A /* UIDevice+IdentifierAddition.m */,
+			);
+			name = UIDeviceUniqueIdentifier;
 			sourceTree = "<group>";
 		};
 		9668374AC79CB33879A380DE /* Frameworks */ = {
@@ -274,10 +313,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B4344BE1C11D38E00400E8A /* UIDevice+IdentifierAddition.m in Sources */,
 				8B4344B21C1190CD00400E8A /* LoginController.m in Sources */,
+				8B4344BD1C11D38E00400E8A /* NSString+MD5Addition.m in Sources */,
 				8B4344941C1174E600400E8A /* AppDelegate.m in Sources */,
 				8B4344AF1C1187D200400E8A /* SuperViewController.m in Sources */,
 				8B43449D1C1174E600400E8A /* travelmaker.xcdatamodeld in Sources */,
+				8B4344C11C11D39700400E8A /* DCDefines.m in Sources */,
 				8B4344911C1174E600400E8A /* main.m in Sources */,
 				8B4344B51C11922000400E8A /* TutorialController.m in Sources */,
 			);
@@ -390,6 +432,7 @@
 			baseConfigurationReference = 6A188A1AE76F6893AE3E97AA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Amit Nadir (K3B5699EA6)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = travelmaker/Info.plist;
@@ -406,6 +449,7 @@
 			baseConfigurationReference = 52943EB0F6760A9A043CFEED /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Amit Nadir (M72ZRB7GL2)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = travelmaker/Info.plist;
