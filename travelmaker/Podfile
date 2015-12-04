@@ -1,0 +1,4 @@
+pod 'IQKeyboardManager'
+pod 'GoogleCloudMessaging'
+pod 'MBProgressHUD'
+pod 'Google/CloudMessaging'
