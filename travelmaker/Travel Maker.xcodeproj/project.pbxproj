@@ -20,6 +20,8 @@
 		8B4344BE1C11D38E00400E8A /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344BC1C11D38E00400E8A /* UIDevice+IdentifierAddition.m */; };
 		8B4344C11C11D39700400E8A /* DCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344C01C11D39700400E8A /* DCDefines.m */; };
 		8B4CE6641C151C6E00D0C19D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B4CE6631C151C6E00D0C19D /* GoogleService-Info.plist */; };
+		8B4CE6671C15314E00D0C19D /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CE6661C15314E00D0C19D /* RegisterController.m */; };
+		8B4CE66A1C15435A00D0C19D /* PaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CE6691C15435A00D0C19D /* PaddingTextField.m */; };
 		DBFC9FFE25489B546EC484A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 931D7C9D48A7962FAD3442DF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,10 @@
 		8B4344BF1C11D39700400E8A /* DCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCDefines.h; path = Classes/External/HTTP_Communication/DCDefines.h; sourceTree = "<group>"; };
 		8B4344C01C11D39700400E8A /* DCDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCDefines.m; path = Classes/External/HTTP_Communication/DCDefines.m; sourceTree = "<group>"; };
 		8B4CE6631C151C6E00D0C19D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8B4CE6651C15314E00D0C19D /* RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterController.h; path = Classes/Controller/RegisterController.h; sourceTree = "<group>"; };
+		8B4CE6661C15314E00D0C19D /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterController.m; path = Classes/Controller/RegisterController.m; sourceTree = "<group>"; };
+		8B4CE6681C15435A00D0C19D /* PaddingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaddingTextField.h; path = Classes/View/PaddingTextField.h; sourceTree = "<group>"; };
+		8B4CE6691C15435A00D0C19D /* PaddingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaddingTextField.m; path = Classes/View/PaddingTextField.m; sourceTree = "<group>"; };
 		931D7C9D48A7962FAD3442DF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -135,6 +141,8 @@
 				8B4344B11C1190CD00400E8A /* LoginController.m */,
 				8B4344B31C11922000400E8A /* TutorialController.h */,
 				8B4344B41C11922000400E8A /* TutorialController.m */,
+				8B4CE6651C15314E00D0C19D /* RegisterController.h */,
+				8B4CE6661C15314E00D0C19D /* RegisterController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -149,6 +157,8 @@
 		8B4344AC1C1187BB00400E8A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8B4CE6681C15435A00D0C19D /* PaddingTextField.h */,
+				8B4CE6691C15435A00D0C19D /* PaddingTextField.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -321,6 +331,8 @@
 				8B4344B21C1190CD00400E8A /* LoginController.m in Sources */,
 				8B4344BD1C11D38E00400E8A /* NSString+MD5Addition.m in Sources */,
 				8B4344941C1174E600400E8A /* AppDelegate.m in Sources */,
+				8B4CE6671C15314E00D0C19D /* RegisterController.m in Sources */,
+				8B4CE66A1C15435A00D0C19D /* PaddingTextField.m in Sources */,
 				8B4344AF1C1187D200400E8A /* SuperViewController.m in Sources */,
 				8B43449D1C1174E600400E8A /* travelmaker.xcdatamodeld in Sources */,
 				8B4344C11C11D39700400E8A /* DCDefines.m in Sources */,

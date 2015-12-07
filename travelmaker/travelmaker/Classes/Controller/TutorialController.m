@@ -8,15 +8,26 @@
 
 #import "TutorialController.h"
 
-@interface TutorialController ()
-
-@end
-
 @implementation TutorialController
+
+@synthesize imgTutorial;
+@synthesize lblTutorial;
+
+int current_tutorial;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft:)];
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft ];
+    [self.view addGestureRecognizer:swipeLeft];
+    
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedRight:)];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight ];
+    [self.view addGestureRecognizer:swipeRight];
+    
+    current_tutorial = 1;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +45,56 @@
 }
 */
 
+- (IBAction)swipedRight:(UISwipeGestureRecognizer *)recognizer
+{
+    if (current_tutorial == 1)
+        return;
+    
+    current_tutorial --;
+    [self updateTutorialView:current_tutorial];
+}
+
+- (IBAction)swipedLeft:(UISwipeGestureRecognizer *)recognizer
+{
+    if (current_tutorial == 3)
+        return;
+    
+    current_tutorial ++;
+    [self updateTutorialView:current_tutorial];
+}
+
+- (void)updateTutorialView:(int) tutorial
+{
+    UIImage *newImage = nil;
+    NSString *newText = nil;
+    
+    switch (tutorial)
+    {
+        case 1:
+            newImage = [UIImage imageNamed:@"Tutorial01"];
+            newText = @"טקסט עבור המסך הראשון";
+            break;
+        case 2:
+            newImage = [UIImage imageNamed:@"Tutorial02"];
+            newText = @"טקסט עבור המסך השני";
+            break;
+        case 3:
+            newImage = [UIImage imageNamed:@"Tutorial03"];
+            newText = @"טקסט עבור המסך השני";
+            break;
+        default:
+            newImage = [UIImage imageNamed:@"Tutorial01"];
+            newText = @"טקסט עבור המסך הראשון";
+            break;
+    }
+    
+    [UIView transitionWithView:self.view
+                      duration:.3f
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        imgTutorial.image = newImage;
+                    } completion:nil];
+    
+    [lblTutorial setText:newText];
+}
 @end

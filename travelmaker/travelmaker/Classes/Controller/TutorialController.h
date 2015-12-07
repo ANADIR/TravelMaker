@@ -10,4 +10,7 @@
 
 @interface TutorialController : SuperViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgTutorial;
+@property (weak, nonatomic) IBOutlet UILabel *lblTutorial;
+
 @end

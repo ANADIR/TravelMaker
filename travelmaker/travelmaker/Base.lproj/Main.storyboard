@@ -65,6 +65,9 @@
                                             <constraint firstAttribute="width" constant="295" id="wQ5-MM-EbR"/>
                                         </constraints>
                                         <state key="normal" image="LetStart"/>
+                                        <connections>
+                                            <segue destination="GZz-gM-iPA" kind="modal" identifier="registerSegue" modalTransitionStyle="crossDissolve" id="4JG-GR-6Oh"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טקסט עבור המסך הראשון" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhT-v3-xCg">
                                         <rect key="frame" x="150" y="0.0" width="300" height="40"/>
@@ -88,6 +91,9 @@
                                         <state key="normal" title="כבר רשום?">
                                             <color key="titleColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="modal" identifier="loginSegue" modalTransitionStyle="crossDissolve" id="gKL-Bm-V6V"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -117,14 +123,132 @@
                             <constraint firstItem="YZU-ee-cwe" firstAttribute="centerX" secondItem="1nc-Gi-Fdj" secondAttribute="centerX" id="yzd-hc-wJB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgTutorial" destination="dmB-9a-BcX" id="YtG-4S-Ga1"/>
+                        <outlet property="lblTutorial" destination="rhT-v3-xCg" id="AFK-TO-Y8N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cpd-Ua-wsi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="214" y="-383"/>
         </scene>
+        <!--Register Controller-->
+        <scene sceneID="tuE-Cx-4Vb">
+            <objects>
+                <viewController storyboardIdentifier="registerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GZz-gM-iPA" customClass="RegisterController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CXK-22-PiY"/>
+                        <viewControllerLayoutGuide type="bottom" id="V7B-As-nnB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G2U-A5-eAF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="zXa-Ak-6qz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zuh-4C-wtF">
+                                <rect key="frame" x="0.0" y="370" width="600" height="230"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="הכנס את מספר הנייד שלך" textAlignment="natural" minimumFontSize="17" background="Phone" translatesAutoresizingMaskIntoConstraints="NO" id="ZRP-Qx-CdW" customClass="PaddingTextField">
+                                        <rect key="frame" x="150" y="8" width="300" height="50"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="7mw-Sm-1Yg"/>
+                                            <constraint firstAttribute="height" constant="50" id="xaE-mm-Id1"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkf-cB-Qf7">
+                                        <rect key="frame" x="150" y="70" width="300" height="50"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="X9e-96-pmG"/>
+                                            <constraint firstAttribute="width" constant="300" id="dkk-6O-3bU"/>
+                                        </constraints>
+                                        <state key="normal" image="Facebook"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44l-eS-Yky">
+                                        <rect key="frame" x="150" y="132" width="300" height="50"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="4pU-0O-37o"/>
+                                            <constraint firstAttribute="width" constant="300" id="vJO-PT-H1l"/>
+                                        </constraints>
+                                        <state key="normal" image="Email"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68h-1w-d2Z">
+                                        <rect key="frame" x="150" y="190" width="130" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="1xg-fl-SYb"/>
+                                            <constraint firstAttribute="width" constant="130" id="rbm-rW-Cjh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="דלג על הרישום">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNR-k2-rOX">
+                                        <rect key="frame" x="300" y="190" width="150" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="PUB-wJ-0Jp"/>
+                                            <constraint firstAttribute="width" constant="150" id="vi7-Yc-t78"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="נרשמת כבר בעבר?">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="68h-1w-d2Z" firstAttribute="leading" secondItem="44l-eS-Yky" secondAttribute="leading" id="3NE-vf-gSX"/>
+                                    <constraint firstItem="bkf-cB-Qf7" firstAttribute="centerX" secondItem="Zuh-4C-wtF" secondAttribute="centerX" id="43U-rC-4Kf"/>
+                                    <constraint firstItem="68h-1w-d2Z" firstAttribute="top" secondItem="44l-eS-Yky" secondAttribute="bottom" constant="8" id="H0G-pb-NTH"/>
+                                    <constraint firstItem="fNR-k2-rOX" firstAttribute="trailing" secondItem="44l-eS-Yky" secondAttribute="trailing" id="Kq5-t2-J0y"/>
+                                    <constraint firstItem="44l-eS-Yky" firstAttribute="centerX" secondItem="Zuh-4C-wtF" secondAttribute="centerX" id="MEL-zC-Owt"/>
+                                    <constraint firstAttribute="height" constant="230" id="SD6-4a-pK0"/>
+                                    <constraint firstItem="fNR-k2-rOX" firstAttribute="top" secondItem="44l-eS-Yky" secondAttribute="bottom" constant="8" id="UOs-Pn-Qpj"/>
+                                    <constraint firstItem="ZRP-Qx-CdW" firstAttribute="top" secondItem="Zuh-4C-wtF" secondAttribute="top" constant="8" id="ab1-W0-FUY"/>
+                                    <constraint firstItem="44l-eS-Yky" firstAttribute="top" secondItem="bkf-cB-Qf7" secondAttribute="bottom" constant="12" id="bYh-yI-98v"/>
+                                    <constraint firstItem="bkf-cB-Qf7" firstAttribute="top" secondItem="ZRP-Qx-CdW" secondAttribute="bottom" constant="12" id="wXA-Dv-Kku"/>
+                                    <constraint firstItem="ZRP-Qx-CdW" firstAttribute="centerX" secondItem="Zuh-4C-wtF" secondAttribute="centerX" id="zIB-O6-YtD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="zXa-Ak-6qz" secondAttribute="trailing" constant="-20" id="HLY-cD-1PQ"/>
+                            <constraint firstItem="V7B-As-nnB" firstAttribute="top" secondItem="Zuh-4C-wtF" secondAttribute="bottom" id="Lhb-56-OyJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zuh-4C-wtF" secondAttribute="trailing" constant="-20" id="e4r-p2-XDc"/>
+                            <constraint firstItem="Zuh-4C-wtF" firstAttribute="leading" secondItem="G2U-A5-eAF" secondAttribute="leadingMargin" constant="-20" id="geH-qT-lm7"/>
+                            <constraint firstItem="zXa-Ak-6qz" firstAttribute="leading" secondItem="G2U-A5-eAF" secondAttribute="leadingMargin" constant="-20" id="oVK-3X-72m"/>
+                            <constraint firstItem="Zuh-4C-wtF" firstAttribute="centerX" secondItem="G2U-A5-eAF" secondAttribute="centerX" id="ori-mi-Mgq"/>
+                            <constraint firstItem="zXa-Ak-6qz" firstAttribute="top" secondItem="CXK-22-PiY" secondAttribute="bottom" constant="-20" id="uEC-fI-QpH"/>
+                            <constraint firstItem="V7B-As-nnB" firstAttribute="top" secondItem="zXa-Ak-6qz" secondAttribute="bottom" id="xYd-x6-dgL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="txtCellPhone" destination="ZRP-Qx-CdW" id="ZTk-jf-Sz7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jMD-GK-yj0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="214" y="376"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Email" width="590" height="100"/>
+        <image name="Facebook" width="590" height="100"/>
         <image name="LetStart" width="295" height="50"/>
+        <image name="LoginBackground" width="640" height="1136"/>
+        <image name="Phone" width="590" height="100"/>
         <image name="Tutorial01" width="640" height="807"/>
     </resources>
 </document>
