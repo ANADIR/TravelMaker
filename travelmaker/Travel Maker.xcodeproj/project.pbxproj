@@ -19,6 +19,7 @@
 		8B4344BD1C11D38E00400E8A /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344BA1C11D38E00400E8A /* NSString+MD5Addition.m */; };
 		8B4344BE1C11D38E00400E8A /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344BC1C11D38E00400E8A /* UIDevice+IdentifierAddition.m */; };
 		8B4344C11C11D39700400E8A /* DCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344C01C11D39700400E8A /* DCDefines.m */; };
+		8B4CE6641C151C6E00D0C19D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B4CE6631C151C6E00D0C19D /* GoogleService-Info.plist */; };
 		DBFC9FFE25489B546EC484A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 931D7C9D48A7962FAD3442DF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		8B4344BC1C11D38E00400E8A /* UIDevice+IdentifierAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+IdentifierAddition.m"; path = "Classes/External/UIDeviceUniqueIdentifier/UIDevice+IdentifierAddition.m"; sourceTree = "<group>"; };
 		8B4344BF1C11D39700400E8A /* DCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCDefines.h; path = Classes/External/HTTP_Communication/DCDefines.h; sourceTree = "<group>"; };
 		8B4344C01C11D39700400E8A /* DCDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCDefines.m; path = Classes/External/HTTP_Communication/DCDefines.m; sourceTree = "<group>"; };
+		8B4CE6631C151C6E00D0C19D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		931D7C9D48A7962FAD3442DF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 				8B43449E1C1174E600400E8A /* Assets.xcassets */,
 				8B4344A01C1174E600400E8A /* LaunchScreen.storyboard */,
 				8B4344A31C1174E600400E8A /* Info.plist */,
+				8B4CE6631C151C6E00D0C19D /* GoogleService-Info.plist */,
 				8B43449B1C1174E600400E8A /* travelmaker.xcdatamodeld */,
 				8B43448F1C1174E600400E8A /* Supporting Files */,
 			);
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B4344A21C1174E600400E8A /* LaunchScreen.storyboard in Resources */,
+				8B4CE6641C151C6E00D0C19D /* GoogleService-Info.plist in Resources */,
 				8B43449F1C1174E600400E8A /* Assets.xcassets in Resources */,
 				8B43449A1C1174E600400E8A /* Main.storyboard in Resources */,
 			);
