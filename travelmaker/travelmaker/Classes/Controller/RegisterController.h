@@ -15,5 +15,6 @@
 
 - (IBAction)clickFacebook:(UIButton *)sender;
 - (IBAction)clickEmail:(UIButton *)sender;
+- (IBAction)clickGotoTraffic:(id)sender;
 
 @end

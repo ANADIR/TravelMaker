@@ -7,6 +7,11 @@
 //
 
 #import "LoginController.h"
+#import "MFSideMenu.h"
+#import "TrafficController.h"
+#import "MenuController.h"
+#import "AppDelegate.h"
+
 
 @interface LoginController ()
 
@@ -32,6 +37,7 @@
     UIImage *imgPasswd = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     [vwPasswd setBackgroundColor:[UIColor colorWithPatternImage:imgPasswd]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,6 +105,24 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if([status isEqualToString:@"logged OK"] == NO) {
                 [Common showAlert:@"Error" Message:@"Failed on logging in." ButtonName:@"Ok"];
+            }
+            else
+            {
+                //
+                
+                AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+                
+                TrafficController *trafficController = [self.storyboard instantiateViewControllerWithIdentifier:@"trafficVC"];
+                MenuController *menuController = [self.storyboard instantiateViewControllerWithIdentifier:@"menuVC"];
+                
+                MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController
+                                                                containerWithCenterViewController:trafficController
+                                                                leftMenuViewController:menuController
+                                                                rightMenuViewController:nil];
+                
+                delegate.window.rootViewController = container;
+                [delegate.window makeKeyAndVisible];
+
             }
         });
     }];

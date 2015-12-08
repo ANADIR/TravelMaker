@@ -10,6 +10,10 @@
 #import "RegisterEmailController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "MFSideMenu.h"
+#import "TrafficController.h"
+#import "MenuController.h"
+#import "AppDelegate.h"
 
 @interface RegisterController ()
 
@@ -133,6 +137,21 @@
     }
 }
 
+- (IBAction)clickGotoTraffic:(id)sender
+{
+    AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    TrafficController *trafficController = [self.storyboard instantiateViewControllerWithIdentifier:@"trafficVC"];
+    MenuController *menuController = [self.storyboard instantiateViewControllerWithIdentifier:@"menuVC"];
+    
+    MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController
+                                                    containerWithCenterViewController:trafficController
+                                                    leftMenuViewController:menuController
+                                                    rightMenuViewController:nil];
+    
+    delegate.window.rootViewController = container;
+    [delegate.window makeKeyAndVisible];
+}
 
 #pragma mark - UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string

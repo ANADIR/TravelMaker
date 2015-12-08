@@ -15,7 +15,6 @@
 @interface AppDelegate ()
 @property(nonatomic, strong) void (^registrationHandler)(NSString *registrationToken, NSError *error);
 @property(nonatomic, assign) BOOL connectedToGCM;
-//@property(nonatomic, strong) NSString* registrationToken;
 @property(nonatomic, assign) BOOL subscribedToTopic;
 
 @end
