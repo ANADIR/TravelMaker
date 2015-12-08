@@ -22,6 +22,7 @@
 		8B4CE6641C151C6E00D0C19D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B4CE6631C151C6E00D0C19D /* GoogleService-Info.plist */; };
 		8B4CE6671C15314E00D0C19D /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CE6661C15314E00D0C19D /* RegisterController.m */; };
 		8B4CE66A1C15435A00D0C19D /* PaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CE6691C15435A00D0C19D /* PaddingTextField.m */; };
+		8B4CE66D1C155F5400D0C19D /* RegisterEmailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CE66C1C155F5400D0C19D /* RegisterEmailController.m */; };
 		DBFC9FFE25489B546EC484A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 931D7C9D48A7962FAD3442DF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,8 @@
 		8B4CE6661C15314E00D0C19D /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterController.m; path = Classes/Controller/RegisterController.m; sourceTree = "<group>"; };
 		8B4CE6681C15435A00D0C19D /* PaddingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaddingTextField.h; path = Classes/View/PaddingTextField.h; sourceTree = "<group>"; };
 		8B4CE6691C15435A00D0C19D /* PaddingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaddingTextField.m; path = Classes/View/PaddingTextField.m; sourceTree = "<group>"; };
+		8B4CE66B1C155F5400D0C19D /* RegisterEmailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterEmailController.h; path = Classes/Controller/RegisterEmailController.h; sourceTree = "<group>"; };
+		8B4CE66C1C155F5400D0C19D /* RegisterEmailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterEmailController.m; path = Classes/Controller/RegisterEmailController.m; sourceTree = "<group>"; };
 		931D7C9D48A7962FAD3442DF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -143,6 +146,8 @@
 				8B4344B41C11922000400E8A /* TutorialController.m */,
 				8B4CE6651C15314E00D0C19D /* RegisterController.h */,
 				8B4CE6661C15314E00D0C19D /* RegisterController.m */,
+				8B4CE66B1C155F5400D0C19D /* RegisterEmailController.h */,
+				8B4CE66C1C155F5400D0C19D /* RegisterEmailController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				8B4344BD1C11D38E00400E8A /* NSString+MD5Addition.m in Sources */,
 				8B4344941C1174E600400E8A /* AppDelegate.m in Sources */,
 				8B4CE6671C15314E00D0C19D /* RegisterController.m in Sources */,
+				8B4CE66D1C155F5400D0C19D /* RegisterEmailController.m in Sources */,
 				8B4CE66A1C15435A00D0C19D /* PaddingTextField.m in Sources */,
 				8B4344AF1C1187D200400E8A /* SuperViewController.m in Sources */,
 				8B43449D1C1174E600400E8A /* travelmaker.xcdatamodeld in Sources */,

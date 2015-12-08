@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  Agombi
+//  Travel Maker
 //
-//  Created by Filip on 10/2/15.
-//  Copyright (c) 2015 Filip. All rights reserved.
+//  Created by developer on 12/4/15.
+//  Copyright © 2015 developer. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -13,4 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet PaddingTextField *txtCellPhone;
 
+- (IBAction)clickFacebook:(UIButton *)sender;
+- (IBAction)clickEmail:(UIButton *)sender;
+
 @end

@@ -1,15 +1,16 @@
 //
 //  AppDelegate.m
-//  Agombi
+//  Travel Maker
 //
-//  Created by Filip on 10/2/15.
-//  Copyright (c) 2015 Filip. All rights reserved.
+//  Created by developer on 12/4/15.
+//  Copyright © 2015 developer. All rights reserved.
 //
 
 #import "AppDelegate.h"
 #import "DCDefines.h"
 #import "UIDevice+IdentifierAddition.h"
 #import <AdSupport/AdSupport.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()
 @property(nonatomic, strong) void (^registrationHandler)(NSString *registrationToken, NSError *error);
@@ -341,4 +342,10 @@ didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+}
 @end

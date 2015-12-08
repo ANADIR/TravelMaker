@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <IQKeyboardManager.h>
 #import <IQKeyboardReturnKeyHandler.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
-@interface SuperViewController : UIViewController
+@interface SuperViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate, UITextViewDelegate>
 {
     IQKeyboardReturnKeyHandler *returnKeyHandler;
 }
