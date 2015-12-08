@@ -20,6 +20,7 @@
 @property(nonatomic, readonly, strong) NSDictionary *registrationOptions;
 
 @property(nonatomic, strong) NSString* registrationToken;
+@property(nonatomic, strong) NSString* deviceId;
 
 @end
 

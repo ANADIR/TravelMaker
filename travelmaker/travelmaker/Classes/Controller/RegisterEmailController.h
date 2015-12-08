@@ -11,6 +11,8 @@
 
 @interface RegisterEmailController : SuperViewController
 
+@property (copy, nonatomic) NSString * cellPhone;
+
 @property (nonatomic, weak) IBOutlet UIView *vwEmail;
 @property (nonatomic, weak) IBOutlet UIView *vwPasswd;
 @property (nonatomic, weak) IBOutlet PaddingTextField *txtEmail;

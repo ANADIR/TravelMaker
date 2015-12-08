@@ -99,16 +99,13 @@ bool isNeedGoUpdate;
     NSString *registrationToken = @"registrationToken";
     [preferences setObject:self.registrationToken forKey:registrationToken];
     
-    NSString *deviceId;
-    //    deviceId = [[UIDevice currentDevice].identifierForVendor UUIDString];
-    //    deviceId = [[UIDevice currentDevice] uniqueDeviceIdentifier];
-    deviceId = [self UniqueAppId];
+    self.deviceId = [self UniqueAppId];
     NSString *deviceIdStored = @"deviceIdStored";
-    [preferences setObject:deviceId forKey:deviceIdStored];
-    NSLog(@"deviceID: %@", deviceId);
+    [preferences setObject:self.deviceId forKey:deviceIdStored];
+    NSLog(@"deviceID: %@", self.deviceId);
     
     NSString * registerDeviceUrl = @"http://travelmakerdata.co.nf/server/index.php?action=register_device_push&regid=";
-    NSString * url = [NSString stringWithFormat:@"%@%@&device_id=%@&device_type=iOS",registerDeviceUrl,self.registrationToken, deviceId];
+    NSString * url = [NSString stringWithFormat:@"%@%@&device_id=%@&device_type=iOS",registerDeviceUrl,self.registrationToken, self.deviceId];
     
     [DCDefines getHttpAsyncResponse:url :^(NSData *data, NSError *connectionError) {
         NSData *responseData = data;

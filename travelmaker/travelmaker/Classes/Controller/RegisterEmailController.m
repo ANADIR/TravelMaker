@@ -7,6 +7,7 @@
 //
 
 #import "RegisterEmailController.h"
+#import "AppDelegate.h"
 
 @interface RegisterEmailController ()
 
@@ -58,6 +59,56 @@
 
 - (IBAction)clickContinue:(UIButton *)sender
 {
+    NSString *email = [txtEmail text];
+    if ([Common checkEmailValidation:email] == NO)
+    {
+        [Common showAlert:@"error" Message:@"Please input a valid email address." ButtonName:@"Ok"];
+        return;
+    }
     
+    NSString *passwd = [txtPasswd text];
+    if ([Common checkPasswordValidation:passwd] == NO)
+    {
+        [Common showAlert:@"error" Message:@"Password is no less than 6 characters." ButtonName:@"Ok"];
+        return;
+    }
+    
+    AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    NSString *deviceId = delegate.deviceId;
+    
+    NSString * registerUrl = @"http://travelmakerdata.co.nf/server/index.php?action=register_user";
+    registerUrl = [NSString stringWithFormat:@"%@&device_id=%@",registerUrl, deviceId];
+    registerUrl = [NSString stringWithFormat:@"%@&FB_id=%@",    registerUrl, @""];
+    registerUrl = [NSString stringWithFormat:@"%@&fullname=%@", registerUrl, @""];
+    registerUrl = [NSString stringWithFormat:@"%@&cellphone=%@",registerUrl, self.cellPhone];
+    registerUrl = [NSString stringWithFormat:@"%@&image_url=%@",registerUrl, @"none"];
+    registerUrl = [NSString stringWithFormat:@"%@&email=%@",    registerUrl, email];
+    registerUrl = [NSString stringWithFormat:@"%@&password=%@", registerUrl, passwd];
+
+
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [DCDefines getHttpAsyncResponse:registerUrl :^(NSData *data, NSError *connectionError) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+        
+        NSData *responseData = data;
+        if (responseData == nil) {
+            return;
+        }
+        NSString *string = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"result string: %@", string);
+        
+        NSError *error;
+        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
+        NSString * status = [jsonDict objectForKey:@"status"];
+        NSString * returnerror = [jsonDict objectForKey:@"error"];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if([status isEqualToString:@"done"]) {
+            }
+        });
+    }];
+
 }
 @end

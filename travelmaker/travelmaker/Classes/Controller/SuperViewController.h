@@ -10,6 +10,8 @@
 #import <IQKeyboardManager.h>
 #import <IQKeyboardReturnKeyHandler.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "Common.h"
+#import "DCDefines.h"
 
 @interface SuperViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate, UITextViewDelegate>
 {

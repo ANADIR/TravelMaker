@@ -18,7 +18,6 @@
 @implementation RegisterController
 
 
-#define CELLPHONE_MAXLENGTH 10
 #define PHONE_PADDING_WIDTH 20
 
 @synthesize txtCellPhone;
@@ -47,7 +46,9 @@
 
 - (IBAction)clickFacebook:(UIButton *)sender
 {
-    if ([self checkValidation] == YES)
+    NSString *phone = [txtCellPhone text];
+    
+    if ([Common checkPhoneValidation:phone] == YES)
     {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.labelText = @"Please wait...";
@@ -59,7 +60,7 @@
             [hud hide:YES];
             if (error)
             {
-                [self showAlert:@"Error" Message:@"Failed on logging in facekbook." ButtonName:@"Ok"];
+                [Common showAlert:@"Error" Message:@"Failed on logging in facekbook." ButtonName:@"Ok"];
             }
             else
             {
@@ -74,7 +75,7 @@
     }
     else
     {
-        [self showAlert:@"error" Message:@"The phone number must be total 10 digits." ButtonName:@"Ok"];
+        [Common showAlert:@"error" Message:@"The phone number must be total 10 digits." ButtonName:@"Ok"];
     }
 }
 
@@ -118,37 +119,19 @@
 
 - (IBAction)clickEmail:(UIButton *)sender
 {
-    if ([self checkValidation] == YES)
+    NSString *phone = [txtCellPhone text];
+    if ([Common checkPhoneValidation:phone] == YES)
     {
         RegisterEmailController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"registerEmailVC"];
-        
+        [controller setCellPhone:phone];
         [self presentViewController:controller animated:YES completion:nil];
     }
     else
     {
-        [self showAlert:@"error" Message:@"The phone number must be total 10 digits." ButtonName:@"Ok"];
+        [Common showAlert:@"error" Message:@"The phone number must be total 10 digits." ButtonName:@"Ok"];
     }
 }
 
-- (BOOL)checkValidation
-{
-    int length = [[txtCellPhone text] length];
-    
-    if (length < CELLPHONE_MAXLENGTH)
-        return NO;
-    
-    return YES;
-}
-
--(void) showAlert:(NSString *)title Message:(NSString *)message ButtonName:(NSString *)buttonname
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:buttonname
-                                          otherButtonTitles:nil];
-    [alert show];
-}
 
 #pragma mark - UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
