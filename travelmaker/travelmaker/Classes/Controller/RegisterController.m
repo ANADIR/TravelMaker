@@ -124,6 +124,7 @@
     {
         RegisterEmailController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"registerEmailVC"];
         [controller setCellPhone:phone];
+        controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController:controller animated:YES completion:nil];
     }
     else

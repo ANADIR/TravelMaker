@@ -54,7 +54,7 @@
 
 - (IBAction)clickBack:(UIButton *)sender
 {
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)clickContinue:(UIButton *)sender
@@ -102,10 +102,10 @@
         NSError *error;
         NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
         NSString * status = [jsonDict objectForKey:@"status"];
-        NSString * returnerror = [jsonDict objectForKey:@"error"];
-        
+//        NSString * returnerror = [jsonDict objectForKey:@"error"];
         dispatch_async(dispatch_get_main_queue(), ^{
-            if([status isEqualToString:@"done"]) {
+            if([status isEqualToString:@"done"] == NO) {
+                [Common showAlert:@"Error" Message:@"Failed on registering user." ButtonName:@"Ok"];
             }
         });
     }];
