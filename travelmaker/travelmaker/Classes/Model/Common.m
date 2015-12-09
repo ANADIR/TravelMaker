@@ -22,13 +22,13 @@
 
 + (BOOL)checkPasswordValidation:(NSString *)password
 {
-    int length = [password length];
+    NSInteger length = [password length];
     return length >= PASSWORD_MINENGTH? YES: NO;
 }
 
 + (BOOL)checkPhoneValidation:(NSString *)phone
 {
-    int length = [phone length];
+    NSInteger length = [phone length];
     
     if (length < CELLPHONE_MAXLENGTH)
         return NO;

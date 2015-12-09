@@ -120,6 +120,8 @@
                                                                 leftMenuViewController:menuController
                                                                 rightMenuViewController:nil];
                 
+                [trafficController setMenuController:container];
+                
                 delegate.window.rootViewController = container;
                 [delegate.window makeKeyAndVisible];
 
