@@ -8,8 +8,27 @@
 
 #import "SuperViewController.h"
 
-@interface OfferDetailController : SuperViewController
+@interface OfferDetailController : SuperViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (copy, nonatomic) NSDictionary *trafficData;
+
+@property (nonatomic, weak) IBOutlet UITableView *tblTraffic;
+@property (nonatomic, weak) IBOutlet UILabel *lblTrip;
+@property (nonatomic, weak) IBOutlet UILabel *lblTitle;
+@property (nonatomic, weak) IBOutlet UILabel *lblDescription;
+@property (nonatomic, weak) IBOutlet UILabel *lblPrice;
+
+
+@property (nonatomic, weak) IBOutlet UIView *vwCompany;
+@property (nonatomic, weak) IBOutlet UILabel *lblCompany;
+
+@property (nonatomic, weak) IBOutlet UIView *vwWhatsapp;
+@property (nonatomic, weak) IBOutlet UIView *vwTelephone;
+
+- (IBAction)clickBack:(id)sender;
+- (IBAction)clickAddNew:(id)sender;
+- (IBAction)clickWhatsapp:(id)sender;
+- (IBAction)clickTelephone:(id)sender;
+- (IBAction)clickClose:(id)sender;
 
 @end
