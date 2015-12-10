@@ -58,9 +58,25 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "DYRateView/DYRateView/Resources/StarEmpty.png"
+  install_resource "DYRateView/DYRateView/Resources/StarEmpty@2x.png"
+  install_resource "DYRateView/DYRateView/Resources/StarEmptyLarge.png"
+  install_resource "DYRateView/DYRateView/Resources/StarEmptyLarge@2x.png"
+  install_resource "DYRateView/DYRateView/Resources/StarFull.png"
+  install_resource "DYRateView/DYRateView/Resources/StarFull@2x.png"
+  install_resource "DYRateView/DYRateView/Resources/StarFullLarge.png"
+  install_resource "DYRateView/DYRateView/Resources/StarFullLarge@2x.png"
   install_resource "IQKeyboardManager/IQKeyBoardManager/Resources/IQKeyboardManager.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "DYRateView/DYRateView/Resources/StarEmpty.png"
+  install_resource "DYRateView/DYRateView/Resources/StarEmpty@2x.png"
+  install_resource "DYRateView/DYRateView/Resources/StarEmptyLarge.png"
+  install_resource "DYRateView/DYRateView/Resources/StarEmptyLarge@2x.png"
+  install_resource "DYRateView/DYRateView/Resources/StarFull.png"
+  install_resource "DYRateView/DYRateView/Resources/StarFull@2x.png"
+  install_resource "DYRateView/DYRateView/Resources/StarFullLarge.png"
+  install_resource "DYRateView/DYRateView/Resources/StarFullLarge@2x.png"
   install_resource "IQKeyboardManager/IQKeyBoardManager/Resources/IQKeyboardManager.bundle"
 fi
 

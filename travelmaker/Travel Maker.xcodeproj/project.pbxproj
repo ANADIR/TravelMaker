@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B04659A1C19360F00CF6F03 /* RequestDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0465991C19360F00CF6F03 /* RequestDetailController.m */; };
+		8B04659D1C19365A00CF6F03 /* OfferDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B04659C1C19365A00CF6F03 /* OfferDetailController.m */; };
+		8B0646B11C1970F200D42E8D /* DetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0646B01C1970F200D42E8D /* DetailViewCell.m */; };
 		8B145A401C17205F0049BAA9 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B145A3F1C17205F0049BAA9 /* Common.m */; };
 		8B145A481C17410A0049BAA9 /* TrafficController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B145A471C17410A0049BAA9 /* TrafficController.m */; };
 		8B145A4B1C1741270049BAA9 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B145A4A1C1741270049BAA9 /* MenuController.m */; };
@@ -33,6 +36,12 @@
 /* Begin PBXFileReference section */
 		52943EB0F6760A9A043CFEED /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6A188A1AE76F6893AE3E97AA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8B0465981C19360F00CF6F03 /* RequestDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestDetailController.h; path = Classes/Controller/RequestDetailController.h; sourceTree = "<group>"; };
+		8B0465991C19360F00CF6F03 /* RequestDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestDetailController.m; path = Classes/Controller/RequestDetailController.m; sourceTree = "<group>"; };
+		8B04659B1C19365A00CF6F03 /* OfferDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferDetailController.h; path = Classes/Controller/OfferDetailController.h; sourceTree = "<group>"; };
+		8B04659C1C19365A00CF6F03 /* OfferDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferDetailController.m; path = Classes/Controller/OfferDetailController.m; sourceTree = "<group>"; };
+		8B0646AF1C1970F200D42E8D /* DetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewCell.h; path = Classes/View/DetailViewCell.h; sourceTree = "<group>"; };
+		8B0646B01C1970F200D42E8D /* DetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewCell.m; path = Classes/View/DetailViewCell.m; sourceTree = "<group>"; };
 		8B145A3F1C17205F0049BAA9 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Common.m; path = Classes/Model/Common.m; sourceTree = "<group>"; };
 		8B145A421C1720E10049BAA9 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = Classes/Model/Common.h; sourceTree = "<group>"; };
 		8B145A461C17410A0049BAA9 /* TrafficController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrafficController.h; path = Classes/Controller/TrafficController.h; sourceTree = "<group>"; };
@@ -164,6 +173,10 @@
 				8B145A471C17410A0049BAA9 /* TrafficController.m */,
 				8B145A491C1741270049BAA9 /* MenuController.h */,
 				8B145A4A1C1741270049BAA9 /* MenuController.m */,
+				8B0465981C19360F00CF6F03 /* RequestDetailController.h */,
+				8B0465991C19360F00CF6F03 /* RequestDetailController.m */,
+				8B04659B1C19365A00CF6F03 /* OfferDetailController.h */,
+				8B04659C1C19365A00CF6F03 /* OfferDetailController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -184,6 +197,8 @@
 				8B4CE6691C15435A00D0C19D /* PaddingTextField.m */,
 				8B9AC23A1C18248400572703 /* TrafficViewCell.h */,
 				8B9AC23B1C18248400572703 /* TrafficViewCell.m */,
+				8B0646AF1C1970F200D42E8D /* DetailViewCell.h */,
+				8B0646B01C1970F200D42E8D /* DetailViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -353,9 +368,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B4344BE1C11D38E00400E8A /* UIDevice+IdentifierAddition.m in Sources */,
+				8B04659D1C19365A00CF6F03 /* OfferDetailController.m in Sources */,
 				8B145A481C17410A0049BAA9 /* TrafficController.m in Sources */,
 				8B4344B21C1190CD00400E8A /* LoginController.m in Sources */,
 				8B145A4B1C1741270049BAA9 /* MenuController.m in Sources */,
+				8B04659A1C19360F00CF6F03 /* RequestDetailController.m in Sources */,
 				8B4344BD1C11D38E00400E8A /* NSString+MD5Addition.m in Sources */,
 				8B4344941C1174E600400E8A /* AppDelegate.m in Sources */,
 				8B9AC23C1C18248400572703 /* TrafficViewCell.m in Sources */,
@@ -366,6 +383,7 @@
 				8B43449D1C1174E600400E8A /* travelmaker.xcdatamodeld in Sources */,
 				8B4344C11C11D39700400E8A /* DCDefines.m in Sources */,
 				8B145A401C17205F0049BAA9 /* Common.m in Sources */,
+				8B0646B11C1970F200D42E8D /* DetailViewCell.m in Sources */,
 				8B4344911C1174E600400E8A /* main.m in Sources */,
 				8B4344B51C11922000400E8A /* TutorialController.m in Sources */,
 			);

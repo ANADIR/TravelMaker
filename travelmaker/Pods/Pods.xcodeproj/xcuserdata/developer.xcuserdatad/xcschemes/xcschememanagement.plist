@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DYRateView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +47,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>04E642EBA40173853943DDBEFB8A31A5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0FB3864CF47A4C4BD1587783785938C3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>20D766638DEBB39710CE799651AEC45A</key>
+		<key>1C1791490ED2A7A5EAA325AC2D6B8386</key>
 		<dict>
 			<key>primary</key>
 			<true/>

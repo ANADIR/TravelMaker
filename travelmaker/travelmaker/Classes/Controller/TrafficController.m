@@ -8,6 +8,8 @@
 
 #import "TrafficController.h"
 #import "TrafficViewCell.h"
+#import "RequestDetailController.h"
+#import "OfferDetailController.h"
 
 @interface TrafficViewCell ()
 
@@ -334,7 +336,24 @@ BOOL isSelectedRequest = YES;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (isSelectedRequest == YES)
+    {
+        NSDictionary *traffic = [self.arrayRequestTrip objectAtIndex:indexPath.row];
+        
+        RequestDetailController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"requestDetailVC"];
+        [controller setTrafficData:traffic];
+        controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:controller animated:YES completion:nil];
+    }
+    else
+    {
+        NSDictionary *traffic = [self.arrayOfferTrip objectAtIndex:indexPath.row];
+        
+        OfferDetailController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"offerDetailVC"];
+        [controller setTrafficData:traffic];
+        controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:controller animated:YES completion:nil];
+    }
 }
 
 @end
