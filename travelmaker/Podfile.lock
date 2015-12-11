@@ -49,6 +49,7 @@ PODS:
   - IQKeyboardManager (3.3.4)
   - MBProgressHUD (0.9.1)
   - MFSideMenu (0.5.5)
+  - MJPopupViewController (0.4)
 
 DEPENDENCIES:
   - DYRateView
@@ -59,6 +60,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - MBProgressHUD
   - MFSideMenu
+  - MJPopupViewController
 
 SPEC CHECKSUMS:
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
@@ -76,5 +78,6 @@ SPEC CHECKSUMS:
   IQKeyboardManager: ac803e61e5b50efae6b3aeedd95a02c7c7d3b2b3
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MFSideMenu: 268122e6894f2747fc3a2b48578100b232506c60
+  MJPopupViewController: e9ad553a3145eb8126ba2748e872ae7fb25cc605
 
 COCOAPODS: 0.39.0

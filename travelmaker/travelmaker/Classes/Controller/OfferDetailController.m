@@ -9,6 +9,8 @@
 #import "OfferDetailController.h"
 #import "DetailViewCell.h"
 #import <DYRateView.h>
+#import "UIViewController+MJPopupViewController.h"
+#import "NewTripController.h"
 
 
 @implementation OfferDetailController
@@ -61,7 +63,10 @@
 
 - (IBAction)clickAddNew:(id)sender
 {
-    
+    NewTripController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"newTripVC"];
+    [controller.view setFrame:CGRectMake(0, 100, 320, 320)];
+    [self presentPopupViewController:controller animationType:MJPopupViewAnimationFade];
+  
 }
 
 - (IBAction)clickClose:(id)sender

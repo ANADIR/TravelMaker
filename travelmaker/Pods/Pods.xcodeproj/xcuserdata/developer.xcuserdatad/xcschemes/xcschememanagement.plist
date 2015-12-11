@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MJPopupViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,11 +52,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>04E642EBA40173853943DDBEFB8A31A5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>0FB3864CF47A4C4BD1587783785938C3</key>
 		<dict>
 			<key>primary</key>
@@ -72,12 +72,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7D5D51C15B5FDBC4573ED1D64863432B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>81D7FE2A0FD9258247B1232874B837DA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>A48601FEE4437A924848DB48369BA809</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C08BA015151F32546921B1FCA9B4FF0C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

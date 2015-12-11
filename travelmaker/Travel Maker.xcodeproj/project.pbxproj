@@ -29,6 +29,7 @@
 		8B4CE6671C15314E00D0C19D /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CE6661C15314E00D0C19D /* RegisterController.m */; };
 		8B4CE66A1C15435A00D0C19D /* PaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CE6691C15435A00D0C19D /* PaddingTextField.m */; };
 		8B4CE66D1C155F5400D0C19D /* RegisterEmailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CE66C1C155F5400D0C19D /* RegisterEmailController.m */; };
+		8B858D521C1AB3C000A80CB8 /* NewTripController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B858D511C1AB3C000A80CB8 /* NewTripController.m */; };
 		8B9AC23C1C18248400572703 /* TrafficViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AC23B1C18248400572703 /* TrafficViewCell.m */; };
 		DBFC9FFE25489B546EC484A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 931D7C9D48A7962FAD3442DF /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,8 @@
 		8B4CE6691C15435A00D0C19D /* PaddingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaddingTextField.m; path = Classes/View/PaddingTextField.m; sourceTree = "<group>"; };
 		8B4CE66B1C155F5400D0C19D /* RegisterEmailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterEmailController.h; path = Classes/Controller/RegisterEmailController.h; sourceTree = "<group>"; };
 		8B4CE66C1C155F5400D0C19D /* RegisterEmailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterEmailController.m; path = Classes/Controller/RegisterEmailController.m; sourceTree = "<group>"; };
+		8B858D501C1AB3C000A80CB8 /* NewTripController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewTripController.h; path = Classes/Controller/NewTripController.h; sourceTree = "<group>"; };
+		8B858D511C1AB3C000A80CB8 /* NewTripController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewTripController.m; path = Classes/Controller/NewTripController.m; sourceTree = "<group>"; };
 		8B9AC23A1C18248400572703 /* TrafficViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrafficViewCell.h; path = Classes/View/TrafficViewCell.h; sourceTree = "<group>"; };
 		8B9AC23B1C18248400572703 /* TrafficViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrafficViewCell.m; path = Classes/View/TrafficViewCell.m; sourceTree = "<group>"; };
 		931D7C9D48A7962FAD3442DF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +180,8 @@
 				8B0465991C19360F00CF6F03 /* RequestDetailController.m */,
 				8B04659B1C19365A00CF6F03 /* OfferDetailController.h */,
 				8B04659C1C19365A00CF6F03 /* OfferDetailController.m */,
+				8B858D501C1AB3C000A80CB8 /* NewTripController.h */,
+				8B858D511C1AB3C000A80CB8 /* NewTripController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 				8B0646B11C1970F200D42E8D /* DetailViewCell.m in Sources */,
 				8B4344911C1174E600400E8A /* main.m in Sources */,
 				8B4344B51C11922000400E8A /* TutorialController.m in Sources */,
+				8B858D521C1AB3C000A80CB8 /* NewTripController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5A5DDC32F04A6152347465A5'
-               BlueprintName = 'MFSideMenu'
+               BlueprintIdentifier = '3B27B24F94F1A860565EB4BB'
+               BlueprintName = 'MJPopupViewController'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libMFSideMenu.a'>
+               BuildableName = 'libMJPopupViewController.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
