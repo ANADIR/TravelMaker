@@ -8,8 +8,9 @@
 
 #import "SuperViewController.h"
 #import "MFSideMenu.h"
+#import "NewTripController.h"
 
-@interface TrafficController : SuperViewController <UITableViewDataSource, UITableViewDelegate>
+@interface TrafficController : SuperViewController <UITableViewDataSource, UITableViewDelegate, NewTripDelegate>
 
 @property (assign, atomic) MFSideMenuContainerViewController *menuController;
 

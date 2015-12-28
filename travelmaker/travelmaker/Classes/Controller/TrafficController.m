@@ -12,6 +12,10 @@
 #import "OfferDetailController.h"
 #import "UIViewController+MJPopupViewController.h"
 #import "NewTripController.h"
+#import "RegisterController.h"
+#import "NewRequestController.h"
+#import "NewOfferController.h"
+
 
 @interface TrafficViewCell ()
 
@@ -38,7 +42,11 @@ BOOL isSelectedRequest = YES;
     self.arrayTrafficData = [[NSMutableArray alloc] init];
     self.arrayOfferTrip = [[NSMutableArray alloc] init];
     self.arrayRequestTrip = [[NSMutableArray alloc] init];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
     [self loadTrafficData];
 }
@@ -82,6 +90,9 @@ BOOL isSelectedRequest = YES;
 
 - (void)loadTrafficData
 {
+    [self.arrayOfferTrip removeAllObjects];
+    [self.arrayRequestTrip removeAllObjects];
+    
     NSString * getTrafficUrl = @"http://travelmakerdata.co.nf/server/index.php?action=getAllTrafficData";
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -106,6 +117,9 @@ BOOL isSelectedRequest = YES;
                 for (id traffic in self.arrayTrafficData)
                 {
                     NSString *type = [traffic objectForKey:@"traffic_type"];
+                    if (type == (NSString *)[NSNull null])
+                        continue;
+                    
                     if ([type isEqualToString:@"requested"] == YES)
                         [self.arrayRequestTrip addObject:traffic];
                     else
@@ -139,7 +153,21 @@ BOOL isSelectedRequest = YES;
 
 - (IBAction)clickAddNew:(id)sender
 {
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSString *user_id = [preferences objectForKey:@"user_id"];
+    if (user_id == nil || [user_id isEqualToString:@""])
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                         message:@"You're not registered yet. \nDo you want to register now?"
+                                                        delegate:self
+                                               cancelButtonTitle:@"NO"
+                                               otherButtonTitles:@"YES", nil];
+        [alert show];        
+        return;
+    }
+    
     NewTripController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"newTripVC"];
+    controller.delegate = self;
     [controller.view setFrame:CGRectMake(0, 100, 320, 320)];
     [self presentPopupViewController:controller animationType:MJPopupViewAnimationFade];
 }
@@ -358,6 +386,41 @@ BOOL isSelectedRequest = YES;
         controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController:controller animated:YES completion:nil];
     }
+}
+
+#pragma mark -UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        // cancel
+    }
+    else
+    {
+        // Ok
+        RegisterController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"registerVC"];
+        controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:controller animated:YES completion:nil];
+    }
+}
+
+#pragma mark - NewTripDelegate
+- (void)gotoNewOfferTrip
+{
+    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+    
+    NewOfferController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"newOfferVC"];
+    controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void)gotoNewRequestTrip
+{
+    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+
+    NewRequestController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"newRequestVC"];
+    controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end

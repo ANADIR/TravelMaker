@@ -38,6 +38,9 @@
     UIGraphicsEndImageContext();
     [vwPasswd setBackgroundColor:[UIColor colorWithPatternImage:imgPasswd]];
     
+    // TODO for release
+    [txtEmail setText:@"test@gmail.com"];
+    [txtPasswd setText:@"12345678"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,7 +104,6 @@
         NSError *error;
         NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
         NSString * status = [jsonDict objectForKey:@"status"];
-        //        NSString * returnerror = [jsonDict objectForKey:@"error"];
         dispatch_async(dispatch_get_main_queue(), ^{
             if([status isEqualToString:@"logged OK"] == NO) {
                 [Common showAlert:@"Error" Message:@"Failed on logging in." ButtonName:@"Ok"];
@@ -109,6 +111,10 @@
             else
             {
                 //
+                NSString *user_id = [jsonDict objectForKey:@"user_id"];
+                NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+                [preferences setObject:user_id forKey:@"user_id"];
+
                 
                 AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
                 

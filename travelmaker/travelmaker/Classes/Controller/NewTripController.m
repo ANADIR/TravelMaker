@@ -23,12 +23,12 @@
 #pragma mark - IBAction
 - (IBAction)clickNewOfferTrip:(id)sender
 {
-    
+    [self.delegate gotoNewOfferTrip];
 }
 
 - (IBAction)clickNewRequestTrip:(id)sender
 {
-    
+    [self.delegate gotoNewRequestTrip];
 }
 
 

@@ -11,7 +11,9 @@
 #import <DYRateView.h>
 #import "UIViewController+MJPopupViewController.h"
 #import "NewTripController.h"
-
+#import "RegisterController.h"
+#import "NewRequestController.h"
+#import "NewOfferController.h"
 
 @implementation OfferDetailController
 
@@ -63,10 +65,23 @@
 
 - (IBAction)clickAddNew:(id)sender
 {
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSString *user_id = [preferences objectForKey:@"user_id"];
+    if (user_id == nil || [user_id isEqualToString:@""])
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                         message:@"You're not registered yet. \nDo you want to register now?"
+                                                        delegate:self
+                                               cancelButtonTitle:@"NO"
+                                               otherButtonTitles:@"YES", nil];
+        [alert show];
+        return;
+    }
+
     NewTripController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"newTripVC"];
+    controller.delegate = self;
     [controller.view setFrame:CGRectMake(0, 100, 320, 320)];
     [self presentPopupViewController:controller animationType:MJPopupViewAnimationFade];
-  
 }
 
 - (IBAction)clickClose:(id)sender
@@ -78,7 +93,6 @@
 - (IBAction)clickWhatsapp:(id)sender
 {
     [self handleWhatsapp];
-    
 }
 
 - (IBAction)clickTelephone:(id)sender
@@ -170,6 +184,41 @@
     }
     
     return cell;
+}
+
+#pragma mark -UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        // cancel
+    }
+    else
+    {
+        // Ok
+        RegisterController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"registerVC"];
+        controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:controller animated:YES completion:nil];
+    }
+}
+
+#pragma mark - NewTripDelegate
+- (void)gotoNewOfferTrip
+{
+    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+    
+    NewOfferController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"newOfferVC"];
+    controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void)gotoNewRequestTrip
+{
+    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+    
+    NewRequestController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"newRequestVC"];
+    controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end

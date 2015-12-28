@@ -29,7 +29,12 @@
 		8B4CE6671C15314E00D0C19D /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CE6661C15314E00D0C19D /* RegisterController.m */; };
 		8B4CE66A1C15435A00D0C19D /* PaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CE6691C15435A00D0C19D /* PaddingTextField.m */; };
 		8B4CE66D1C155F5400D0C19D /* RegisterEmailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CE66C1C155F5400D0C19D /* RegisterEmailController.m */; };
+		8B4DDC2B1C2286A80029D266 /* RightPaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4DDC2A1C2286A80029D266 /* RightPaddingTextField.m */; };
+		8B4DDC2F1C228D370029D266 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4DDC2E1C228D370029D266 /* UIPlaceHolderTextView.m */; };
+		8B4DDC331C2372530029D266 /* ZSYPopoverListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4DDC321C2372530029D266 /* ZSYPopoverListView.m */; };
 		8B858D521C1AB3C000A80CB8 /* NewTripController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B858D511C1AB3C000A80CB8 /* NewTripController.m */; };
+		8B858D551C1E6C4100A80CB8 /* NewRequestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B858D541C1E6C4100A80CB8 /* NewRequestController.m */; };
+		8B858D581C1E6C5100A80CB8 /* NewOfferController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B858D571C1E6C5100A80CB8 /* NewOfferController.m */; };
 		8B9AC23C1C18248400572703 /* TrafficViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AC23B1C18248400572703 /* TrafficViewCell.m */; };
 		DBFC9FFE25489B546EC484A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 931D7C9D48A7962FAD3442DF /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -77,8 +82,18 @@
 		8B4CE6691C15435A00D0C19D /* PaddingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaddingTextField.m; path = Classes/View/PaddingTextField.m; sourceTree = "<group>"; };
 		8B4CE66B1C155F5400D0C19D /* RegisterEmailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterEmailController.h; path = Classes/Controller/RegisterEmailController.h; sourceTree = "<group>"; };
 		8B4CE66C1C155F5400D0C19D /* RegisterEmailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterEmailController.m; path = Classes/Controller/RegisterEmailController.m; sourceTree = "<group>"; };
+		8B4DDC291C2286A80029D266 /* RightPaddingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightPaddingTextField.h; path = Classes/View/RightPaddingTextField.h; sourceTree = "<group>"; };
+		8B4DDC2A1C2286A80029D266 /* RightPaddingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RightPaddingTextField.m; path = Classes/View/RightPaddingTextField.m; sourceTree = "<group>"; };
+		8B4DDC2D1C228D370029D266 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIPlaceHolderTextView.h; path = Classes/External/UIPlaceHolderTextView/UIPlaceHolderTextView.h; sourceTree = "<group>"; };
+		8B4DDC2E1C228D370029D266 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIPlaceHolderTextView.m; path = Classes/External/UIPlaceHolderTextView/UIPlaceHolderTextView.m; sourceTree = "<group>"; };
+		8B4DDC311C2372530029D266 /* ZSYPopoverListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZSYPopoverListView.h; path = Classes/External/ZSYPopoverListView/ZSYPopoverListView.h; sourceTree = "<group>"; };
+		8B4DDC321C2372530029D266 /* ZSYPopoverListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZSYPopoverListView.m; path = Classes/External/ZSYPopoverListView/ZSYPopoverListView.m; sourceTree = "<group>"; };
 		8B858D501C1AB3C000A80CB8 /* NewTripController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewTripController.h; path = Classes/Controller/NewTripController.h; sourceTree = "<group>"; };
 		8B858D511C1AB3C000A80CB8 /* NewTripController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewTripController.m; path = Classes/Controller/NewTripController.m; sourceTree = "<group>"; };
+		8B858D531C1E6C4100A80CB8 /* NewRequestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewRequestController.h; path = Classes/Controller/NewRequestController.h; sourceTree = "<group>"; };
+		8B858D541C1E6C4100A80CB8 /* NewRequestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewRequestController.m; path = Classes/Controller/NewRequestController.m; sourceTree = "<group>"; };
+		8B858D561C1E6C5100A80CB8 /* NewOfferController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewOfferController.h; path = Classes/Controller/NewOfferController.h; sourceTree = "<group>"; };
+		8B858D571C1E6C5100A80CB8 /* NewOfferController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewOfferController.m; path = Classes/Controller/NewOfferController.m; sourceTree = "<group>"; };
 		8B9AC23A1C18248400572703 /* TrafficViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrafficViewCell.h; path = Classes/View/TrafficViewCell.h; sourceTree = "<group>"; };
 		8B9AC23B1C18248400572703 /* TrafficViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrafficViewCell.m; path = Classes/View/TrafficViewCell.m; sourceTree = "<group>"; };
 		931D7C9D48A7962FAD3442DF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,14 +189,18 @@
 				8B4CE66C1C155F5400D0C19D /* RegisterEmailController.m */,
 				8B145A461C17410A0049BAA9 /* TrafficController.h */,
 				8B145A471C17410A0049BAA9 /* TrafficController.m */,
-				8B145A491C1741270049BAA9 /* MenuController.h */,
-				8B145A4A1C1741270049BAA9 /* MenuController.m */,
-				8B0465981C19360F00CF6F03 /* RequestDetailController.h */,
-				8B0465991C19360F00CF6F03 /* RequestDetailController.m */,
-				8B04659B1C19365A00CF6F03 /* OfferDetailController.h */,
-				8B04659C1C19365A00CF6F03 /* OfferDetailController.m */,
 				8B858D501C1AB3C000A80CB8 /* NewTripController.h */,
 				8B858D511C1AB3C000A80CB8 /* NewTripController.m */,
+				8B0465981C19360F00CF6F03 /* RequestDetailController.h */,
+				8B0465991C19360F00CF6F03 /* RequestDetailController.m */,
+				8B858D531C1E6C4100A80CB8 /* NewRequestController.h */,
+				8B858D541C1E6C4100A80CB8 /* NewRequestController.m */,
+				8B04659B1C19365A00CF6F03 /* OfferDetailController.h */,
+				8B04659C1C19365A00CF6F03 /* OfferDetailController.m */,
+				8B858D561C1E6C5100A80CB8 /* NewOfferController.h */,
+				8B858D571C1E6C5100A80CB8 /* NewOfferController.m */,
+				8B145A491C1741270049BAA9 /* MenuController.h */,
+				8B145A4A1C1741270049BAA9 /* MenuController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -204,6 +223,8 @@
 				8B9AC23B1C18248400572703 /* TrafficViewCell.m */,
 				8B0646AF1C1970F200D42E8D /* DetailViewCell.h */,
 				8B0646B01C1970F200D42E8D /* DetailViewCell.m */,
+				8B4DDC291C2286A80029D266 /* RightPaddingTextField.h */,
+				8B4DDC2A1C2286A80029D266 /* RightPaddingTextField.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -211,6 +232,8 @@
 		8B4344B61C11D36200400E8A /* External */ = {
 			isa = PBXGroup;
 			children = (
+				8B4DDC301C2372420029D266 /* ZSYPopoverListView */,
+				8B4DDC2C1C228D160029D266 /* UIPlaceHolderTextView */,
 				8B4344B81C11D37700400E8A /* UIDeviceUniqueIdentifier */,
 				8B4344B71C11D36800400E8A /* HTTP_Communication */,
 			);
@@ -235,6 +258,24 @@
 				8B4344BC1C11D38E00400E8A /* UIDevice+IdentifierAddition.m */,
 			);
 			name = UIDeviceUniqueIdentifier;
+			sourceTree = "<group>";
+		};
+		8B4DDC2C1C228D160029D266 /* UIPlaceHolderTextView */ = {
+			isa = PBXGroup;
+			children = (
+				8B4DDC2D1C228D370029D266 /* UIPlaceHolderTextView.h */,
+				8B4DDC2E1C228D370029D266 /* UIPlaceHolderTextView.m */,
+			);
+			name = UIPlaceHolderTextView;
+			sourceTree = "<group>";
+		};
+		8B4DDC301C2372420029D266 /* ZSYPopoverListView */ = {
+			isa = PBXGroup;
+			children = (
+				8B4DDC311C2372530029D266 /* ZSYPopoverListView.h */,
+				8B4DDC321C2372530029D266 /* ZSYPopoverListView.m */,
+			);
+			name = ZSYPopoverListView;
 			sourceTree = "<group>";
 		};
 		9668374AC79CB33879A380DE /* Frameworks */ = {
@@ -279,6 +320,7 @@
 				TargetAttributes = {
 					8B43448B1C1174E600400E8A = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = M72ZRB7GL2;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -373,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B4344BE1C11D38E00400E8A /* UIDevice+IdentifierAddition.m in Sources */,
+				8B858D581C1E6C5100A80CB8 /* NewOfferController.m in Sources */,
 				8B04659D1C19365A00CF6F03 /* OfferDetailController.m in Sources */,
 				8B145A481C17410A0049BAA9 /* TrafficController.m in Sources */,
 				8B4344B21C1190CD00400E8A /* LoginController.m in Sources */,
@@ -385,10 +428,14 @@
 				8B4CE66D1C155F5400D0C19D /* RegisterEmailController.m in Sources */,
 				8B4CE66A1C15435A00D0C19D /* PaddingTextField.m in Sources */,
 				8B4344AF1C1187D200400E8A /* SuperViewController.m in Sources */,
+				8B4DDC2B1C2286A80029D266 /* RightPaddingTextField.m in Sources */,
+				8B858D551C1E6C4100A80CB8 /* NewRequestController.m in Sources */,
 				8B43449D1C1174E600400E8A /* travelmaker.xcdatamodeld in Sources */,
 				8B4344C11C11D39700400E8A /* DCDefines.m in Sources */,
 				8B145A401C17205F0049BAA9 /* Common.m in Sources */,
+				8B4DDC2F1C228D370029D266 /* UIPlaceHolderTextView.m in Sources */,
 				8B0646B11C1970F200D42E8D /* DetailViewCell.m in Sources */,
+				8B4DDC331C2372530029D266 /* ZSYPopoverListView.m in Sources */,
 				8B4344911C1174E600400E8A /* main.m in Sources */,
 				8B4344B51C11922000400E8A /* TutorialController.m in Sources */,
 				8B858D521C1AB3C000A80CB8 /* NewTripController.m in Sources */,
@@ -434,7 +481,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Amit Nadir (K3B5699EA6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Amit Nadir (K3B5699EA6)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -456,6 +504,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "3bdad2d7-2e73-4faf-8576-a21a20a4d916";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -477,7 +526,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Amit Nadir (M72ZRB7GL2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Amit Nadir (M72ZRB7GL2)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -492,6 +542,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "d4b90013-accb-4adc-8570-c10a198446c4";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -504,13 +555,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Amit Nadir (K3B5699EA6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Amit Nadir (K3B5699EA6)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = travelmaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiwiz.travelmaker;
 				PRODUCT_NAME = "Travel Maker";
-				PROVISIONING_PROFILE = "3bdad2d7-2e73-4faf-8576-a21a20a4d916";
+				PROVISIONING_PROFILE = "290c14f8-9bf3-40d3-ac3f-d6356694e609";
 			};
 			name = Debug;
 		};
@@ -521,6 +573,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Amit Nadir (M72ZRB7GL2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Amit Nadir (M72ZRB7GL2)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = travelmaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

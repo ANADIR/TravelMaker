@@ -8,9 +8,18 @@
 
 #import "SuperViewController.h"
 
+@protocol NewTripDelegate
+
+- (void)gotoNewOfferTrip;
+- (void)gotoNewRequestTrip;
+
+@end
+
 @interface NewTripController : SuperViewController
 
+@property(nonatomic, assign) NSObject<NewTripDelegate> *delegate;
 
 - (IBAction)clickNewOfferTrip:(id)sender;
 - (IBAction)clickNewRequestTrip:(id)sender;
+
 @end

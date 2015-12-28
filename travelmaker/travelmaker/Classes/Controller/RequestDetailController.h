@@ -7,8 +7,9 @@
 //
 
 #import "SuperViewController.h"
+#import "NewTripController.h"
 
-@interface RequestDetailController : SuperViewController <UITableViewDataSource, UITableViewDelegate>
+@interface RequestDetailController : SuperViewController <UITableViewDataSource, UITableViewDelegate, NewTripDelegate>
 
 @property (copy, nonatomic) NSDictionary *trafficData;
 
