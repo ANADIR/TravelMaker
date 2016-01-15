@@ -21,6 +21,7 @@
 @synthesize lblDescription, lblTrip, lblCompany;
 @synthesize tblTraffic;
 @synthesize vwCompany, vwTelephone, vwWhatsapp;
+@synthesize trafficDelegate;
 
 - (void)viewDidLoad
 {
@@ -31,13 +32,29 @@
     NSString *txtTrip = [NSString stringWithFormat:@"%@ - %@", exit_location, start_location];
     [lblTrip setText:txtTrip];
     
-    NSString *txtFreeText = [trafficData objectForKey:@"free_text"];
+    id freeText = [trafficData objectForKey:@"free_text"];
+    NSString *txtFreeText = @"";
+    if (freeText != [NSNull null])
+        txtFreeText = (NSString *)freeText;
     [lblDescription setText:txtFreeText];
  
+    NSString *txtCompany = [trafficData objectForKey:@"fullname"];
+    if (txtCompany == (id)[NSNull null])
+        [lblCompany setText:@""];
+    else
+        [lblCompany setText:txtCompany];
+
+    NSString *txtRate = [trafficData objectForKey:@"avg_rank"];
+    float rateValue = 0.0f;
+    if (txtRate == nil || [txtRate isEqualToString:@""] == YES)
+        rateValue = 0.0f;
+    else
+        rateValue = [txtRate floatValue];
+
     CGRect frame = lblCompany.frame;
     CGRect rateFrame = CGRectMake(frame.origin.x, frame.origin.y + 30, frame.size.width, 30);
     DYRateView *rateView = [[DYRateView alloc] initWithFrame:rateFrame];
-    [rateView setRate:4.2];
+    [rateView setRate:rateValue];
     [rateView setAlignment:RateViewAlignmentLeft];
     [vwCompany addSubview:rateView];
     
@@ -46,6 +63,10 @@
     
     UITapGestureRecognizer *tapTelephone = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapTelephone:)];
     [vwTelephone addGestureRecognizer:tapTelephone];
+
+    cellphone = [trafficData objectForKey:@"cellphone"];
+    if (cellphone == (id)[NSNull null])
+        cellphone = @"";
 
 }
 
@@ -57,6 +78,11 @@
 #pragma mark - IBAction
 - (IBAction)clickBack:(id)sender
 {
+    if ([self.trafficDelegate respondsToSelector:@selector(trafficDetailControllerDismissed:)])
+    {
+        [self.trafficDelegate trafficDetailControllerDismissed:YES];
+    }
+
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -79,6 +105,26 @@
     controller.delegate = self;
     [controller.view setFrame:CGRectMake(0, 100, 320, 320)];
     [self presentPopupViewController:controller animationType:MJPopupViewAnimationFade];
+}
+
+- (IBAction)clickRequest:(id)sender
+{
+    if ([self.trafficDelegate respondsToSelector:@selector(trafficDetailControllerDismissed:)])
+    {
+        [self.trafficDelegate trafficDetailControllerDismissed:YES];
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)clickOffer:(id)sender
+{
+    if ([self.trafficDelegate respondsToSelector:@selector(trafficDetailControllerDismissed:)])
+    {
+        [self.trafficDelegate trafficDetailControllerDismissed:NO];
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)clickWhatsapp:(id)sender
@@ -105,12 +151,77 @@
 
 - (void)handleWhatsapp
 {
-    [Common showAlert:@"Alert" Message:@"Clicked WhatsApp" ButtonName:@"OK"];
+    NSString *trafficId = [trafficData objectForKey:@"id"];
+    NSString * phoneCounterUrl = @"http://travelmakerdata.co.nf/server/index.php?action=increaseCallCounter";
+    phoneCounterUrl = [NSString stringWithFormat:@"%@&id=%@", phoneCounterUrl, trafficId];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [DCDefines getHttpAsyncResponse:phoneCounterUrl :^(NSData *data, NSError *connectionError) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+        
+        NSData *responseData = data;
+        if (responseData == nil) {
+            return;
+        }
+        NSString *string = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"result string: %@", string);
+        
+        NSError *error;
+        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
+        NSString * status = [jsonDict objectForKey:@"status"];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if([status isEqualToString:@"done"] == YES)
+            {
+                NSString *url = @"whatsapp://send";
+                url = [NSString stringWithFormat:@"%@?abid=%@", url, cellphone];
+                NSURL *whatsappURL = [NSURL URLWithString:url];
+                if ([[UIApplication sharedApplication] canOpenURL: whatsappURL])
+                    [[UIApplication sharedApplication] openURL: whatsappURL];
+            }
+            else
+            {
+                [Common showAlert:@"Error" Message:@"Failed on updating phone counter clicked" ButtonName:@"OK"];
+            }
+        });
+    }];
 }
 
 - (void)handleTelephone
 {
-    [Common showAlert:@"Alert" Message:@"Clicked Telephone" ButtonName:@"Ok"];
+    NSString *trafficId = [trafficData objectForKey:@"id"];
+    NSString * phoneCounterUrl = @"http://travelmakerdata.co.nf/server/index.php?action=increaseCallCounter";
+    phoneCounterUrl = [NSString stringWithFormat:@"%@&id=%@", phoneCounterUrl, trafficId];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [DCDefines getHttpAsyncResponse:phoneCounterUrl :^(NSData *data, NSError *connectionError) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+        
+        NSData *responseData = data;
+        if (responseData == nil) {
+            return;
+        }
+        NSString *string = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"result string: %@", string);
+        
+        NSError *error;
+        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
+        NSString * status = [jsonDict objectForKey:@"status"];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if([status isEqualToString:@"done"] == YES)
+            {
+                NSString *phoneNumber = [@"telprompt://" stringByAppendingString:cellphone];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+            }
+            else
+            {
+                [Common showAlert:@"Error" Message:@"Failed on updating phone counter clicked" ButtonName:@"OK"];
+            }
+        });
+    }];
 }
 
 #pragma mark - UITableViewDelegate
@@ -136,28 +247,45 @@
     }
     
     NSString *date = nil;
-    
+    NSString *value = nil;
+
     switch (indexPath.row) {
         case 0:
-            [cell.lblValue setText:[trafficData objectForKey:@"num_passengers"]];
-            [cell.lblKey setText:@"סוג רכב"];
+            value = [trafficData objectForKey:@"num_passengers"];
+            if (value != nil && value != (id)[NSNull null])
+            {
+                [cell.lblValue setText:value];
+                [cell.lblKey setText:@"סוג רכב"];
+            }
             break;
         case 1:
-            [cell.lblValue setText:[trafficData objectForKey:@"time_start"]];
-            [cell.lblKey setText:@"שעת פינוי"];
+            value = [trafficData objectForKey:@"time_start"];
+            if (value != nil && value != (id)[NSNull null])
+            {
+                [cell.lblValue setText:value];
+                [cell.lblKey setText:@"שעת פינוי"];
+            }
             break;
         case 2:
-            [cell.lblValue setText:[trafficData objectForKey:@"start_location"]];
-            [cell.lblKey setText:@"מוצא"];
+            value = [trafficData objectForKey:@"start_location"];
+            if (value != nil && value != (id)[NSNull null])
+            {
+                [cell.lblValue setText:value];
+                [cell.lblKey setText:@"מוצא"];
+            }
             break;
         case 3:
-            [cell.lblValue setText:[trafficData objectForKey:@"area"]];
-            [cell.lblKey setText:@"לאזור"];
+            value = [trafficData objectForKey:@"area"];
+            if (value != nil && value != (id)[NSNull null])
+            {
+                [cell.lblValue setText:value];
+                [cell.lblKey setText:@"לאזור"];
+            }
             break;
         case 4:
             date = [trafficData objectForKey:@"date_start"];
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"ddMMyyyy"];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
             NSDate *dateFromString = [dateFormatter dateFromString:date];
             [dateFormatter setDateFormat:@"dd.MM.yyyy"];
             NSString *displayDate = [dateFormatter stringFromDate:dateFromString];
@@ -192,6 +320,7 @@
     [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
     
     NewOfferController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"newOfferVC"];
+    controller.trafficDelegate = self.trafficDelegate;
     controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:controller animated:YES completion:nil];
 }
@@ -201,8 +330,14 @@
     [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
     
     NewRequestController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"newRequestVC"];
+    controller.trafficDelegate = self.trafficDelegate;
     controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void)closePopup
+{
+    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
 }
 
 @end

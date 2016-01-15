@@ -11,6 +11,7 @@
 @implementation NewOfferController
 
 @synthesize txtDate, txtEndArea, txtEndTime, txtMoreInfo, txtPrice, txtStartArea, txtStartTime, txtTypeVehicle;
+@synthesize trafficDelegate;
 
 NSMutableArray *arrayOfferCarType;
 
@@ -18,7 +19,7 @@ NSMutableArray *arrayOfferCarType;
 {
     [super viewDidLoad];
     
-    [txtMoreInfo setPlaceholder:@"פרטי נוספים"];
+    [txtMoreInfo setPlaceholder:@"פרטים נוספים"];
     [txtMoreInfo setPlaceholderColor:[UIColor colorWithRed:50.0/255.0 green:152.0/255.0 blue:219.0/255.0 alpha:1.0f]];
     [txtMoreInfo setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"NewFieldFreetext"]]];
     
@@ -106,8 +107,7 @@ NSMutableArray *arrayOfferCarType;
     NSString *textMore = [txtMoreInfo text];
     if (textMore == nil || [textMore isEqualToString:@""])
     {
-        [Common showAlert:@"Error" Message:@"Please input a Additional details" ButtonName:@"OK"];
-        return;
+        textMore = @"";
     }
     
     NSString *textPrice = [txtPrice text];
@@ -122,10 +122,11 @@ NSMutableArray *arrayOfferCarType;
     NSString *user_id = [preferences objectForKey:@"user_id"];
     
     // convert date to DDMMYYYY
+    NSString *startDate = [NSString stringWithFormat:@"%@ %@", textDate, textStartTime];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
-    NSDate *date = [dateFormatter dateFromString:textDate];
-    [dateFormatter setDateFormat:@"ddMMyyyy"];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy HH:mm"];
+    NSDate *date = [dateFormatter dateFromString:startDate];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSString *convertDate = [dateFormatter stringFromDate:date];
     
     // get current date
@@ -144,6 +145,7 @@ NSMutableArray *arrayOfferCarType;
     postTripUrl = [NSString stringWithFormat:@"%@&area=%@", postTripUrl, @""];
     postTripUrl = [NSString stringWithFormat:@"%@&date_start=%@", postTripUrl, convertDate];
     postTripUrl = [NSString stringWithFormat:@"%@&time_start=%@", postTripUrl, textStartTime];
+    postTripUrl = [NSString stringWithFormat:@"%@&time_end=%@", postTripUrl, textEndTime];
     postTripUrl = [NSString stringWithFormat:@"%@&num_passengers=%@", postTripUrl, textVehicle];
     postTripUrl = [NSString stringWithFormat:@"%@&free_text=%@", postTripUrl, textMore];
     postTripUrl = [NSString stringWithFormat:@"%@&price=%@", postTripUrl, textPrice];
@@ -173,7 +175,14 @@ NSMutableArray *arrayOfferCarType;
                 [Common showAlert:@"Error" Message:@"Failed on creating new trip" ButtonName:@"Ok"];
             }
             else
-                [Common showAlert:@"Success" Message:@"Added new Offered Trip" ButtonName:@"Ok"];
+            {
+                if ([self.trafficDelegate respondsToSelector:@selector(trafficDetailControllerDismissed:)])
+                {
+                    [self.trafficDelegate trafficDetailControllerDismissed:NO];
+                }
+                
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
         });
         
     }];
@@ -185,7 +194,7 @@ NSMutableArray *arrayOfferCarType;
     int height = [arrayOfferCarType count] * 45 + 30;
     
     ZSYPopoverListView *listView = [[ZSYPopoverListView alloc] initWithFrame:CGRectMake(0, 0, 250, height)];
-    listView.titleName.text = @"Select a type";
+    listView.titleName.text = @"סוג רכב";
     listView.datasource = self;
     listView.delegate = self;
     

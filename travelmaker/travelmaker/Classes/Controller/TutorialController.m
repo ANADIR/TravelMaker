@@ -7,6 +7,10 @@
 //
 
 #import "TutorialController.h"
+#import "MFSideMenu.h"
+#import "TrafficController.h"
+#import "MenuController.h"
+#import "AppDelegate.h"
 
 @implementation TutorialController
 
@@ -14,6 +18,7 @@
 @synthesize lblTutorial;
 
 int current_tutorial;
+int previous_tutorial;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,11 +33,38 @@ int current_tutorial;
     [self.view addGestureRecognizer:swipeRight];
     
     current_tutorial = 1;
+    previous_tutorial = current_tutorial;
+    
+    // auto login
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSString *user_id = [preferences objectForKey:@"user_id"];
+    NSString *email = [preferences objectForKey:@"email"];
+    if (user_id != nil && email != nil)
+        [self gotoMainScreen];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)gotoMainScreen
+{
+    AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    TrafficController *trafficController = [self.storyboard instantiateViewControllerWithIdentifier:@"trafficVC"];
+    MenuController *menuController = [self.storyboard instantiateViewControllerWithIdentifier:@"menuVC"];
+    
+    MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController
+                                                    containerWithCenterViewController:trafficController
+                                                    leftMenuViewController:menuController
+                                                    rightMenuViewController:nil];
+    
+    [trafficController setMenuController:container];
+    [menuController setMenuController:container];
+    
+    delegate.window.rootViewController = container;
+    [delegate.window makeKeyAndVisible];
 }
 
 /*
@@ -50,6 +82,7 @@ int current_tutorial;
     if (current_tutorial == 1)
         return;
     
+    previous_tutorial = current_tutorial;
     current_tutorial --;
     [self updateTutorialView:current_tutorial];
 }
@@ -58,7 +91,8 @@ int current_tutorial;
 {
     if (current_tutorial == 3)
         return;
-    
+
+    previous_tutorial = current_tutorial;
     current_tutorial ++;
     [self updateTutorialView:current_tutorial];
 }
@@ -88,12 +122,24 @@ int current_tutorial;
             break;
     }
     
-    [UIView transitionWithView:self.view
-                      duration:.3f
-                       options:UIViewAnimationOptionTransitionCrossDissolve
-                    animations:^{
-                        imgTutorial.image = newImage;
-                    } completion:nil];
+//    [UIView transitionWithView:self.view
+//                      duration:.3f
+//                       options:UIViewAnimationOption
+//                    animations:^{
+//                        imgTutorial.image = newImage;
+//                    } completion:nil];
+    imgTutorial.image = newImage;
+    
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.3f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionPush;
+    if (previous_tutorial > current_tutorial)
+        transition.subtype = kCATransitionFromLeft;
+    else
+        transition.subtype = kCATransitionFromRight;
+    
+    [imgTutorial.layer addAnimation:transition forKey:nil];
     
     [lblTutorial setText:newText];
 }

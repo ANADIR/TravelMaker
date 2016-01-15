@@ -317,16 +317,21 @@ static void * const keypath = (void*)&keypath;
 
 - (void)fadeViewOut:(UIView*)popupView sourceView:(UIView*)sourceView overlayView:(UIView*)overlayView
 {
-    [UIView animateWithDuration:kPopupModalAnimationDuration animations:^{
-        [self.mj_popupViewController viewWillDisappear:NO];
-        self.mj_popupBackgroundView.alpha = 0.0f;
-        popupView.alpha = 0.0f;
-    } completion:^(BOOL finished) {
-        [popupView removeFromSuperview];
-        [overlayView removeFromSuperview];
-        [self.mj_popupViewController viewDidDisappear:NO];
-        self.mj_popupViewController = nil;
-    }];
+//    [UIView animateWithDuration:kPopupModalAnimationDuration animations:^{
+//        [self.mj_popupViewController viewWillDisappear:NO];
+//        self.mj_popupBackgroundView.alpha = 0.0f;
+//        popupView.alpha = 0.0f;
+//    } completion:^(BOOL finished) {
+//        [popupView removeFromSuperview];
+//        [overlayView removeFromSuperview];
+//        [self.mj_popupViewController viewDidDisappear:NO];
+//        self.mj_popupViewController = nil;
+//    }];
+    [popupView removeFromSuperview];
+    [overlayView removeFromSuperview];
+    [self.mj_popupViewController viewDidDisappear:NO];
+    self.mj_popupViewController = nil;
+
 }
 
 

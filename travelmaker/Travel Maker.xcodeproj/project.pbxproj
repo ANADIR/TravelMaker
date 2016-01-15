@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B01CF231C3EB135002E84CF /* RankController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01CF221C3EB135002E84CF /* RankController.m */; };
 		8B04659A1C19360F00CF6F03 /* RequestDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0465991C19360F00CF6F03 /* RequestDetailController.m */; };
 		8B04659D1C19365A00CF6F03 /* OfferDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B04659C1C19365A00CF6F03 /* OfferDetailController.m */; };
+		8B05347D1C46893200FA4D43 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B05347C1C46893200FA4D43 /* TermsViewController.m */; };
+		8B0534811C468E6800FA4D43 /* about.htm in Resources */ = {isa = PBXBuildFile; fileRef = 8B0534801C468E6800FA4D43 /* about.htm */; };
 		8B0646B11C1970F200D42E8D /* DetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0646B01C1970F200D42E8D /* DetailViewCell.m */; };
 		8B145A401C17205F0049BAA9 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B145A3F1C17205F0049BAA9 /* Common.m */; };
 		8B145A481C17410A0049BAA9 /* TrafficController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B145A471C17410A0049BAA9 /* TrafficController.m */; };
@@ -25,6 +28,8 @@
 		8B4344BD1C11D38E00400E8A /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344BA1C11D38E00400E8A /* NSString+MD5Addition.m */; };
 		8B4344BE1C11D38E00400E8A /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344BC1C11D38E00400E8A /* UIDevice+IdentifierAddition.m */; };
 		8B4344C11C11D39700400E8A /* DCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4344C01C11D39700400E8A /* DCDefines.m */; };
+		8B4AFA201C4263E500FB0AB0 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4AFA1F1C4263E500FB0AB0 /* MessageCell.m */; };
+		8B4AFA231C4267BA00FB0AB0 /* MyMessageDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4AFA221C4267BA00FB0AB0 /* MyMessageDetailController.m */; };
 		8B4CE6641C151C6E00D0C19D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B4CE6631C151C6E00D0C19D /* GoogleService-Info.plist */; };
 		8B4CE6671C15314E00D0C19D /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CE6661C15314E00D0C19D /* RegisterController.m */; };
 		8B4CE66A1C15435A00D0C19D /* PaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4CE6691C15435A00D0C19D /* PaddingTextField.m */; };
@@ -32,6 +37,15 @@
 		8B4DDC2B1C2286A80029D266 /* RightPaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4DDC2A1C2286A80029D266 /* RightPaddingTextField.m */; };
 		8B4DDC2F1C228D370029D266 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4DDC2E1C228D370029D266 /* UIPlaceHolderTextView.m */; };
 		8B4DDC331C2372530029D266 /* ZSYPopoverListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4DDC321C2372530029D266 /* ZSYPopoverListView.m */; };
+		8B5229E71C3253B600DD868E /* MyMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5229E61C3253B600DD868E /* MyMessageController.m */; };
+		8B5229EA1C32573B00DD868E /* MyMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5229E91C32573B00DD868E /* MyMessageCell.m */; };
+		8B5404511C3CEFBD007227A7 /* ProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5404501C3CEFBD007227A7 /* ProfileController.m */; };
+		8B542C0E1C3A58D000C4F672 /* MessageDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B542C0D1C3A58D000C4F672 /* MessageDetailController.m */; };
+		8B542C111C3A6A3800C4F672 /* MessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B542C101C3A6A3800C4F672 /* MessageController.m */; };
+		8B542C141C3AA15700C4F672 /* TripClosureApproveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B542C131C3AA15700C4F672 /* TripClosureApproveController.m */; };
+		8B542C171C3BB02C00C4F672 /* AboutServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B542C161C3BB02C00C4F672 /* AboutServiceController.m */; };
+		8B542C1B1C3BB90B00C4F672 /* service.htm in Resources */ = {isa = PBXBuildFile; fileRef = 8B542C1A1C3BB90B00C4F672 /* service.htm */; };
+		8B542C1E1C3BFA2800C4F672 /* ContactController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B542C1D1C3BFA2800C4F672 /* ContactController.m */; };
 		8B858D521C1AB3C000A80CB8 /* NewTripController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B858D511C1AB3C000A80CB8 /* NewTripController.m */; };
 		8B858D551C1E6C4100A80CB8 /* NewRequestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B858D541C1E6C4100A80CB8 /* NewRequestController.m */; };
 		8B858D581C1E6C5100A80CB8 /* NewOfferController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B858D571C1E6C5100A80CB8 /* NewOfferController.m */; };
@@ -42,10 +56,15 @@
 /* Begin PBXFileReference section */
 		52943EB0F6760A9A043CFEED /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6A188A1AE76F6893AE3E97AA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8B01CF211C3EB135002E84CF /* RankController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankController.h; path = Classes/Controller/RankController.h; sourceTree = "<group>"; };
+		8B01CF221C3EB135002E84CF /* RankController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankController.m; path = Classes/Controller/RankController.m; sourceTree = "<group>"; };
 		8B0465981C19360F00CF6F03 /* RequestDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestDetailController.h; path = Classes/Controller/RequestDetailController.h; sourceTree = "<group>"; };
 		8B0465991C19360F00CF6F03 /* RequestDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestDetailController.m; path = Classes/Controller/RequestDetailController.m; sourceTree = "<group>"; };
 		8B04659B1C19365A00CF6F03 /* OfferDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfferDetailController.h; path = Classes/Controller/OfferDetailController.h; sourceTree = "<group>"; };
 		8B04659C1C19365A00CF6F03 /* OfferDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfferDetailController.m; path = Classes/Controller/OfferDetailController.m; sourceTree = "<group>"; };
+		8B05347B1C46893200FA4D43 /* TermsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TermsViewController.h; path = Classes/Controller/TermsViewController.h; sourceTree = "<group>"; };
+		8B05347C1C46893200FA4D43 /* TermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TermsViewController.m; path = Classes/Controller/TermsViewController.m; sourceTree = "<group>"; };
+		8B0534801C468E6800FA4D43 /* about.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.htm; sourceTree = "<group>"; };
 		8B0646AF1C1970F200D42E8D /* DetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewCell.h; path = Classes/View/DetailViewCell.h; sourceTree = "<group>"; };
 		8B0646B01C1970F200D42E8D /* DetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewCell.m; path = Classes/View/DetailViewCell.m; sourceTree = "<group>"; };
 		8B145A3F1C17205F0049BAA9 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Common.m; path = Classes/Model/Common.m; sourceTree = "<group>"; };
@@ -75,6 +94,10 @@
 		8B4344BC1C11D38E00400E8A /* UIDevice+IdentifierAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+IdentifierAddition.m"; path = "Classes/External/UIDeviceUniqueIdentifier/UIDevice+IdentifierAddition.m"; sourceTree = "<group>"; };
 		8B4344BF1C11D39700400E8A /* DCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCDefines.h; path = Classes/External/HTTP_Communication/DCDefines.h; sourceTree = "<group>"; };
 		8B4344C01C11D39700400E8A /* DCDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCDefines.m; path = Classes/External/HTTP_Communication/DCDefines.m; sourceTree = "<group>"; };
+		8B4AFA1E1C4263E500FB0AB0 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageCell.h; path = Classes/View/MessageCell.h; sourceTree = "<group>"; };
+		8B4AFA1F1C4263E500FB0AB0 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageCell.m; path = Classes/View/MessageCell.m; sourceTree = "<group>"; };
+		8B4AFA211C4267BA00FB0AB0 /* MyMessageDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMessageDetailController.h; path = Classes/Controller/MyMessageDetailController.h; sourceTree = "<group>"; };
+		8B4AFA221C4267BA00FB0AB0 /* MyMessageDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyMessageDetailController.m; path = Classes/Controller/MyMessageDetailController.m; sourceTree = "<group>"; };
 		8B4CE6631C151C6E00D0C19D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8B4CE6651C15314E00D0C19D /* RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterController.h; path = Classes/Controller/RegisterController.h; sourceTree = "<group>"; };
 		8B4CE6661C15314E00D0C19D /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterController.m; path = Classes/Controller/RegisterController.m; sourceTree = "<group>"; };
@@ -88,6 +111,23 @@
 		8B4DDC2E1C228D370029D266 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIPlaceHolderTextView.m; path = Classes/External/UIPlaceHolderTextView/UIPlaceHolderTextView.m; sourceTree = "<group>"; };
 		8B4DDC311C2372530029D266 /* ZSYPopoverListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZSYPopoverListView.h; path = Classes/External/ZSYPopoverListView/ZSYPopoverListView.h; sourceTree = "<group>"; };
 		8B4DDC321C2372530029D266 /* ZSYPopoverListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZSYPopoverListView.m; path = Classes/External/ZSYPopoverListView/ZSYPopoverListView.m; sourceTree = "<group>"; };
+		8B5229E51C3253B600DD868E /* MyMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMessageController.h; path = Classes/Controller/MyMessageController.h; sourceTree = "<group>"; };
+		8B5229E61C3253B600DD868E /* MyMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyMessageController.m; path = Classes/Controller/MyMessageController.m; sourceTree = "<group>"; };
+		8B5229E81C32573B00DD868E /* MyMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMessageCell.h; path = Classes/View/MyMessageCell.h; sourceTree = "<group>"; };
+		8B5229E91C32573B00DD868E /* MyMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyMessageCell.m; path = Classes/View/MyMessageCell.m; sourceTree = "<group>"; };
+		8B54044F1C3CEFBD007227A7 /* ProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileController.h; path = Classes/Controller/ProfileController.h; sourceTree = "<group>"; };
+		8B5404501C3CEFBD007227A7 /* ProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileController.m; path = Classes/Controller/ProfileController.m; sourceTree = "<group>"; };
+		8B542C0C1C3A58D000C4F672 /* MessageDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageDetailController.h; path = Classes/Controller/MessageDetailController.h; sourceTree = "<group>"; };
+		8B542C0D1C3A58D000C4F672 /* MessageDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageDetailController.m; path = Classes/Controller/MessageDetailController.m; sourceTree = "<group>"; };
+		8B542C0F1C3A6A3800C4F672 /* MessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageController.h; path = Classes/Controller/MessageController.h; sourceTree = "<group>"; };
+		8B542C101C3A6A3800C4F672 /* MessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageController.m; path = Classes/Controller/MessageController.m; sourceTree = "<group>"; };
+		8B542C121C3AA15700C4F672 /* TripClosureApproveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TripClosureApproveController.h; path = Classes/Controller/TripClosureApproveController.h; sourceTree = "<group>"; };
+		8B542C131C3AA15700C4F672 /* TripClosureApproveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TripClosureApproveController.m; path = Classes/Controller/TripClosureApproveController.m; sourceTree = "<group>"; };
+		8B542C151C3BB02C00C4F672 /* AboutServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutServiceController.h; path = Classes/Controller/AboutServiceController.h; sourceTree = "<group>"; };
+		8B542C161C3BB02C00C4F672 /* AboutServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutServiceController.m; path = Classes/Controller/AboutServiceController.m; sourceTree = "<group>"; };
+		8B542C1A1C3BB90B00C4F672 /* service.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = service.htm; sourceTree = "<group>"; };
+		8B542C1C1C3BFA2800C4F672 /* ContactController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactController.h; path = Classes/Controller/ContactController.h; sourceTree = "<group>"; };
+		8B542C1D1C3BFA2800C4F672 /* ContactController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactController.m; path = Classes/Controller/ContactController.m; sourceTree = "<group>"; };
 		8B858D501C1AB3C000A80CB8 /* NewTripController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewTripController.h; path = Classes/Controller/NewTripController.h; sourceTree = "<group>"; };
 		8B858D511C1AB3C000A80CB8 /* NewTripController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewTripController.m; path = Classes/Controller/NewTripController.m; sourceTree = "<group>"; };
 		8B858D531C1E6C4100A80CB8 /* NewRequestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewRequestController.h; path = Classes/Controller/NewRequestController.h; sourceTree = "<group>"; };
@@ -158,6 +198,8 @@
 		8B43448F1C1174E600400E8A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8B0534801C468E6800FA4D43 /* about.htm */,
+				8B542C1A1C3BB90B00C4F672 /* service.htm */,
 				8B4344901C1174E600400E8A /* main.m */,
 			);
 			name = "Supporting Files";
@@ -189,18 +231,38 @@
 				8B4CE66C1C155F5400D0C19D /* RegisterEmailController.m */,
 				8B145A461C17410A0049BAA9 /* TrafficController.h */,
 				8B145A471C17410A0049BAA9 /* TrafficController.m */,
-				8B858D501C1AB3C000A80CB8 /* NewTripController.h */,
-				8B858D511C1AB3C000A80CB8 /* NewTripController.m */,
 				8B0465981C19360F00CF6F03 /* RequestDetailController.h */,
 				8B0465991C19360F00CF6F03 /* RequestDetailController.m */,
-				8B858D531C1E6C4100A80CB8 /* NewRequestController.h */,
-				8B858D541C1E6C4100A80CB8 /* NewRequestController.m */,
 				8B04659B1C19365A00CF6F03 /* OfferDetailController.h */,
 				8B04659C1C19365A00CF6F03 /* OfferDetailController.m */,
+				8B858D501C1AB3C000A80CB8 /* NewTripController.h */,
+				8B858D511C1AB3C000A80CB8 /* NewTripController.m */,
+				8B858D531C1E6C4100A80CB8 /* NewRequestController.h */,
+				8B858D541C1E6C4100A80CB8 /* NewRequestController.m */,
 				8B858D561C1E6C5100A80CB8 /* NewOfferController.h */,
 				8B858D571C1E6C5100A80CB8 /* NewOfferController.m */,
 				8B145A491C1741270049BAA9 /* MenuController.h */,
 				8B145A4A1C1741270049BAA9 /* MenuController.m */,
+				8B5229E51C3253B600DD868E /* MyMessageController.h */,
+				8B5229E61C3253B600DD868E /* MyMessageController.m */,
+				8B542C0F1C3A6A3800C4F672 /* MessageController.h */,
+				8B542C101C3A6A3800C4F672 /* MessageController.m */,
+				8B4AFA211C4267BA00FB0AB0 /* MyMessageDetailController.h */,
+				8B4AFA221C4267BA00FB0AB0 /* MyMessageDetailController.m */,
+				8B542C0C1C3A58D000C4F672 /* MessageDetailController.h */,
+				8B542C0D1C3A58D000C4F672 /* MessageDetailController.m */,
+				8B542C121C3AA15700C4F672 /* TripClosureApproveController.h */,
+				8B542C131C3AA15700C4F672 /* TripClosureApproveController.m */,
+				8B542C151C3BB02C00C4F672 /* AboutServiceController.h */,
+				8B542C161C3BB02C00C4F672 /* AboutServiceController.m */,
+				8B542C1C1C3BFA2800C4F672 /* ContactController.h */,
+				8B542C1D1C3BFA2800C4F672 /* ContactController.m */,
+				8B54044F1C3CEFBD007227A7 /* ProfileController.h */,
+				8B5404501C3CEFBD007227A7 /* ProfileController.m */,
+				8B01CF211C3EB135002E84CF /* RankController.h */,
+				8B01CF221C3EB135002E84CF /* RankController.m */,
+				8B05347B1C46893200FA4D43 /* TermsViewController.h */,
+				8B05347C1C46893200FA4D43 /* TermsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -225,6 +287,10 @@
 				8B0646B01C1970F200D42E8D /* DetailViewCell.m */,
 				8B4DDC291C2286A80029D266 /* RightPaddingTextField.h */,
 				8B4DDC2A1C2286A80029D266 /* RightPaddingTextField.m */,
+				8B5229E81C32573B00DD868E /* MyMessageCell.h */,
+				8B5229E91C32573B00DD868E /* MyMessageCell.m */,
+				8B4AFA1E1C4263E500FB0AB0 /* MessageCell.h */,
+				8B4AFA1F1C4263E500FB0AB0 /* MessageCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -353,9 +419,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B4344A21C1174E600400E8A /* LaunchScreen.storyboard in Resources */,
+				8B542C1B1C3BB90B00C4F672 /* service.htm in Resources */,
 				8B4CE6641C151C6E00D0C19D /* GoogleService-Info.plist in Resources */,
 				8B43449F1C1174E600400E8A /* Assets.xcassets in Resources */,
 				8B43449A1C1174E600400E8A /* Main.storyboard in Resources */,
+				8B0534811C468E6800FA4D43 /* about.htm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,21 +482,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B4AFA231C4267BA00FB0AB0 /* MyMessageDetailController.m in Sources */,
 				8B4344BE1C11D38E00400E8A /* UIDevice+IdentifierAddition.m in Sources */,
 				8B858D581C1E6C5100A80CB8 /* NewOfferController.m in Sources */,
 				8B04659D1C19365A00CF6F03 /* OfferDetailController.m in Sources */,
 				8B145A481C17410A0049BAA9 /* TrafficController.m in Sources */,
 				8B4344B21C1190CD00400E8A /* LoginController.m in Sources */,
+				8B4AFA201C4263E500FB0AB0 /* MessageCell.m in Sources */,
 				8B145A4B1C1741270049BAA9 /* MenuController.m in Sources */,
 				8B04659A1C19360F00CF6F03 /* RequestDetailController.m in Sources */,
 				8B4344BD1C11D38E00400E8A /* NSString+MD5Addition.m in Sources */,
+				8B542C111C3A6A3800C4F672 /* MessageController.m in Sources */,
+				8B5229EA1C32573B00DD868E /* MyMessageCell.m in Sources */,
 				8B4344941C1174E600400E8A /* AppDelegate.m in Sources */,
 				8B9AC23C1C18248400572703 /* TrafficViewCell.m in Sources */,
 				8B4CE6671C15314E00D0C19D /* RegisterController.m in Sources */,
 				8B4CE66D1C155F5400D0C19D /* RegisterEmailController.m in Sources */,
 				8B4CE66A1C15435A00D0C19D /* PaddingTextField.m in Sources */,
+				8B01CF231C3EB135002E84CF /* RankController.m in Sources */,
 				8B4344AF1C1187D200400E8A /* SuperViewController.m in Sources */,
 				8B4DDC2B1C2286A80029D266 /* RightPaddingTextField.m in Sources */,
+				8B542C0E1C3A58D000C4F672 /* MessageDetailController.m in Sources */,
 				8B858D551C1E6C4100A80CB8 /* NewRequestController.m in Sources */,
 				8B43449D1C1174E600400E8A /* travelmaker.xcdatamodeld in Sources */,
 				8B4344C11C11D39700400E8A /* DCDefines.m in Sources */,
@@ -437,8 +511,14 @@
 				8B0646B11C1970F200D42E8D /* DetailViewCell.m in Sources */,
 				8B4DDC331C2372530029D266 /* ZSYPopoverListView.m in Sources */,
 				8B4344911C1174E600400E8A /* main.m in Sources */,
+				8B542C141C3AA15700C4F672 /* TripClosureApproveController.m in Sources */,
+				8B05347D1C46893200FA4D43 /* TermsViewController.m in Sources */,
 				8B4344B51C11922000400E8A /* TutorialController.m in Sources */,
 				8B858D521C1AB3C000A80CB8 /* NewTripController.m in Sources */,
+				8B5404511C3CEFBD007227A7 /* ProfileController.m in Sources */,
+				8B5229E71C3253B600DD868E /* MyMessageController.m in Sources */,
+				8B542C1E1C3BFA2800C4F672 /* ContactController.m in Sources */,
+				8B542C171C3BB02C00C4F672 /* AboutServiceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,7 +660,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiwiz.travelmaker;
 				PRODUCT_NAME = "Travel Maker";
-				PROVISIONING_PROFILE = "d4b90013-accb-4adc-8570-c10a198446c4";
+				PROVISIONING_PROFILE = "f2eab448-5c46-475f-9dfc-b2da8eede7bf";
 			};
 			name = Release;
 		};

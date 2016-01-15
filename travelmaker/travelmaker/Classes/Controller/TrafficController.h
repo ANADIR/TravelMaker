@@ -10,7 +10,13 @@
 #import "MFSideMenu.h"
 #import "NewTripController.h"
 
-@interface TrafficController : SuperViewController <UITableViewDataSource, UITableViewDelegate, NewTripDelegate>
+@protocol TrafficDelegate <NSObject>
+
+- (void)trafficDetailControllerDismissed:(BOOL)isShowRequest;
+
+@end
+
+@interface TrafficController : SuperViewController <UITableViewDataSource, UITableViewDelegate, NewTripDelegate, TrafficDelegate>
 
 @property (assign, atomic) MFSideMenuContainerViewController *menuController;
 

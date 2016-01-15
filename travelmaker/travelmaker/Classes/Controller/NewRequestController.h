@@ -10,12 +10,15 @@
 #import "RightPaddingTextField.h"
 #import "UIPlaceHolderTextView.h"
 #import "ZSYPopoverListView.h"
+#import "TrafficController.h"
 
 @interface NewRequestController : SuperViewController <ZSYPopoverListDatasource, ZSYPopoverListDelegate>
 {
     UIDatePicker *timePicker;
     UIDatePicker *datePicker;
 }
+
+@property (nonatomic, assign) id<TrafficDelegate> trafficDelegate;
 
 @property (nonatomic, weak) IBOutlet RightPaddingTextField *txtTypeVehicle;
 @property (nonatomic, weak) IBOutlet RightPaddingTextField *txtEvacuationTime;

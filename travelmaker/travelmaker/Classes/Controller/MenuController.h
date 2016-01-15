@@ -7,8 +7,11 @@
 //
 
 #import "SuperViewController.h"
+#import "MFSideMenu.h"
 
 @interface MenuController : SuperViewController <UIGestureRecognizerDelegate>
+
+@property (assign, atomic) MFSideMenuContainerViewController *menuController;
 
 @property (nonatomic, weak) IBOutlet UIView *vwMyMessage;
 @property (nonatomic, weak) IBOutlet UIView *vwMessage;
@@ -17,7 +20,7 @@
 @property (nonatomic, weak) IBOutlet UIView *vwContact;
 @property (nonatomic, weak) IBOutlet UIView *vwShare;
 @property (nonatomic, weak) IBOutlet UIView *vwPush;
-@property (nonatomic, weak) IBOutlet UIView *vwPrivacy;
+@property (nonatomic, weak) IBOutlet UIView *vwTerms;
 
 @property (nonatomic, weak) IBOutlet UIButton *btnPush;
 @property (nonatomic, weak) IBOutlet UIImageView *imgAvatar;

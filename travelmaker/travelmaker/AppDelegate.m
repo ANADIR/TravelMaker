@@ -85,8 +85,8 @@ bool isNeedGoUpdate;
             }
         } else {
             NSLog(@"Registration to GCM failed with error: %@", error.localizedDescription);
-            NSDictionary *userInfo = @{@"error":error.localizedDescription};
-            //            [[NSNotificationCenter defaultCenter] postNotificationName:weakSelf.registrationKey object:nil userInfo:userInfo];
+//            NSDictionary *userInfo = @{@"error":error.localizedDescription};
+//            [[NSNotificationCenter defaultCenter] postNotificationName:weakSelf.registrationKey object:nil userInfo:userInfo];
         }
     };
     return YES;
@@ -150,7 +150,7 @@ bool isNeedGoUpdate;
     _registrationOptions = @{kGGLInstanceIDRegisterAPNSOption:deviceToken,kGGLInstanceIDAPNSServerTypeSandboxOption:@NO};
     
     //For development only
-    //_registrationOptions = @{kGGLInstanceIDRegisterAPNSOption:deviceToken,kGGLInstanceIDAPNSServerTypeSandboxOption:@YES};
+//  _registrationOptions = @{kGGLInstanceIDRegisterAPNSOption:deviceToken,kGGLInstanceIDAPNSServerTypeSandboxOption:@YES};
     
     [[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID scope:kGGLInstanceIDScopeGCM options:_registrationOptions handler:_registrationHandler];
 }

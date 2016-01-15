@@ -28,7 +28,6 @@
 @synthesize tblTraffic;
 @synthesize HeaderAreaWidth;
 
-
 BOOL isOpenedMenu = NO;
 BOOL isSelectedRequest = YES;
 
@@ -42,11 +41,6 @@ BOOL isSelectedRequest = YES;
     self.arrayTrafficData = [[NSMutableArray alloc] init];
     self.arrayOfferTrip = [[NSMutableArray alloc] init];
     self.arrayRequestTrip = [[NSMutableArray alloc] init];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
     
     [self loadTrafficData];
 }
@@ -130,13 +124,20 @@ BOOL isSelectedRequest = YES;
             }
         });
     }];
-
 }
 
 #pragma mark - IBAction
 
 - (IBAction)clickMenu:(id)sender
 {
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSString *user_id = [preferences objectForKey:@"user_id"];
+    if (user_id == nil || [user_id isEqualToString:@""] == YES)
+    {
+        [Common showAlert:@"Error" Message:@"Please login first" ButtonName:@"OK"];
+        return;
+    }
+
     if (isOpenedMenu == NO)
     {
         [self.menuController setMenuState:MFSideMenuStateLeftMenuOpen completion:^{
@@ -349,9 +350,9 @@ BOOL isSelectedRequest = YES;
     
     NSString *date = [trafficData objectForKey:@"date_start"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"ddMMyyyy"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSDate *dateFromString = [dateFormatter dateFromString:date];
-    [dateFormatter setDateFormat:@"dd.MM"];
+    [dateFormatter setDateFormat:@"dd.MM.yy"];
     NSString *displayDate = [dateFormatter stringFromDate:dateFromString];
 
     [cell.lblDate setText:displayDate];
@@ -374,6 +375,7 @@ BOOL isSelectedRequest = YES;
         
         RequestDetailController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"requestDetailVC"];
         [controller setTrafficData:traffic];
+        controller.trafficDelegate = self;
         controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController:controller animated:YES completion:nil];
     }
@@ -383,6 +385,7 @@ BOOL isSelectedRequest = YES;
         
         OfferDetailController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"offerDetailVC"];
         [controller setTrafficData:traffic];
+        controller.trafficDelegate = self;
         controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController:controller animated:YES completion:nil];
     }
@@ -410,6 +413,7 @@ BOOL isSelectedRequest = YES;
     [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
     
     NewOfferController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"newOfferVC"];
+    controller.trafficDelegate = self;
     controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:controller animated:YES completion:nil];
 }
@@ -419,8 +423,23 @@ BOOL isSelectedRequest = YES;
     [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
 
     NewRequestController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"newRequestVC"];
+    controller.trafficDelegate = self;
     controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void)closePopup
+{
+    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+}
+
+#pragma mark - TrafficDelegate
+- (void)trafficDetailControllerDismissed:(BOOL)isShowRequest
+{
+    isSelectedRequest = isShowRequest;
+    [self switchRequest:isSelectedRequest];
+
+    [self loadTrafficData];
 }
 
 @end

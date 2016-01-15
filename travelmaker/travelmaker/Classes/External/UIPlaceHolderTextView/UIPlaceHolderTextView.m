@@ -83,6 +83,7 @@ CGFloat const UI_PLACEHOLDER_TEXT_CHANGED_ANIMATION_DURATION = 0.25;
 {
     [super setText:text];
     [self textChanged:nil];
+    
 }
 
 - (void)drawRect:(CGRect)rect
@@ -91,7 +92,7 @@ CGFloat const UI_PLACEHOLDER_TEXT_CHANGED_ANIMATION_DURATION = 0.25;
     {
         if (_placeHolderLabel == nil )
         {
-            _placeHolderLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 8, self.frame.size.width - 14, 16)];
+            _placeHolderLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 8, self.frame.size.width - 20, 20)];
             _placeHolderLabel.lineBreakMode = NSLineBreakByWordWrapping;
             _placeHolderLabel.numberOfLines = 0;
             _placeHolderLabel.font = self.font;
@@ -104,7 +105,6 @@ CGFloat const UI_PLACEHOLDER_TEXT_CHANGED_ANIMATION_DURATION = 0.25;
         }
         
         _placeHolderLabel.text = self.placeholder;
-//        [_placeHolderLabel sizeToFit];
         [self sendSubviewToBack:_placeHolderLabel];
     }
     
@@ -112,7 +112,12 @@ CGFloat const UI_PLACEHOLDER_TEXT_CHANGED_ANIMATION_DURATION = 0.25;
     {
         [[self viewWithTag:999] setAlpha:1];
     }
-    
+
+    [self setContentInset:UIEdgeInsetsMake(0, -20, 0, 20)];
+    CGSize size = self.contentSize;
+    size.width = size.width - 40;
+    self.contentSize = size;
+
     [super drawRect:rect];
 }
 

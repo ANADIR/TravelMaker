@@ -11,6 +11,8 @@
 #import "TrafficController.h"
 #import "MenuController.h"
 #import "AppDelegate.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 
 @interface LoginController ()
@@ -39,8 +41,8 @@
     [vwPasswd setBackgroundColor:[UIColor colorWithPatternImage:imgPasswd]];
     
     // TODO for release
-    [txtEmail setText:@"test@gmail.com"];
-    [txtPasswd setText:@"12345678"];
+//    [txtEmail setText:@"test@gmail.com"];
+//    [txtPasswd setText:@"12345678"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,7 +67,90 @@
 
 - (IBAction)clickFacebook:(id)sender
 {
-    // TODO
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Please wait...";
+    
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    
+    [login logInWithReadPermissions:@[@"public_profile"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        
+        [hud hide:YES];
+        if (error)
+        {
+            [Common showAlert:@"Error" Message:@"Failed on logging in facekbook." ButtonName:@"Ok"];
+        }
+        else
+        {
+            NSLog(@"result: %@", result);
+            if(result.token)   // This means if There is current access token.
+            {
+                // Token created successfully and you are ready to get profile info
+                [self getFacebookProfileInfos];
+            }
+            
+        }
+    }];
+}
+
+-(void)getFacebookProfileInfos {
+    
+    FBSDKGraphRequest *requestMe = [[FBSDKGraphRequest alloc]initWithGraphPath:@"me" parameters:@{@"fields": @"name, picture, email"}];
+
+    FBSDKGraphRequestConnection *connection = [[FBSDKGraphRequestConnection alloc] init];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    [connection addRequest:requestMe completionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+        
+        [hud hide:YES];
+        
+        if(result)
+        {
+            NSLog(@"result: %@", result);
+            
+            NSString *FBId = [result objectForKey:@"id"];
+            
+            NSString * registerUrl = @"http://travelmakerdata.co.nf/server/index.php?action=facebook_login";
+            registerUrl = [NSString stringWithFormat:@"%@&FB_id=%@",registerUrl, FBId];
+            
+            
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.labelText = @"Logging in...";
+            
+            [DCDefines getHttpAsyncResponse:registerUrl :^(NSData *data, NSError *connectionError) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                });
+                
+                NSData *responseData = data;
+                if (responseData == nil) {
+                    return;
+                }
+                NSString *string = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+                NSLog(@"result string: %@", string);
+                
+                NSError *error;
+                NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
+                NSString * status = [jsonDict objectForKey:@"status"];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if([status isEqualToString:@"logged OK"] == NO) {
+                        
+//                      [Common showAlert:@"Error" Message:@"Failed on logging in." ButtonName:@"Ok"];
+
+                        [self registerUserByFacebook:result];
+                    }
+                    else
+                    {
+                        [self loginWithUserInformation:jsonDict];
+                    }
+                });
+            }];
+            
+        }
+        
+    }];
+    
+    [connection start];
 }
 
 - (IBAction)clickEnter:(id)sender
@@ -110,27 +195,7 @@
             }
             else
             {
-                //
-                NSString *user_id = [jsonDict objectForKey:@"user_id"];
-                NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-                [preferences setObject:user_id forKey:@"user_id"];
-
-                
-                AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-                
-                TrafficController *trafficController = [self.storyboard instantiateViewControllerWithIdentifier:@"trafficVC"];
-                MenuController *menuController = [self.storyboard instantiateViewControllerWithIdentifier:@"menuVC"];
-                
-                MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController
-                                                                containerWithCenterViewController:trafficController
-                                                                leftMenuViewController:menuController
-                                                                rightMenuViewController:nil];
-                
-                [trafficController setMenuController:container];
-                
-                delegate.window.rootViewController = container;
-                [delegate.window makeKeyAndVisible];
-
+                [self loginWithUserInformation:jsonDict];
             }
         });
     }];
@@ -200,5 +265,95 @@
 
         
     }
+}
+
+
+- (void)registerUserByFacebook:(id) result
+{
+    NSString *email = [result objectForKey:@"email"];
+    NSString *FBId = [result objectForKey:@"id"];
+    NSString *name = [result objectForKey:@"name"];
+//  NSString *phone = [txtCellPhone text];
+    NSString *password = @"";
+//  NSString *url = [[[result objectForKey:@"picture"] objectForKey:@"data"] objectForKey:@"url"];
+    NSString *url = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=small", FBId];
+    
+    AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    NSString *deviceId = delegate.deviceId;
+    
+    NSString * registerUrl = @"http://travelmakerdata.co.nf/server/index.php?action=register_user";
+    registerUrl = [NSString stringWithFormat:@"%@&device_id=%@",registerUrl, deviceId];
+    registerUrl = [NSString stringWithFormat:@"%@&FB_id=%@",    registerUrl, FBId];
+    registerUrl = [NSString stringWithFormat:@"%@&fullname=%@", registerUrl, name];
+    registerUrl = [NSString stringWithFormat:@"%@&cellphone=%@",registerUrl, @""];
+    registerUrl = [NSString stringWithFormat:@"%@&image_url=%@",registerUrl, url];
+    registerUrl = [NSString stringWithFormat:@"%@&email=%@",    registerUrl, email];
+    registerUrl = [NSString stringWithFormat:@"%@&password=%@", registerUrl, password];
+    
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    [DCDefines getHttpAsyncResponse:registerUrl :^(NSData *data, NSError *connectionError) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+        
+        NSData *responseData = data;
+        if (responseData == nil) {
+            return;
+        }
+        NSString *string = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"result string: %@", string);
+        
+        NSError *error;
+        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
+        NSString * status = [jsonDict objectForKey:@"status"];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if([status isEqualToString:@"done"] == NO) {
+                [Common showAlert:@"Error" Message:@"Failed on registering user." ButtonName:@"Ok"];
+            }
+            else
+            {
+                [self loginWithUserInformation:jsonDict];
+            }
+        });
+    }];
+}
+
+- (void)loginWithUserInformation:(NSDictionary*)jsonDict
+{
+    NSString *user_id = [jsonDict objectForKey:@"user_id"];
+    NSString *FBId = [jsonDict objectForKey:@"FB_id"];
+    NSString *name = [jsonDict objectForKey:@"fullname"];
+    NSString *email = [jsonDict objectForKey:@"email"];
+//  NSString *image_url = [jsonDict objectForKey:@"image_url"];
+    NSString *image_url = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=small", FBId];
+    NSString *phone = [jsonDict objectForKey:@"cellphone"];
+    NSString *rank = [jsonDict objectForKey:@"rank"];
+    
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    [preferences setObject:user_id forKey:@"user_id"];
+    [preferences setObject:name forKey:@"fullname"];
+    [preferences setObject:FBId forKey:@"fb_id"];
+    [preferences setObject:image_url forKey:@"image_url"];
+    [preferences setObject:phone forKey:@"cellphone"];
+    [preferences setObject:email forKey:@"email"];
+    [preferences setObject:rank forKey:@"rank"];
+    
+    AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    TrafficController *trafficController = [self.storyboard instantiateViewControllerWithIdentifier:@"trafficVC"];
+    MenuController *menuController = [self.storyboard instantiateViewControllerWithIdentifier:@"menuVC"];
+    
+    MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController
+                                                    containerWithCenterViewController:trafficController
+                                                    leftMenuViewController:menuController
+                                                    rightMenuViewController:nil];
+    
+    [trafficController setMenuController:container];
+    [menuController setMenuController:container];
+    
+    delegate.window.rootViewController = container;
+    [delegate.window makeKeyAndVisible];
 }
 @end

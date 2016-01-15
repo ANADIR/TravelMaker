@@ -7,6 +7,9 @@
 //
 
 #import "RegisterEmailController.h"
+#import "MFSideMenu.h"
+#import "TrafficController.h"
+#import "MenuController.h"
 #import "AppDelegate.h"
 
 @interface RegisterEmailController ()
@@ -102,10 +105,45 @@
         NSError *error;
         NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
         NSString * status = [jsonDict objectForKey:@"status"];
-//        NSString * returnerror = [jsonDict objectForKey:@"error"];
         dispatch_async(dispatch_get_main_queue(), ^{
             if([status isEqualToString:@"done"] == NO) {
                 [Common showAlert:@"Error" Message:@"Failed on registering user." ButtonName:@"Ok"];
+            }
+            else
+            {
+                NSString *user_id = [jsonDict objectForKey:@"user_id"];
+                NSString *FBId = [jsonDict objectForKey:@"FB_id"];
+                NSString *name = [jsonDict objectForKey:@"fullname"];
+                NSString *email = [jsonDict objectForKey:@"email"];
+                NSString *image_url = [jsonDict objectForKey:@"image_url"];
+                NSString *phone = [jsonDict objectForKey:@"cellphone"];
+                NSString *rank = [jsonDict objectForKey:@"rank"];
+                
+                NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+                [preferences setObject:user_id forKey:@"user_id"];
+                [preferences setObject:name forKey:@"fullname"];
+                [preferences setObject:FBId forKey:@"fb_id"];
+                [preferences setObject:image_url forKey:@"image_url"];
+                [preferences setObject:phone forKey:@"cellphone"];
+                [preferences setObject:email forKey:@"email"];
+                [preferences setObject:rank forKey:@"rank"];
+                
+                AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+                
+                TrafficController *trafficController = [self.storyboard instantiateViewControllerWithIdentifier:@"trafficVC"];
+                MenuController *menuController = [self.storyboard instantiateViewControllerWithIdentifier:@"menuVC"];
+                
+                MFSideMenuContainerViewController *container = [MFSideMenuContainerViewController
+                                                                containerWithCenterViewController:trafficController
+                                                                leftMenuViewController:menuController
+                                                                rightMenuViewController:nil];
+                
+                [trafficController setMenuController:container];
+                [menuController setMenuController:container];
+                
+                delegate.window.rootViewController = container;
+                [delegate.window makeKeyAndVisible];
+                
             }
         });
     }];

@@ -7,7 +7,8 @@
 //
 
 #import "SuperViewController.h"
-
+#import "AppDelegate.h"
+#import "MessageController.h"
 
 @interface SuperViewController ()
 
@@ -20,6 +21,12 @@
     // Do any additional setup after loading the view.
     
     [self setKeyBoard];
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(showUpdateView:)
+                                                 name:appDelegate.pushGotKey
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,4 +57,9 @@
 }
 */
 
+- (void) showUpdateView:(NSNotification *) notification {
+    MessageController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"messageVC"];
+    controller.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:controller animated:YES completion:nil];
+}
 @end

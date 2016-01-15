@@ -7,3 +7,7 @@ pod 'FBSDKLoginKit'
 pod 'MFSideMenu'
 pod 'DYRateView'
 pod 'MJPopupViewController'
+pod 'SDWebImage'
+pod 'AFNetworking'
+pod 'SWTableViewCell'
+

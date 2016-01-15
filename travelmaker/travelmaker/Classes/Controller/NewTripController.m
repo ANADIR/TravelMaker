@@ -31,5 +31,10 @@
     [self.delegate gotoNewRequestTrip];
 }
 
+- (IBAction)clickClosePopup:(id)sender
+{
+    [self.delegate closePopup];
+}
+
 
 @end

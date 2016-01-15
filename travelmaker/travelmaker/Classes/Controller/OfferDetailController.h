@@ -8,8 +8,14 @@
 
 #import "SuperViewController.h"
 #import "NewTripController.h"
+#import "TrafficController.h"
 
 @interface OfferDetailController : SuperViewController <UITableViewDataSource, UITableViewDelegate, NewTripDelegate>
+{
+    NSString *cellphone;
+}
+
+@property (nonatomic, assign) id<TrafficDelegate> trafficDelegate;
 
 @property (copy, nonatomic) NSDictionary *trafficData;
 
@@ -28,6 +34,9 @@
 
 - (IBAction)clickBack:(id)sender;
 - (IBAction)clickAddNew:(id)sender;
+- (IBAction)clickOffer:(id)sender;
+- (IBAction)clickRequest:(id)sender;
+
 - (IBAction)clickWhatsapp:(id)sender;
 - (IBAction)clickTelephone:(id)sender;
 - (IBAction)clickClose:(id)sender;

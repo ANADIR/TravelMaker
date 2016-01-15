@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A9E2A12113E5A95D37A5C158'
+               BlueprintIdentifier = '987C72FBC6359E06ADE11162'
                BlueprintName = 'DYRateView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libDYRateView.a'>

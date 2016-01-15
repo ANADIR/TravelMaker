@@ -12,6 +12,7 @@
 
 - (void)gotoNewOfferTrip;
 - (void)gotoNewRequestTrip;
+- (void)closePopup;
 
 @end
 
@@ -21,5 +22,6 @@
 
 - (IBAction)clickNewOfferTrip:(id)sender;
 - (IBAction)clickNewRequestTrip:(id)sender;
+- (IBAction)clickClosePopup:(id)sender;
 
 @end
