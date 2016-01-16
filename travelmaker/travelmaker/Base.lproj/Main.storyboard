@@ -3527,7 +3527,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WcD-9N-0kq">
                                 <rect key="frame" x="0.0" y="60" width="600" height="540"/>
                                 <subviews>
-                                    <webView contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nSp-OB-eRB">
+                                    <webView contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" translatesAutoresizingMaskIntoConstraints="NO" id="nSp-OB-eRB">
                                         <rect key="frame" x="10" y="10" width="580" height="520"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <dataDetectorType key="dataDetectorTypes"/>

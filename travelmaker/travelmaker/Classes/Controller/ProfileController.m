@@ -7,7 +7,6 @@
 //
 
 #import "ProfileController.h"
-#import <DYRateView.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <AFNetworking/AFHTTPSessionManager.h>
 
@@ -34,7 +33,7 @@ bool isEditable = NO;
                                   (frame.size.height - RATEVIEW_HEIGHT) / 2.0,
                                   RATEVIEW_WIDTH,
                                   RATEVIEW_HEIGHT);
-    DYRateView *rateView = [[DYRateView alloc] initWithFrame:rateFrame];
+    rateView = [[DYRateView alloc] initWithFrame:rateFrame];
     [rateView setRate:0.0f];
     [rateView setAlignment:RateViewAlignmentLeft];
     [vwRateView addSubview:rateView];
@@ -89,12 +88,15 @@ bool isEditable = NO;
             }
             else
             {
-                NSString *imageUrl = [jsonDict objectForKey:@"image_url"];
+//                NSString *imageUrl = [jsonDict objectForKey:@"image_url"];
                 NSString *cellPhone = [jsonDict objectForKey:@"cellphone"];
+                NSString *avg_rank = [jsonDict objectForKey:@"avg_rank"];
+                CGFloat rank = [avg_rank floatValue];
                 
                 // text and phone
                 [txtFullname setText:fullname];
                 [txtPhone setText:cellPhone];
+                [rateView setRate:rank];
                 
 //                if (imageUrl != nil && [imageUrl isEqualToString:@"none"] == NO)
 //                {

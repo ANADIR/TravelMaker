@@ -8,9 +8,12 @@
 
 #import "SuperViewController.h"
 #import "RightPaddingTextField.h"
+#import <DYRateView.h>
 
 @interface ProfileController : SuperViewController<UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-
+{
+    DYRateView *rateView;
+}
 @property (nonatomic, weak) IBOutlet UIImageView *imgAvatar;
 @property (nonatomic, weak) IBOutlet RightPaddingTextField *txtFullname;
 @property (nonatomic, weak) IBOutlet RightPaddingTextField *txtPhone;

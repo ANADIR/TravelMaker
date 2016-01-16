@@ -41,15 +41,14 @@
 }
 
 #pragma mark - UIWebViewDelegate
-- (void)webViewDidFinishLoad:(UIWebView *)webView
+- (void)webViewDidFinishLoad:(UIWebView *)theWebView
 {
-    CGRect frame = webService.frame;
-    frame.size.height = 1;
-    webService.frame = frame;
-    CGSize fittingSize = [webService sizeThatFits:CGSizeZero];
-    frame.size = fittingSize;
-    webService.frame = frame;
+    CGSize contentSize = theWebView.scrollView.contentSize;
+    CGSize viewSize = theWebView.bounds.size;
     
+    float rw = viewSize.width / contentSize.width;
+    theWebView.scrollView.zoomScale = rw;
+
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 

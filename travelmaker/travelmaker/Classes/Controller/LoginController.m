@@ -40,9 +40,6 @@
     UIGraphicsEndImageContext();
     [vwPasswd setBackgroundColor:[UIColor colorWithPatternImage:imgPasswd]];
     
-    // TODO for release
-//    [txtEmail setText:@"test@gmail.com"];
-//    [txtPasswd setText:@"12345678"];
 }
 
 - (void)didReceiveMemoryWarning {
