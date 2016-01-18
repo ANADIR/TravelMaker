@@ -90,11 +90,11 @@
     NSString *user_id = [preferences objectForKey:@"user_id"];
     if (user_id == nil || [user_id isEqualToString:@""])
     {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning"
-                                                         message:@"You're not registered yet. \nDo you want to register now?"
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"שים לב"
+                                                         message:@"אינך רשום עדיין, האם ברצונך להרשם עכשיו?"
                                                         delegate:self
-                                               cancelButtonTitle:@"NO"
-                                               otherButtonTitles:@"YES", nil];
+                                               cancelButtonTitle:@"לא"
+                                               otherButtonTitles:@"כן", nil];
         [alert show];
         return;
     }
@@ -150,11 +150,11 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if(success == 1)
             {
-                [Common showAlert:@"Success" Message:@"בקשת הסגירה להסעה נשלחה בהצלחה לחברת ההסעות." ButtonName:@"Ok"];
+                [Common showAlert:@"הפעולה בוצעה בהצלחה" Message:@"בקשת הסגירה להסעה נשלחה בהצלחה לחברת ההסעות." ButtonName:@"אשר"];
             }
             else
             {
-                [Common showAlert:@"Fail" Message:@"בקשת הסגירה להסעה לא עברה בהצלחה. אנא צור קשר טלפוני עם חברת ההסעות." ButtonName:@"Ok"];
+                [Common showAlert:@"תקלה" Message:@"בקשת הסגירה להסעה לא עברה בהצלחה. אנא צור קשר טלפוני עם חברת ההסעות." ButtonName:@"אשר"];
             }
         });
 
@@ -219,7 +219,7 @@
             }
             else
             {
-                [Common showAlert:@"Error" Message:@"Failed on updating phone counter clicked" ButtonName:@"OK"];
+                [Common showAlert:@"תקלה" Message:@"הפעולה נכשלה" ButtonName:@"אשר"];
             }
         });
 
@@ -257,7 +257,7 @@
             }
             else
             {
-                [Common showAlert:@"Error" Message:@"Failed on updating phone counter clicked" ButtonName:@"OK"];
+                [Common showAlert:@"תקלה" Message:@"הפעולה נכשלה" ButtonName:@"אשר"];
             }
         });
     }];

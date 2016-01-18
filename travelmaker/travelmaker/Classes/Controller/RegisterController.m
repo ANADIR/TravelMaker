@@ -64,7 +64,7 @@
             [hud hide:YES];
             if (error)
             {
-                [Common showAlert:@"Error" Message:@"Failed on logging in facekbook." ButtonName:@"Ok"];
+                [Common showAlert:@"תקלה" Message:@"ניסיון הכניסה לפייסבוק נכשל" ButtonName:@"אשר"];
             }
             else
             {
@@ -79,7 +79,7 @@
     }
     else
     {
-        [Common showAlert:@"error" Message:@"The phone number must be total 10 digits." ButtonName:@"Ok"];
+        [Common showAlert:@"תקלה" Message:@"מספר הטלפון לא חוקי" ButtonName:@"אשר"];
     }
 }
 
@@ -90,7 +90,7 @@
     FBSDKGraphRequestConnection *connection = [[FBSDKGraphRequestConnection alloc] init];
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Getting User information...";
+    hud.labelText = @"טוען נתונים של המשתמש...";
 
     [connection addRequest:requestMe completionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
         
@@ -124,7 +124,7 @@
             
             
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            hud.labelText = @"Registering user";
+            hud.labelText = @"מבצע רישום";
 
             [DCDefines getHttpAsyncResponse:registerUrl :^(NSData *data, NSError *connectionError) {
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -143,7 +143,7 @@
                 NSString * status = [jsonDict objectForKey:@"status"];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if([status isEqualToString:@"done"] == NO) {
-                        [Common showAlert:@"Error" Message:@"Failed on registering user." ButtonName:@"Ok"];
+                        [Common showAlert:@"תקלה" Message:@"רישום נכשל" ButtonName:@"אשר"];
                     }
                     else
                     {
@@ -203,7 +203,7 @@
     }
     else
     {
-        [Common showAlert:@"error" Message:@"The phone number must be total 10 digits." ButtonName:@"Ok"];
+        [Common showAlert:@"תקלה" Message:@"מספר הטלפון לא חוקי" ButtonName:@"אשר"];
     }
 }
 

@@ -103,11 +103,11 @@
         NSString * status = [jsonDict objectForKey:@"status"];
         dispatch_async(dispatch_get_main_queue(), ^{
             if([status isEqualToString:@"done"] == YES) {
-                [Common showAlert:@"Success" Message:@"Ranking a user successfully" ButtonName:@"Ok"];
+                [Common showAlert:@"הפעולה בוצעה בהצלחה" Message:@"הדירוג הושלם בהצלחה" ButtonName:@"אשר"];
             }
             else
             {
-                [Common showAlert:@"Error" Message:@"Error on ranking a user" ButtonName:@"Ok"];
+                [Common showAlert:@"תקלה" Message:@"דירוג לא בוצע בשל תקלה" ButtonName:@"אשר"];
             }
         });
         

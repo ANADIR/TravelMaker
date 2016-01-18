@@ -65,42 +65,42 @@ NSMutableArray *arrayOfferCarType;
     NSString *textVehicle = [txtTypeVehicle text];
     if (textVehicle == nil || [textVehicle isEqualToString:@""])
     {
-        [Common showAlert:@"Error" Message:@"Please input a Type Vehicle" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס את סוג הרכב" ButtonName:@"אשר"];
         return;
     }
     
     NSString *textStartTime = [txtStartTime text];
     if (textStartTime == nil || [textStartTime isEqualToString:@""])
     {
-        [Common showAlert:@"Error" Message:@"Please input a Start Time" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס זמן התחלה" ButtonName:@"אשר"];
         return;
     }
     
     NSString *textEndTime = [txtEndTime text];
     if (textEndTime == nil || [textEndTime isEqualToString:@""])
     {
-        [Common showAlert:@"Error" Message:@"Please input a End Time" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס זמן סיום" ButtonName:@"אשר"];
         return;
     }
     
     NSString *textStartArea = [txtStartArea text];
     if (textStartArea == nil || [textStartArea isEqualToString:@""])
     {
-        [Common showAlert:@"Error" Message:@"Please input a Start Area" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס מוצא" ButtonName:@"אשר"];
         return;
     }
     
     NSString *textEndArea = [txtEndArea text];
     if (textEndArea == nil || [textEndArea isEqualToString:@""])
     {
-        [Common showAlert:@"Error" Message:@"Please input a End Area" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס יעד" ButtonName:@"אשר"];
         return;
     }
     
     NSString *textDate = [txtDate text];
     if (textDate == nil || [textDate isEqualToString:@""])
     {
-        [Common showAlert:@"Error" Message:@"Please input a Date" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס תאריך" ButtonName:@"אשר"];
         return;
     }
     
@@ -113,7 +113,7 @@ NSMutableArray *arrayOfferCarType;
     NSString *textPrice = [txtPrice text];
     if (textPrice == nil || [textPrice isEqualToString:@""])
     {
-        [Common showAlert:@"Error" Message:@"Please input a Price" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס מחיר" ButtonName:@"אשר"];
         return;
     }
 
@@ -172,7 +172,7 @@ NSMutableArray *arrayOfferCarType;
         NSString * status = [jsonDict objectForKey:@"status"];
         dispatch_async(dispatch_get_main_queue(), ^{
             if([status isEqualToString:@"done"] == NO) {
-                [Common showAlert:@"Error" Message:@"Failed on creating new trip" ButtonName:@"Ok"];
+                [Common showAlert:@"תקלה" Message:@"יצירת נסיעה חדשה נכשלה" ButtonName:@"אשר"];
             }
             else
             {

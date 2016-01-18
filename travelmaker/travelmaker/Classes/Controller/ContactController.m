@@ -48,28 +48,28 @@
     NSString *fullname = [txtFullName text];
     if (fullname == nil || [fullname isEqualToString:@""] == YES)
     {
-        [Common showAlert:@"Error" Message:@"Please input a full name." ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס שם מלא" ButtonName:@"אשר"];
         return;
     }
     
     NSString *email = [txtEmail text];
     if ([Common checkEmailValidation:email] == NO)
     {
-        [Common showAlert:@"Error" Message:@"Please input a valid email address." ButtonName:@"Ok"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס כתובת אימייל תקינה" ButtonName:@"אשר"];
         return;
     }
     
     NSString *phone = [txtPhone text];
     if (phone == nil || [phone isEqualToString:@""] == YES)
     {
-        [Common showAlert:@"Error" Message:@"Please input a phone number" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס מספר טלפון" ButtonName:@"אשר"];
         return;
     }
     
     NSString *description = [txtDescription text];
     if (description == nil || [description isEqualToString:@""] == YES)
     {
-        [Common showAlert:@"Error" Message:@"Please input a description" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס תיאור" ButtonName:@"אשר"];
         return;
     }
     
@@ -97,11 +97,11 @@
         NSString * status = [jsonDict objectForKey:@"status"];
         dispatch_async(dispatch_get_main_queue(), ^{
             if([status isEqualToString:@"done"] == YES) {
-                [Common showAlert:@"Success" Message:@"message was sent successfully" ButtonName:@"Ok"];
+                [Common showAlert:@"הפעולה בוצעה בהצלחה" Message:@"הודעה נשלחה בהצלחה" ButtonName:@"אשר"];
             }
             else
             {
-                [Common showAlert:@"Error" Message:@"Error on sending message" ButtonName:@"Ok"];
+                [Common showAlert:@"תקלה" Message:@"הודעה לא נשלחה בשל תקלה" ButtonName:@"אשר"];
             }
         });
     }];

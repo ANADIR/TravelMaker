@@ -57,35 +57,35 @@ NSMutableArray *arrayRequestCarType;
     NSString *textVehicle = [txtTypeVehicle text];
     if (textVehicle == nil || [textVehicle isEqualToString:@""])
     {
-        [Common showAlert:@"Error" Message:@"Please input a Type Vehicle" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס את סוג הרכב" ButtonName:@"אשר"];
         return;
     }
     
     NSString *textTime = [txtEvacuationTime text];
     if (textTime == nil || [textTime isEqualToString:@""])
     {
-        [Common showAlert:@"Error" Message:@"Please input a Evacuation Time" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס זמן סיום" ButtonName:@"אשר"];
         return;
     }
 
     NSString *textAreaExit = [txtExit text];
     if (textAreaExit == nil || [textAreaExit isEqualToString:@""])
     {
-        [Common showAlert:@"Error" Message:@"Please input a Destination Area" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס איזור" ButtonName:@"אשר"];
         return;
     }
 
     NSString *textAreaStart = [txtArea text];
     if (textAreaStart == nil || [textAreaStart isEqualToString:@""])
     {
-        [Common showAlert:@"Error" Message:@"Please input a Place of start" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס מוצא" ButtonName:@"אשר"];
         return;
     }
     
     NSString *textDate = [txtDate text];
     if (textDate == nil || [textDate isEqualToString:@""])
     {
-        [Common showAlert:@"Error" Message:@"Please input a Date" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס תאריך" ButtonName:@"אשר"];
         return;
     }
     
@@ -149,7 +149,7 @@ NSMutableArray *arrayRequestCarType;
         NSString * status = [jsonDict objectForKey:@"status"];
         dispatch_async(dispatch_get_main_queue(), ^{
             if([status isEqualToString:@"done"] == NO) {
-                [Common showAlert:@"Error" Message:@"Failed on creating new trip" ButtonName:@"Ok"];
+                [Common showAlert:@"תקלה" Message:@"יצירת נסיעה חדשה נכשלה" ButtonName:@"אשר"];
             }
             else
             {

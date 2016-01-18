@@ -84,7 +84,7 @@ bool isEditable = NO;
         NSString * fullname = [jsonDict objectForKey:@"fullname"];
         dispatch_async(dispatch_get_main_queue(), ^{
             if([fullname isEqualToString:@""] == YES) {
-                [Common showAlert:@"Error" Message:@"Error on gettting profile information." ButtonName:@"Ok"];
+                [Common showAlert:@"תקלה" Message:@"טעינת נתוני משתמש נכשלה" ButtonName:@"אשר"];
             }
             else
             {
@@ -182,7 +182,7 @@ bool isEditable = NO;
                 NSString * status = [jsonDict objectForKey:@"status"];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if([status isEqualToString:@"done"] == YES) {
-                        [Common showAlert:@"Success" Message:@"Profile updated successfully" ButtonName:@"Ok"];
+                        [Common showAlert:@"Success" Message:@"פרטי פרופיל עודכנו בהצלחה" ButtonName:@"אשר"];
                         
                         // save
                         [preferences setObject:new_name forKey:@"fullname"];
@@ -190,7 +190,7 @@ bool isEditable = NO;
                     }
                     else
                     {
-                        [Common showAlert:@"Error" Message:@"Error on updating profile" ButtonName:@"Ok"];
+                        [Common showAlert:@"תקלה" Message:@"פרופיל לא עודכן בשל תקלה" ButtonName:@"אשר"];
                     }
                 });
             }];
@@ -233,12 +233,12 @@ bool isEditable = NO;
     
     NSString *uploadUrl = @"http://travelmakerdata.co.nf/server/actions/upload_image.php";
 
-    NSData *imageData = UIImagePNGRepresentation(image);
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+//    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     
@@ -250,8 +250,8 @@ bool isEditable = NO;
         
         [formData appendPartWithFileData:imageData
                                     name:@"file"
-                                fileName:@"image.png"
-                                mimeType:@"image/png"];
+                                fileName:@"image.jpg"
+                                mimeType:@"image/jpeg"];
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         

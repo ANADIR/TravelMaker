@@ -65,7 +65,7 @@
 - (IBAction)clickFacebook:(id)sender
 {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Please wait...";
+    hud.labelText = @"אנא המתן...";
     
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
     
@@ -74,7 +74,7 @@
         [hud hide:YES];
         if (error)
         {
-            [Common showAlert:@"Error" Message:@"Failed on logging in facekbook." ButtonName:@"Ok"];
+            [Common showAlert:@"תקלה" Message:@"ניסיון הכניסה לפייסבוק נכשל" ButtonName:@"אשר"];
         }
         else
         {
@@ -112,7 +112,7 @@
             
             
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            hud.labelText = @"Logging in...";
+            hud.labelText = @"מבצע התחברות...";
             
             [DCDefines getHttpAsyncResponse:registerUrl :^(NSData *data, NSError *connectionError) {
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -155,14 +155,14 @@
     NSString *email = [txtEmail text];
     if ([Common checkEmailValidation:email] == NO)
     {
-        [Common showAlert:@"error" Message:@"Please input a valid email address." ButtonName:@"Ok"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס כתובת אימייל תקינה" ButtonName:@"אשר"];
         return;
     }
     
     NSString *passwd = [txtPasswd text];
     if ([Common checkPasswordValidation:passwd] == NO)
     {
-        [Common showAlert:@"error" Message:@"Password is no less than 6 characters." ButtonName:@"Ok"];
+        [Common showAlert:@"תקלה" Message:@"אנא הזן סיסמה באורך 6 תווים לפחות" ButtonName:@"אשר"];
         return;
     }
 
@@ -188,7 +188,7 @@
         NSString * status = [jsonDict objectForKey:@"status"];
         dispatch_async(dispatch_get_main_queue(), ^{
             if([status isEqualToString:@"logged OK"] == NO) {
-                [Common showAlert:@"Error" Message:@"Failed on logging in." ButtonName:@"Ok"];
+                [Common showAlert:@"תקלה" Message:@"הכניסה נכשלה" ButtonName:@"אשר"];
             }
             else
             {
@@ -201,11 +201,11 @@
 
 - (IBAction)clickReminder:(id)sender
 {
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Forgot Password"
-                                                     message:@"Please input your registration email."
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"שכחתי סיסמה"
+                                                     message:@"אנא הכנס את כתובת האימייל שאיתו בצעת הרשמה"
                                                     delegate:self
-                                           cancelButtonTitle:@"Cancel"
-                                           otherButtonTitles:@"Ok", nil];
+                                           cancelButtonTitle:@"בטל"
+                                           otherButtonTitles:@"אשר", nil];
     
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     UITextField * alertTextField = [alert textFieldAtIndex:0];
@@ -228,7 +228,7 @@
         NSString *email = [alertTextField text];
         if ([Common checkEmailValidation:email] == NO)
         {
-            [Common showAlert:@"error" Message:@"Please input a valid email address." ButtonName:@"Ok"];
+            [Common showAlert:@"תקלה" Message:@"אנא הכנס כתובת אימייל תקינה" ButtonName:@"אשר"];
             return;
         }
         
@@ -253,10 +253,10 @@
             NSString * status = [jsonDict objectForKey:@"status"];
             dispatch_async(dispatch_get_main_queue(), ^{
                 if([status isEqualToString:@"email sent"] == NO) {
-                    [Common showAlert:@"Error" Message:@"No existent email." ButtonName:@"Ok"];
+                    [Common showAlert:@"תקלה" Message:@"כתובת האימייל לא קיימת במאגר שלנו" ButtonName:@"אשר"];
                 }
                 else
-                    [Common showAlert:@"Success" Message:@"Sent email." ButtonName:@"Ok"];
+                    [Common showAlert:@"הפעולה בוצעה בהצלחה" Message:@"אימייל נשלח" ButtonName:@"אשר"];
             });
         }];
 
@@ -307,7 +307,7 @@
         NSString * status = [jsonDict objectForKey:@"status"];
         dispatch_async(dispatch_get_main_queue(), ^{
             if([status isEqualToString:@"done"] == NO) {
-                [Common showAlert:@"Error" Message:@"Failed on registering user." ButtonName:@"Ok"];
+                [Common showAlert:@"תקלה" Message:@"רישום נכשל" ButtonName:@"אשר"];
             }
             else
             {

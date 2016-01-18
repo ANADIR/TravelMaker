@@ -65,14 +65,14 @@
     NSString *email = [txtEmail text];
     if ([Common checkEmailValidation:email] == NO)
     {
-        [Common showAlert:@"error" Message:@"Please input a valid email address." ButtonName:@"Ok"];
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס כתובת אימייל תקינה" ButtonName:@"אשר"];
         return;
     }
     
     NSString *passwd = [txtPasswd text];
     if ([Common checkPasswordValidation:passwd] == NO)
     {
-        [Common showAlert:@"error" Message:@"Password is no less than 6 characters." ButtonName:@"Ok"];
+        [Common showAlert:@"תקלה" Message:@"אנא הזן סיסמה באורך 6 תווים לפחות" ButtonName:@"אשר"];
         return;
     }
     
@@ -107,7 +107,7 @@
         NSString * status = [jsonDict objectForKey:@"status"];
         dispatch_async(dispatch_get_main_queue(), ^{
             if([status isEqualToString:@"done"] == NO) {
-                [Common showAlert:@"Error" Message:@"Failed on registering user." ButtonName:@"Ok"];
+                [Common showAlert:@"תקלה" Message:@"רישום נכשל" ButtonName:@"אשר"];
             }
             else
             {

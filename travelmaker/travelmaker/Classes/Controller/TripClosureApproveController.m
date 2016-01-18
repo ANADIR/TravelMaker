@@ -73,11 +73,11 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if(success == 0)
             {
-                [Common showAlert:@"Success" Message:@"הודעתך לא עברה למשתמש, אנא צור איתו קשר טלפוני." ButtonName:@"Ok"];
+                [Common showAlert:@"הפעולה בוצעה בהצלחה" Message:@"הודעתך לא עברה למשתמש, אנא צור איתו קשר טלפוני." ButtonName:@"אשר"];
             }
             else
             {
-                [Common showAlert:@"Fail" Message:@"הודעתך נשלחה בהצלחה." ButtonName:@"Ok"];
+                [Common showAlert:@"תקלה" Message:@"הודעתך נשלחה בהצלחה." ButtonName:@"אשר"];
             }
         });
     }];

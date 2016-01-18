@@ -134,7 +134,7 @@ BOOL isSelectedRequest = YES;
     NSString *user_id = [preferences objectForKey:@"user_id"];
     if (user_id == nil || [user_id isEqualToString:@""] == YES)
     {
-        [Common showAlert:@"Error" Message:@"Please login first" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"אנא בצע רישום על מנת להמשיך" ButtonName:@"אשר"];
         return;
     }
 
@@ -158,11 +158,11 @@ BOOL isSelectedRequest = YES;
     NSString *user_id = [preferences objectForKey:@"user_id"];
     if (user_id == nil || [user_id isEqualToString:@""])
     {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning"
-                                                         message:@"You're not registered yet. \nDo you want to register now?"
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"שים לב"
+                                                         message:@"אינך רשום עדיין, האם ברצונך להרשם עכשיו?"
                                                         delegate:self
-                                               cancelButtonTitle:@"NO"
-                                               otherButtonTitles:@"YES", nil];
+                                               cancelButtonTitle:@"לא"
+                                               otherButtonTitles:@"כן", nil];
         [alert show];        
         return;
     }

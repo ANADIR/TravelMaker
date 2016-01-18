@@ -41,7 +41,7 @@
     NSString *user_id = [preferences objectForKey:@"user_id"];
     if (user_id == nil || [user_id isEqualToString:@""] == YES)
     {
-        [Common showAlert:@"Error" Message:@"Please login first" ButtonName:@"OK"];
+        [Common showAlert:@"תקלה" Message:@"Please login first" ButtonName:@"אשר"];
         return;
     }
     
@@ -186,11 +186,11 @@
         NSString * status = [jsonDict objectForKey:@"status"];
         dispatch_async(dispatch_get_main_queue(), ^{
             if([status isEqualToString:@"done"] == NO) {
-                [Common showAlert:@"Error" Message:@"Error on deleting message." ButtonName:@"Ok"];
+                [Common showAlert:@"תקלה" Message:@"מחיקת הודעה נכשלה" ButtonName:@"אשר"];
             }
             else
             {
-                [Common showAlert:@"Success" Message:@"Deleted" ButtonName:@"Ok"];
+                [Common showAlert:@"הפעולה בוצעה בהצלחה" Message:@"נמחק בהצלחה" ButtonName:@"אשר"];
                 
                 [self loadTrafficData];
             }
