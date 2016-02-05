@@ -10,7 +10,7 @@
 
 @implementation NewRequestController
 
-@synthesize txtArea, txtDate, txtEvacuationTime, txtExit, txtMoreInfo, txtTypeVehicle;
+@synthesize txtStartArea, txtEndArea, txtDate, txtEvacuationTime, txtMoreInfo, txtTypeVehicle;
 @synthesize trafficDelegate;
 
 NSMutableArray *arrayRequestCarType;
@@ -68,20 +68,20 @@ NSMutableArray *arrayRequestCarType;
         return;
     }
 
-    NSString *textAreaExit = [txtExit text];
-    if (textAreaExit == nil || [textAreaExit isEqualToString:@""])
+    NSString *textStartArea = [txtStartArea text];
+    if (textStartArea == nil || [textStartArea isEqualToString:@""])
+    {
+        [Common showAlert:@"תקלה" Message:@"אנא הכנס מוצא" ButtonName:@"אשר"];
+        return;
+    }
+
+    NSString *textEndArea = [txtEndArea text];
+    if (textEndArea == nil || [textEndArea isEqualToString:@""])
     {
         [Common showAlert:@"תקלה" Message:@"אנא הכנס איזור" ButtonName:@"אשר"];
         return;
     }
 
-    NSString *textAreaStart = [txtArea text];
-    if (textAreaStart == nil || [textAreaStart isEqualToString:@""])
-    {
-        [Common showAlert:@"תקלה" Message:@"אנא הכנס מוצא" ButtonName:@"אשר"];
-        return;
-    }
-    
     NSString *textDate = [txtDate text];
     if (textDate == nil || [textDate isEqualToString:@""])
     {
@@ -117,9 +117,9 @@ NSMutableArray *arrayRequestCarType;
     postTripUrl = [NSString stringWithFormat:@"%@&id=%@", postTripUrl, @"1"];
     postTripUrl = [NSString stringWithFormat:@"%@&author_id=%@", postTripUrl, user_id];
     postTripUrl = [NSString stringWithFormat:@"%@&traffic_type=%@", postTripUrl, @"requested"];
-    postTripUrl = [NSString stringWithFormat:@"%@&start_location=%@", postTripUrl, textAreaStart];
+    postTripUrl = [NSString stringWithFormat:@"%@&start_location=%@", postTripUrl, textStartArea];
     postTripUrl = [NSString stringWithFormat:@"%@&destination=%@", postTripUrl, @""];
-    postTripUrl = [NSString stringWithFormat:@"%@&area=%@", postTripUrl, textAreaExit];
+    postTripUrl = [NSString stringWithFormat:@"%@&area=%@", postTripUrl, textEndArea];
     postTripUrl = [NSString stringWithFormat:@"%@&date_start=%@", postTripUrl, convertDate];
     postTripUrl = [NSString stringWithFormat:@"%@&time_start=%@", postTripUrl, textTime];
     postTripUrl = [NSString stringWithFormat:@"%@&time_end=%@", postTripUrl, @"none"];

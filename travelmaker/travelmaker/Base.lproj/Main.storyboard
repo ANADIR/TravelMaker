@@ -2526,11 +2526,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="txtArea" destination="gWo-Bj-3Ya" id="rca-SH-oVw"/>
                         <outlet property="txtDate" destination="sNy-AY-1TB" id="FzX-d8-jv4"/>
+                        <outlet property="txtEndArea" destination="gWo-Bj-3Ya" id="Cou-pc-PBH"/>
                         <outlet property="txtEvacuationTime" destination="aas-hS-uFH" id="eVw-yf-vYF"/>
-                        <outlet property="txtExit" destination="5xc-Fa-RtN" id="cE2-0k-lW2"/>
                         <outlet property="txtMoreInfo" destination="UgG-dT-UE1" id="rlY-0i-KtV"/>
+                        <outlet property="txtStartArea" destination="5xc-Fa-RtN" id="trW-Md-dlb"/>
                         <outlet property="txtTypeVehicle" destination="ft1-U5-Zp8" id="9ND-IN-He0"/>
                     </connections>
                 </viewController>

@@ -22,8 +22,8 @@
 
 @property (nonatomic, weak) IBOutlet RightPaddingTextField *txtTypeVehicle;
 @property (nonatomic, weak) IBOutlet RightPaddingTextField *txtEvacuationTime;
-@property (nonatomic, weak) IBOutlet RightPaddingTextField *txtExit;
-@property (nonatomic, weak) IBOutlet RightPaddingTextField *txtArea;
+@property (nonatomic, weak) IBOutlet RightPaddingTextField *txtStartArea;
+@property (nonatomic, weak) IBOutlet RightPaddingTextField *txtEndArea;
 @property (nonatomic, weak) IBOutlet RightPaddingTextField *txtDate;
 @property (nonatomic, weak) IBOutlet UIPlaceHolderTextView *txtMoreInfo;
 
