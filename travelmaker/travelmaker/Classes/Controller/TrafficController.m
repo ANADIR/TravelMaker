@@ -17,8 +17,17 @@
 #import "NewOfferController.h"
 
 
-@interface TrafficViewCell ()
-
+@interface TrafficController ()
+{
+    BOOL isAscPassenger;
+    BOOL isAscHour;
+    BOOL isAscDate;
+    BOOL isAscAreaOrDest;
+    BOOL isAscStart;
+    
+    BOOL isOpenedMenu;
+    BOOL isSelectedRequest;
+}
 @end
 
 @implementation TrafficController
@@ -28,13 +37,17 @@
 @synthesize tblTraffic;
 @synthesize HeaderAreaWidth;
 
-BOOL isOpenedMenu = NO;
-BOOL isSelectedRequest = YES;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    isAscPassenger = YES;
+    isAscHour = YES;
+    isAscDate = YES;
+    isAscAreaOrDest = YES;
+    isAscStart = YES;
+    
+    isOpenedMenu = NO;
     isSelectedRequest = YES;
     [self switchRequest:isSelectedRequest];
     
@@ -197,7 +210,11 @@ BOOL isSelectedRequest = YES;
         [self.arrayRequestTrip sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
             NSString *value1 = (NSString *)[obj1 objectForKey:@"num_passengers"];
             NSString *value2 = (NSString *)[obj2 objectForKey:@"num_passengers"];
-            return [value1 compare:value2];
+            
+            if (isAscPassenger == YES)
+                return [value1 compare:value2];
+            else
+                return [value2 compare:value1];
         }];
         
         [tblTraffic reloadData];
@@ -207,11 +224,18 @@ BOOL isSelectedRequest = YES;
         [self.arrayOfferTrip sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
             NSString *value1 = (NSString *)[obj1 objectForKey:@"num_passengers"];
             NSString *value2 = (NSString *)[obj2 objectForKey:@"num_passengers"];
-            return [value1 compare:value2];
+
+            if (isAscPassenger == YES)
+                return [value1 compare:value2];
+            else
+                return [value2 compare:value1];
+
         }];
         
         [tblTraffic reloadData];
     }
+    
+    isAscPassenger = !isAscPassenger;
 }
 
 - (IBAction)clickHour:(id)sender;
@@ -221,7 +245,11 @@ BOOL isSelectedRequest = YES;
         [self.arrayRequestTrip sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
             NSString *value1 = (NSString *)[obj1 objectForKey:@"time_start"];
             NSString *value2 = (NSString *)[obj2 objectForKey:@"time_start"];
-            return [value1 compare:value2];
+            
+            if (isAscHour == YES)
+                return [value1 compare:value2];
+            else
+                return [value2 compare:value1];
         }];
         
         [tblTraffic reloadData];
@@ -231,11 +259,17 @@ BOOL isSelectedRequest = YES;
         [self.arrayOfferTrip sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
             NSString *value1 = (NSString *)[obj1 objectForKey:@"time_start"];
             NSString *value2 = (NSString *)[obj2 objectForKey:@"time_start"];
-            return [value1 compare:value2];
+
+            if (isAscHour == YES)
+                return [value1 compare:value2];
+            else
+                return [value2 compare:value1];
         }];
         
         [tblTraffic reloadData];
     }
+    
+    isAscHour = !isAscHour;
 }
 
 - (IBAction)clickDate:(id)sender
@@ -245,7 +279,11 @@ BOOL isSelectedRequest = YES;
         [self.arrayRequestTrip sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
             NSString *value1 = (NSString *)[obj1 objectForKey:@"date_start"];
             NSString *value2 = (NSString *)[obj2 objectForKey:@"date_start"];
-            return [value1 compare:value2];
+            
+            if (isAscDate == YES)
+                return [value1 compare:value2];
+            else
+                return [value2 compare:value1];
         }];
         
         [tblTraffic reloadData];
@@ -255,11 +293,17 @@ BOOL isSelectedRequest = YES;
         [self.arrayOfferTrip sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
             NSString *value1 = (NSString *)[obj1 objectForKey:@"date_start"];
             NSString *value2 = (NSString *)[obj2 objectForKey:@"date_start"];
-            return [value1 compare:value2];
+            
+            if (isAscDate == YES)
+                return [value1 compare:value2];
+            else
+                return [value2 compare:value1];
         }];
         
         [tblTraffic reloadData];
     }
+    
+    isAscDate = !isAscDate;
 }
 
 - (IBAction)clickAreaOrDest:(id)sender
@@ -269,7 +313,11 @@ BOOL isSelectedRequest = YES;
         [self.arrayRequestTrip sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
             NSString *value1 = (NSString *)[obj1 objectForKey:@"area"];
             NSString *value2 = (NSString *)[obj2 objectForKey:@"area"];
-            return [value1 compare:value2];
+            
+            if (isAscAreaOrDest == YES)
+                return [value1 compare:value2];
+            else
+                return [value2 compare:value1];
         }];
         
         [tblTraffic reloadData];
@@ -279,11 +327,17 @@ BOOL isSelectedRequest = YES;
         [self.arrayOfferTrip sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
             NSString *value1 = (NSString *)[obj1 objectForKey:@"destination"];
             NSString *value2 = (NSString *)[obj2 objectForKey:@"destination"];
-            return [value1 compare:value2];
+
+            if (isAscAreaOrDest == YES)
+                return [value1 compare:value2];
+            else
+                return [value2 compare:value1];
         }];
         
         [tblTraffic reloadData];
     }
+    
+    isAscAreaOrDest = !isAscAreaOrDest;
 }
 
 - (IBAction)clickStart:(id)sender
@@ -293,7 +347,11 @@ BOOL isSelectedRequest = YES;
         [self.arrayRequestTrip sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
             NSString *value1 = (NSString *)[obj1 objectForKey:@"start_location"];
             NSString *value2 = (NSString *)[obj2 objectForKey:@"start_location"];
-            return [value1 compare:value2];
+            
+            if (isAscStart == YES)
+                return [value1 compare:value2];
+            else
+                return [value2 compare:value1];
         }];
         
         [tblTraffic reloadData];
@@ -303,11 +361,17 @@ BOOL isSelectedRequest = YES;
         [self.arrayOfferTrip sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
             NSString *value1 = (NSString *)[obj1 objectForKey:@"start_location"];
             NSString *value2 = (NSString *)[obj2 objectForKey:@"start_location"];
-            return [value1 compare:value2];
+            
+            if (isAscStart == YES)
+                return [value1 compare:value2];
+            else
+                return [value2 compare:value1];
         }];
         
         [tblTraffic reloadData];
     }
+    
+    isAscStart = !isAscStart;
 }
 
 #pragma mark - UITableDelegate
