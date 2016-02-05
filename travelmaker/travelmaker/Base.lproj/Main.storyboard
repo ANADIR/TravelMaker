@@ -863,7 +863,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Usv-Na-f5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="163" y="1173"/>
+            <point key="canvasLocation" x="214" y="1165"/>
         </scene>
         <!--Menu Controller-->
         <scene sceneID="qbT-U3-XzN">
@@ -4136,7 +4136,7 @@
                                 </constraints>
                             </view>
                             <webView contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UYf-ce-esg">
-                                <rect key="frame" x="10" y="70" width="590" height="520"/>
+                                <rect key="frame" x="10" y="70" width="580" height="520"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
                                 <connections>
                                     <outlet property="delegate" destination="Vo3-IC-rZ6" id="PP7-fV-TVB"/>
@@ -4145,12 +4145,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="fz4-Lt-iDo" firstAttribute="top" secondItem="UYf-ce-esg" secondAttribute="bottom" constant="10" id="DnG-ti-dan"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KI5-Zn-QLu" secondAttribute="trailing" constant="-20" id="H7w-na-GtU"/>
-                            <constraint firstItem="fz4-Lt-iDo" firstAttribute="top" secondItem="UYf-ce-esg" secondAttribute="bottom" constant="10" id="K3O-0L-EKa"/>
-                            <constraint firstItem="UYf-ce-esg" firstAttribute="top" secondItem="KI5-Zn-QLu" secondAttribute="bottom" constant="10" id="N0W-kL-M1R"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="UYf-ce-esg" secondAttribute="leading" constant="10" id="aus-YT-FLL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UYf-ce-esg" secondAttribute="trailing" constant="-20" id="azs-Aw-FGc"/>
+                            <constraint firstItem="UYf-ce-esg" firstAttribute="top" secondItem="KI5-Zn-QLu" secondAttribute="bottom" constant="10" id="IKA-Yx-kgm"/>
+                            <constraint firstItem="UYf-ce-esg" firstAttribute="leading" secondItem="ju9-2Z-bLE" secondAttribute="leadingMargin" constant="-10" id="dCu-zt-4WC"/>
                             <constraint firstItem="KI5-Zn-QLu" firstAttribute="top" secondItem="Ghc-72-upK" secondAttribute="bottom" constant="-20" id="deB-xt-Ldy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UYf-ce-esg" secondAttribute="trailing" constant="-10" id="hFc-E1-H1Y"/>
                             <constraint firstItem="KI5-Zn-QLu" firstAttribute="leading" secondItem="ju9-2Z-bLE" secondAttribute="leadingMargin" constant="-20" id="j8c-In-P7H"/>
                         </constraints>
                     </view>
