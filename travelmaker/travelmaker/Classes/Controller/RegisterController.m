@@ -105,7 +105,6 @@
             NSString *name = [result objectForKey:@"name"];
             NSString *phone = [txtCellPhone text];
             NSString *password = @"";
-//            NSString *url = [[[result objectForKey:@"picture"] objectForKey:@"data"] objectForKey:@"url"];
             NSString *url = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=small", FBId];
 
             

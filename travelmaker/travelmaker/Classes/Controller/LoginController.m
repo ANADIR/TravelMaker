@@ -323,8 +323,8 @@
     NSString *FBId = [jsonDict objectForKey:@"FB_id"];
     NSString *name = [jsonDict objectForKey:@"fullname"];
     NSString *email = [jsonDict objectForKey:@"email"];
-//  NSString *image_url = [jsonDict objectForKey:@"image_url"];
-    NSString *image_url = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=small", FBId];
+  NSString *image_url = [jsonDict objectForKey:@"image_url"];
+//    NSString *image_url = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=small", FBId];
     NSString *phone = [jsonDict objectForKey:@"cellphone"];
     NSString *rank = [jsonDict objectForKey:@"rank"];
     
