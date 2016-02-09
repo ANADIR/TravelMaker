@@ -23,7 +23,6 @@
 //    [webService loadHTMLString:htmlString baseURL:nil];
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"about" withExtension:@"htm"];
     [webService loadRequest:[NSURLRequest requestWithURL:url]];
-    
     [webService setBackgroundColor:[UIColor whiteColor]];
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];

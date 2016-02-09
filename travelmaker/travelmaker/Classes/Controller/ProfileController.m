@@ -88,7 +88,7 @@ bool isEditable = NO;
             }
             else
             {
-//                NSString *imageUrl = [jsonDict objectForKey:@"image_url"];
+                NSString *imageUrl = [jsonDict objectForKey:@"image_url"];
                 NSString *cellPhone = [jsonDict objectForKey:@"cellphone"];
                 NSString *avg_rank = [jsonDict objectForKey:@"avg_rank"];
                 CGFloat rank = [avg_rank floatValue];
@@ -107,11 +107,11 @@ bool isEditable = NO;
 //                    imgAvatar.layer.borderColor = [UIColor colorWithRed:52.0/255.0 green:152.0/255.0 blue:219.0/255.0 alpha:1.0f].CGColor;
 //                    imgAvatar.layer.borderWidth = 5.0f;
 //                }
-                NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-                NSString *imgUrl = [preferences objectForKey:@"image_url"];
-                if (imgUrl != nil && [imgUrl isEqualToString:@""] == NO)
+//                NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+//                NSString *imgUrl = [preferences objectForKey:@"image_url"];
+                if (imageUrl != nil && [imageUrl isEqualToString:@""] == NO)
                 {
-                    [imgAvatar sd_setImageWithURL:[NSURL URLWithString:imgUrl]];
+                    [imgAvatar sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
                     
                     imgAvatar.layer.cornerRadius = imgAvatar.frame.size.width / 2.0f;
                     imgAvatar.clipsToBounds = YES;
@@ -187,6 +187,7 @@ bool isEditable = NO;
                         // save
                         [preferences setObject:new_name forKey:@"fullname"];
                         [preferences setObject:new_phone forKey:@"cellphone"];
+                        [preferences synchronize];
                     }
                     else
                     {
@@ -261,6 +262,10 @@ bool isEditable = NO;
         dispatch_async(dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [imgAvatar setImage:image];
+            
+            NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+            
+            [preferences synchronize];
         });
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

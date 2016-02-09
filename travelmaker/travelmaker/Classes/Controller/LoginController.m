@@ -336,6 +336,7 @@
     [preferences setObject:phone forKey:@"cellphone"];
     [preferences setObject:email forKey:@"email"];
     [preferences setObject:rank forKey:@"rank"];
+    [preferences synchronize];
     
     AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     

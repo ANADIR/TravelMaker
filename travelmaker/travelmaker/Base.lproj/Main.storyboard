@@ -3528,7 +3528,7 @@
                                 <rect key="frame" x="0.0" y="60" width="600" height="540"/>
                                 <subviews>
                                     <webView contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" translatesAutoresizingMaskIntoConstraints="NO" id="nSp-OB-eRB">
-                                        <rect key="frame" x="10" y="10" width="580" height="520"/>
+                                        <rect key="frame" x="15" y="10" width="570" height="520"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <dataDetectorType key="dataDetectorTypes"/>
                                         <connections>
@@ -3538,10 +3538,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="nSp-OB-eRB" secondAttribute="trailing" constant="10" id="9tC-Z1-SpG"/>
+                                    <constraint firstAttribute="trailing" secondItem="nSp-OB-eRB" secondAttribute="trailing" constant="15" id="9tC-Z1-SpG"/>
                                     <constraint firstItem="nSp-OB-eRB" firstAttribute="top" secondItem="WcD-9N-0kq" secondAttribute="top" constant="10" id="DzO-uo-7Eu"/>
                                     <constraint firstAttribute="bottom" secondItem="nSp-OB-eRB" secondAttribute="bottom" constant="10" id="Ye5-IA-GUT"/>
-                                    <constraint firstItem="nSp-OB-eRB" firstAttribute="leading" secondItem="WcD-9N-0kq" secondAttribute="leading" constant="10" id="rGS-Mi-o80"/>
+                                    <constraint firstItem="nSp-OB-eRB" firstAttribute="leading" secondItem="WcD-9N-0kq" secondAttribute="leading" constant="15" id="rGS-Mi-o80"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -4136,7 +4136,7 @@
                                 </constraints>
                             </view>
                             <webView contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UYf-ce-esg">
-                                <rect key="frame" x="10" y="70" width="580" height="520"/>
+                                <rect key="frame" x="15" y="70" width="570" height="520"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
                                 <connections>
                                     <outlet property="delegate" destination="Vo3-IC-rZ6" id="PP7-fV-TVB"/>
@@ -4148,9 +4148,9 @@
                             <constraint firstItem="fz4-Lt-iDo" firstAttribute="top" secondItem="UYf-ce-esg" secondAttribute="bottom" constant="10" id="DnG-ti-dan"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KI5-Zn-QLu" secondAttribute="trailing" constant="-20" id="H7w-na-GtU"/>
                             <constraint firstItem="UYf-ce-esg" firstAttribute="top" secondItem="KI5-Zn-QLu" secondAttribute="bottom" constant="10" id="IKA-Yx-kgm"/>
-                            <constraint firstItem="UYf-ce-esg" firstAttribute="leading" secondItem="ju9-2Z-bLE" secondAttribute="leadingMargin" constant="-10" id="dCu-zt-4WC"/>
+                            <constraint firstItem="UYf-ce-esg" firstAttribute="leading" secondItem="ju9-2Z-bLE" secondAttribute="leadingMargin" constant="-5" id="dCu-zt-4WC"/>
                             <constraint firstItem="KI5-Zn-QLu" firstAttribute="top" secondItem="Ghc-72-upK" secondAttribute="bottom" constant="-20" id="deB-xt-Ldy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UYf-ce-esg" secondAttribute="trailing" constant="-10" id="hFc-E1-H1Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UYf-ce-esg" secondAttribute="trailing" constant="-5" id="hFc-E1-H1Y"/>
                             <constraint firstItem="KI5-Zn-QLu" firstAttribute="leading" secondItem="ju9-2Z-bLE" secondAttribute="leadingMargin" constant="-20" id="j8c-In-P7H"/>
                         </constraints>
                     </view>
