@@ -3524,35 +3524,23 @@
                                     <constraint firstItem="5yn-2K-fOx" firstAttribute="centerY" secondItem="qth-X3-db5" secondAttribute="centerY" id="yOe-sr-Sip"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WcD-9N-0kq">
-                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
-                                <subviews>
-                                    <webView contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" translatesAutoresizingMaskIntoConstraints="NO" id="nSp-OB-eRB">
-                                        <rect key="frame" x="15" y="10" width="570" height="520"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <dataDetectorType key="dataDetectorTypes"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="4EX-Jg-VR0" id="gAB-ya-qC8"/>
-                                        </connections>
-                                    </webView>
-                                </subviews>
+                            <webView contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" translatesAutoresizingMaskIntoConstraints="NO" id="nSp-OB-eRB">
+                                <rect key="frame" x="15" y="70" width="570" height="520"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="nSp-OB-eRB" secondAttribute="trailing" constant="15" id="9tC-Z1-SpG"/>
-                                    <constraint firstItem="nSp-OB-eRB" firstAttribute="top" secondItem="WcD-9N-0kq" secondAttribute="top" constant="10" id="DzO-uo-7Eu"/>
-                                    <constraint firstAttribute="bottom" secondItem="nSp-OB-eRB" secondAttribute="bottom" constant="10" id="Ye5-IA-GUT"/>
-                                    <constraint firstItem="nSp-OB-eRB" firstAttribute="leading" secondItem="WcD-9N-0kq" secondAttribute="leading" constant="15" id="rGS-Mi-o80"/>
-                                </constraints>
-                            </view>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4EX-Jg-VR0" id="gAB-ya-qC8"/>
+                                </connections>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="qth-X3-db5" secondAttribute="trailing" constant="-20" id="5L7-vp-N4q"/>
-                            <constraint firstItem="WcD-9N-0kq" firstAttribute="leading" secondItem="Oso-5q-v5l" secondAttribute="leadingMargin" constant="-20" id="CTt-Xo-51W"/>
+                            <constraint firstItem="nSp-OB-eRB" firstAttribute="leading" secondItem="Oso-5q-v5l" secondAttribute="leadingMargin" constant="-5" id="LmQ-a0-bVC"/>
                             <constraint firstItem="qth-X3-db5" firstAttribute="top" secondItem="gGy-jl-8YK" secondAttribute="bottom" constant="-20" id="N3a-ZU-oAl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WcD-9N-0kq" secondAttribute="trailing" constant="-20" id="OTf-U7-egu"/>
-                            <constraint firstItem="P16-Sn-dK5" firstAttribute="top" secondItem="WcD-9N-0kq" secondAttribute="bottom" id="fEc-rp-Vq6"/>
-                            <constraint firstItem="WcD-9N-0kq" firstAttribute="top" secondItem="qth-X3-db5" secondAttribute="bottom" id="loT-rb-MRR"/>
+                            <constraint firstItem="nSp-OB-eRB" firstAttribute="top" secondItem="qth-X3-db5" secondAttribute="bottom" constant="10" id="cij-7k-zDw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nSp-OB-eRB" secondAttribute="trailing" constant="-5" id="g9G-Go-WTs"/>
+                            <constraint firstItem="P16-Sn-dK5" firstAttribute="top" secondItem="nSp-OB-eRB" secondAttribute="bottom" constant="10" id="gff-eI-AIp"/>
                             <constraint firstItem="qth-X3-db5" firstAttribute="leading" secondItem="Oso-5q-v5l" secondAttribute="leadingMargin" constant="-20" id="qyr-Tz-ycK"/>
                         </constraints>
                     </view>

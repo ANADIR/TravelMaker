@@ -642,7 +642,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiwiz.travelmaker;
 				PRODUCT_NAME = "Travel Maker";
-				PROVISIONING_PROFILE = "290c14f8-9bf3-40d3-ac3f-d6356694e609";
+				PROVISIONING_PROFILE = "c13794b2-0583-46a1-a4ee-a102b2a60c02";
 			};
 			name = Debug;
 		};

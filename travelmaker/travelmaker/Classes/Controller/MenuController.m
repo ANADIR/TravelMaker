@@ -73,17 +73,6 @@ BOOL bPushEnabled;
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:btnLogout.titleLabel.text attributes:linkAttributes];
     [btnLogout.titleLabel setAttributedText:attributedString];
     
-    // profile picture
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    NSString *imgUrl = [preferences objectForKey:@"image_url"];
-    if (imgUrl != nil && [imgUrl isEqualToString:@""] == NO)
-    {
-        [imgAvatar sd_setImageWithURL:[NSURL URLWithString:imgUrl]];
-        
-        imgAvatar.layer.cornerRadius = imgAvatar.frame.size.width / 2.0f;
-        imgAvatar.clipsToBounds = YES;
-    }
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,6 +88,16 @@ BOOL bPushEnabled;
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *fullname = [preferences objectForKey:@"fullname"];
     [lblName setText:fullname];
+    
+    // profile picture
+    NSString *imgUrl = [preferences objectForKey:@"image_url"];
+    if (imgUrl != nil && [imgUrl isEqualToString:@""] == NO)
+    {
+        [imgAvatar sd_setImageWithURL:[NSURL URLWithString:imgUrl]];
+        
+        imgAvatar.layer.cornerRadius = imgAvatar.frame.size.width / 2.0f;
+        imgAvatar.clipsToBounds = YES;
+    }
 }
 #pragma mark - UITapGestureRecognizer handler
 - (void)handleTapAbout

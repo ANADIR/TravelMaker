@@ -258,14 +258,15 @@ bool isEditable = NO;
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"Sucess uploading image: %@", responseObject);
-        
+
+        NSString *imageUrl = [responseObject objectForKey:@"image_url"];
+        NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+        [preferences setObject:imageUrl forKey:@"image_url"];
+        [preferences synchronize];
+
         dispatch_async(dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [imgAvatar setImage:image];
-            
-            NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-            
-            [preferences synchronize];
         });
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

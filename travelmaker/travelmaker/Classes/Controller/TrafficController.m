@@ -145,7 +145,7 @@
 {
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *user_id = [preferences objectForKey:@"user_id"];
-    if (user_id == nil || [user_id isEqualToString:@""] == YES)
+    if (user_id == nil)
     {
         [Common showAlert:@"תקלה" Message:@"אנא בצע רישום על מנת להמשיך" ButtonName:@"אשר"];
         return;

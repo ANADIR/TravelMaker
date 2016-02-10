@@ -16,11 +16,6 @@
 {
     [super viewDidLoad];
     
-//    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"about" ofType:@"htm"];
-//    NSError *error = nil;
-//    NSString *htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:&error];
-//    NSLog(@"error: %@", error);
-//    [webService loadHTMLString:htmlString baseURL:nil];
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"about" withExtension:@"htm"];
     [webService loadRequest:[NSURLRequest requestWithURL:url]];
     [webService setBackgroundColor:[UIColor whiteColor]];
@@ -42,12 +37,21 @@
 #pragma mark - UIWebViewDelegate
 - (void)webViewDidFinishLoad:(UIWebView *)theWebView
 {
-    CGSize contentSize = theWebView.scrollView.contentSize;
-    CGSize viewSize = theWebView.bounds.size;
+//    CGSize contentSize = theWebView.scrollView.contentSize;
+//    CGSize viewSize = theWebView.bounds.size;
+//    
+//    float rw = viewSize.width / contentSize.width;
+//    
+//    theWebView.scrollView.zoomScale = rw;
+//
+//    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    CGRect frame = webService.frame;
+    frame.size.height = 1;
+    webService.frame = frame;
+    CGSize fittingSize = [webService sizeThatFits:CGSizeZero];
+    frame.size = fittingSize;
+    webService.frame = frame;
     
-    float rw = viewSize.width / contentSize.width;
-    theWebView.scrollView.zoomScale = rw;
-
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
