@@ -3809,7 +3809,7 @@
                                                     <constraint firstAttribute="height" constant="80" id="tvs-8f-bfn"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="יוסי הסעות" textAlignment="right" minimumFontSize="17" background="NewFieldBackground1" translatesAutoresizingMaskIntoConstraints="NO" id="QpG-Q9-7XB" customClass="RightPaddingTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="הכנס כאן את שם החברה" textAlignment="right" minimumFontSize="17" background="NewFieldBackground1" translatesAutoresizingMaskIntoConstraints="NO" id="QpG-Q9-7XB" customClass="RightPaddingTextField">
                                                 <rect key="frame" x="30" y="100" width="260" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="4st-I3-8y7"/>
@@ -3826,14 +3826,14 @@
                                                     <constraint firstAttribute="width" constant="20" id="OXf-07-6wg"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="054-5805900" textAlignment="right" minimumFontSize="17" background="NewFieldBackground1" translatesAutoresizingMaskIntoConstraints="NO" id="Nio-pU-eJv" customClass="RightPaddingTextField">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="מספר נייד" textAlignment="right" minimumFontSize="17" background="NewFieldBackground1" translatesAutoresizingMaskIntoConstraints="NO" id="Nio-pU-eJv" customClass="RightPaddingTextField">
                                                 <rect key="frame" x="30" y="160" width="260" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="Tzg-H3-WQb"/>
                                                     <constraint firstAttribute="width" constant="260" id="W1L-3K-gG9"/>
                                                 </constraints>
                                                 <color key="textColor" red="0.1529411765" green="0.51372549020000002" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Edit" translatesAutoresizingMaskIntoConstraints="NO" id="R3x-3l-pVO">

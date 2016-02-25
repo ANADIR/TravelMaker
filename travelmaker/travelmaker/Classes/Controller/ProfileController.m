@@ -53,11 +53,6 @@ bool isEditable = NO;
 
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
 - (void)loadProfileInformation
 {
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
@@ -84,7 +79,8 @@ bool isEditable = NO;
         NSString * fullname = [jsonDict objectForKey:@"fullname"];
         dispatch_async(dispatch_get_main_queue(), ^{
             if([fullname isEqualToString:@""] == YES) {
-                [Common showAlert:@"תקלה" Message:@"טעינת נתוני משתמש נכשלה" ButtonName:@"אשר"];
+//                [Common showAlert:@"תקלה" Message:@"טעינת נתוני משתמש נכשלה" ButtonName:@"אשר"];
+                
             }
             else
             {
