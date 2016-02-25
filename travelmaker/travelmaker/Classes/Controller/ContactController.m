@@ -77,7 +77,7 @@
     contactUrl = [NSString stringWithFormat:@"%@&fullname=%@",contactUrl, fullname];
     contactUrl = [NSString stringWithFormat:@"%@&email=%@",contactUrl, email];
     contactUrl = [NSString stringWithFormat:@"%@&phone=%@",contactUrl, phone];
-    contactUrl = [NSString stringWithFormat:@"%@&text=%@",contactUrl, description];
+    contactUrl = [NSString stringWithFormat:@"%@&note=%@",contactUrl, description];
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [DCDefines getHttpAsyncResponse:contactUrl :^(NSData *data, NSError *connectionError) {

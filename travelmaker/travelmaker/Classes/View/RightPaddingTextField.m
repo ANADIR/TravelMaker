@@ -42,7 +42,7 @@
                                   NSForegroundColorAttributeName: [UIColor colorWithRed:50.0/255.0 green:152.0/255.0 blue:219.0/255.0 alpha:1.0f]
                                   };
     
-    CGRect placeholderRect = CGRectMake(rect.origin.x, (rect.size.height- self.font.pointSize)/2, rect.size.width, self.font.pointSize);
+    CGRect placeholderRect = CGRectMake(rect.origin.x, (rect.size.height- self.font.pointSize)/2, rect.size.width, rect.size.height);
     [[self placeholder] drawInRect:placeholderRect withAttributes:attributes];
 }
 

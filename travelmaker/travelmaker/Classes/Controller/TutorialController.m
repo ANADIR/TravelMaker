@@ -105,12 +105,12 @@ int previous_tutorial;
     switch (tutorial)
     {
         case 1:
-            newImage = [UIImage imageNamed:@"Tutorial01"];
-            newText = @"פרטי הנסיעה";
+            newImage = [UIImage imageNamed:@"Tutorial02"];
+            newText = @"זירת המסחר - כאן תוכל לצפות או להוסיף נסיעות";
             break;
         case 2:
-            newImage = [UIImage imageNamed:@"Tutorial02"];
-            newText = @"זירת המחסר - כאן תוכל לצפות או להוסיף נסיעות";
+            newImage = [UIImage imageNamed:@"Tutorial01"];
+            newText = @"פרטי הנסיעה";
             break;
         case 3:
             newImage = [UIImage imageNamed:@"Tutorial03"];

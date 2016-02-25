@@ -166,7 +166,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZU-ee-cwe">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="440"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial01" translatesAutoresizingMaskIntoConstraints="NO" id="dmB-9a-BcX">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial02" translatesAutoresizingMaskIntoConstraints="NO" id="dmB-9a-BcX">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="440"/>
                                     </imageView>
                                 </subviews>
@@ -192,7 +192,7 @@
                                             <segue destination="GZz-gM-iPA" kind="modal" identifier="registerSegue" modalTransitionStyle="crossDissolve" id="4JG-GR-6Oh"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="פרטי הנסיעה" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhT-v3-xCg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="זירת המסחר - כאן תוכל לצפות או להוסיף נסיעות" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhT-v3-xCg">
                                         <rect key="frame" x="150" y="0.0" width="300" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="24U-Kv-hI4"/>
@@ -1544,7 +1544,7 @@
                                                                     <action selector="clickWhatsapp:" destination="Khf-cY-CPc" eventType="touchUpInside" id="wN1-R7-qUO"/>
                                                                 </connections>
                                                             </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="הודעת וואטסאפ" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLv-aj-bHg">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMS הודעת" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLv-aj-bHg">
                                                                 <rect key="frame" x="80" y="10" width="70" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="Ken-SF-H2S"/>
@@ -4196,7 +4196,7 @@
         <image name="SwitchOff" width="82" height="48"/>
         <image name="SwitchOn" width="80" height="48"/>
         <image name="Telephone" width="80" height="80"/>
-        <image name="Tutorial01" width="640" height="807"/>
+        <image name="Tutorial02" width="640" height="809"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gKL-Bm-V6V"/>

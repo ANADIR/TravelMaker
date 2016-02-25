@@ -51,6 +51,7 @@ bool isEditable = NO;
     tapAvatar.delegate = self;
     [imgAvatar addGestureRecognizer:tapAvatar];
 
+
 }
 
 - (void)loadProfileInformation

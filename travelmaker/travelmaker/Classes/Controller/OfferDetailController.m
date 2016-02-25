@@ -209,13 +209,17 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if([status isEqualToString:@"done"] == YES)
             {
-                NSString *url = @"whatsapp://send";
-                url = [NSString stringWithFormat:@"%@?abid=%@", url, cellphone];
-                NSURL *whatsappURL = [NSURL URLWithString:url];
-                if ([[UIApplication sharedApplication] canOpenURL: whatsappURL])
-                {
-                    [[UIApplication sharedApplication] openURL: whatsappURL];
-                }
+//                NSString *url = @"whatsapp://send";
+//                url = [NSString stringWithFormat:@"%@?abid=%@", url, cellphone];
+//                NSURL *whatsappURL = [NSURL URLWithString:url];
+//                if ([[UIApplication sharedApplication] canOpenURL: whatsappURL])
+//                {
+//                    [[UIApplication sharedApplication] openURL: whatsappURL];
+//                }
+                NSURL *smsUrl = [NSURL URLWithString:@"sms:"];
+                if ([[UIApplication sharedApplication] canOpenURL:smsUrl])
+                    [[UIApplication sharedApplication] openURL:smsUrl];
+
             }
             else
             {
