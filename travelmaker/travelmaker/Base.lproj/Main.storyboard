@@ -164,10 +164,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZU-ee-cwe">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="450"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="440"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial01" translatesAutoresizingMaskIntoConstraints="NO" id="dmB-9a-BcX">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="450"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="440"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -179,10 +179,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmZ-PV-vK6">
-                                <rect key="frame" x="0.0" y="450" width="600" height="150"/>
+                                <rect key="frame" x="0.0" y="440" width="600" height="160"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNJ-1M-eX3">
-                                        <rect key="frame" x="153" y="50" width="295" height="50"/>
+                                        <rect key="frame" x="153" y="60" width="295" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="YDC-Ey-sBw"/>
                                             <constraint firstAttribute="width" constant="295" id="wQ5-MM-EbR"/>
@@ -192,10 +192,10 @@
                                             <segue destination="GZz-gM-iPA" kind="modal" identifier="registerSegue" modalTransitionStyle="crossDissolve" id="4JG-GR-6Oh"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טקסט עבור המסך הראשון" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhT-v3-xCg">
-                                        <rect key="frame" x="150" y="0.0" width="300" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="פרטי הנסיעה" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhT-v3-xCg">
+                                        <rect key="frame" x="150" y="0.0" width="300" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="24U-Kv-hI4"/>
+                                            <constraint firstAttribute="height" constant="60" id="24U-Kv-hI4"/>
                                             <constraint firstAttribute="width" constant="300" id="OeU-xq-LBk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -203,7 +203,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enc-zh-1xj">
-                                        <rect key="frame" x="153" y="100" width="295" height="50"/>
+                                        <rect key="frame" x="153" y="110" width="295" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="295" id="jvS-ft-wjc"/>
                                             <constraint firstAttribute="height" constant="50" id="ru4-zD-1Np"/>
@@ -222,8 +222,8 @@
                                     <constraint firstAttribute="bottom" secondItem="enc-zh-1xj" secondAttribute="bottom" id="IqL-Nt-XCZ"/>
                                     <constraint firstItem="enc-zh-1xj" firstAttribute="centerX" secondItem="KmZ-PV-vK6" secondAttribute="centerX" id="VRE-eF-KSy"/>
                                     <constraint firstItem="rhT-v3-xCg" firstAttribute="centerX" secondItem="KmZ-PV-vK6" secondAttribute="centerX" id="Xka-Ds-S0a"/>
-                                    <constraint firstAttribute="height" constant="150" id="b4V-PG-E6L"/>
-                                    <constraint firstItem="YNJ-1M-eX3" firstAttribute="centerY" secondItem="KmZ-PV-vK6" secondAttribute="centerY" id="lYl-Um-Ce3"/>
+                                    <constraint firstAttribute="height" constant="160" id="b4V-PG-E6L"/>
+                                    <constraint firstItem="enc-zh-1xj" firstAttribute="top" secondItem="YNJ-1M-eX3" secondAttribute="bottom" id="iGE-Is-kEG"/>
                                     <constraint firstItem="rhT-v3-xCg" firstAttribute="top" secondItem="KmZ-PV-vK6" secondAttribute="top" id="t2k-MO-BD9"/>
                                     <constraint firstItem="YNJ-1M-eX3" firstAttribute="centerX" secondItem="KmZ-PV-vK6" secondAttribute="centerX" id="vi4-D2-YbH"/>
                                 </constraints>
@@ -1539,7 +1539,7 @@
                                                                     <constraint firstAttribute="height" constant="50" id="QrJ-wV-YXV"/>
                                                                     <constraint firstAttribute="width" constant="50" id="YOH-hU-AQu"/>
                                                                 </constraints>
-                                                                <state key="normal" image="Whatsapp"/>
+                                                                <state key="normal" image="SMS"/>
                                                                 <connections>
                                                                     <action selector="clickWhatsapp:" destination="Khf-cY-CPc" eventType="touchUpInside" id="wN1-R7-qUO"/>
                                                                 </connections>
@@ -2060,7 +2060,7 @@
                                                                     <constraint firstAttribute="width" constant="50" id="2q8-3H-7Kl"/>
                                                                     <constraint firstAttribute="height" constant="50" id="XMX-Cq-Y21"/>
                                                                 </constraints>
-                                                                <state key="normal" image="Whatsapp"/>
+                                                                <state key="normal" image="SMS"/>
                                                                 <connections>
                                                                     <action selector="clickWhatsapp:" destination="aZL-zV-uOW" eventType="touchUpInside" id="X4G-wu-dAH"/>
                                                                 </connections>
@@ -4190,13 +4190,13 @@
         <image name="Rate" width="261" height="100"/>
         <image name="RideGiveDisable" width="222" height="222"/>
         <image name="RideGiveEnable" width="222" height="222"/>
+        <image name="SMS" width="81" height="76"/>
         <image name="Send" width="543" height="100"/>
         <image name="Share" width="40" height="40"/>
         <image name="SwitchOff" width="82" height="48"/>
         <image name="SwitchOn" width="80" height="48"/>
         <image name="Telephone" width="80" height="80"/>
         <image name="Tutorial01" width="640" height="807"/>
-        <image name="Whatsapp" width="80" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gKL-Bm-V6V"/>

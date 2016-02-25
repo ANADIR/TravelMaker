@@ -106,19 +106,19 @@ int previous_tutorial;
     {
         case 1:
             newImage = [UIImage imageNamed:@"Tutorial01"];
-            newText = @"טקסט עבור המסך הראשון";
+            newText = @"פרטי הנסיעה";
             break;
         case 2:
             newImage = [UIImage imageNamed:@"Tutorial02"];
-            newText = @"טקסט עבור המסך השני";
+            newText = @"זירת המחסר - כאן תוכל לצפות או להוסיף נסיעות";
             break;
         case 3:
             newImage = [UIImage imageNamed:@"Tutorial03"];
-            newText = @"טקסט עבור המסך השני";
+            newText = @"סגירת הנסיעות ודרכי תקשורת";
             break;
         default:
             newImage = [UIImage imageNamed:@"Tutorial01"];
-            newText = @"טקסט עבור המסך הראשון";
+            newText = @"פרטי הנסיעה";
             break;
     }
     

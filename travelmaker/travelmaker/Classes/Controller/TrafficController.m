@@ -55,7 +55,7 @@
     self.arrayOfferTrip = [[NSMutableArray alloc] init];
     self.arrayRequestTrip = [[NSMutableArray alloc] init];
     
-    [self loadTrafficData];
+//    [self loadTrafficData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,6 +69,14 @@
 
     HeaderAreaWidth.constant = (SCREEN_WIDTH - 160 - 16) / 2.0f;
     [self updateViewConstraints];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    
+    [self loadTrafficData];
 }
 
 - (void)switchRequest:(BOOL)isRequest
@@ -191,7 +199,8 @@
     isSelectedRequest = YES;
     [self switchRequest:isSelectedRequest];
     
-    [tblTraffic reloadData];
+//    [tblTraffic reloadData];
+    [self loadTrafficData];
 }
 
 - (IBAction)clickOffer:(id)sender
@@ -199,7 +208,8 @@
     isSelectedRequest = NO;
     [self switchRequest:isSelectedRequest];
     
-    [tblTraffic reloadData];
+//    [tblTraffic reloadData];
+    [self loadTrafficData];
 }
 
 
