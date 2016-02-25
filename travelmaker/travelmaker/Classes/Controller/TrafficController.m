@@ -71,10 +71,9 @@
     [self updateViewConstraints];
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    
+    [super viewDidAppear:animated];
     
     [self loadTrafficData];
 }
@@ -105,8 +104,6 @@
 
 - (void)loadTrafficData
 {
-    [self.arrayOfferTrip removeAllObjects];
-    [self.arrayRequestTrip removeAllObjects];
     
     NSString * getTrafficUrl = @"http://travelmakerdata.co.nf/server/index.php?action=getAllTrafficData";
     
@@ -126,23 +123,26 @@
 
         NSError *error;
         self.arrayTrafficData = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (self.arrayTrafficData != nil)
+        if (self.arrayTrafficData != nil)
+        {
+            [self.arrayOfferTrip removeAllObjects];
+            [self.arrayRequestTrip removeAllObjects];
+
+            for (id traffic in self.arrayTrafficData)
             {
-                for (id traffic in self.arrayTrafficData)
-                {
-                    NSString *type = [traffic objectForKey:@"traffic_type"];
-                    if (type == (NSString *)[NSNull null])
-                        continue;
-                    
-                    if ([type isEqualToString:@"requested"] == YES)
-                        [self.arrayRequestTrip addObject:traffic];
-                    else
-                        [self.arrayOfferTrip addObject:traffic];
-                }
+                NSString *type = [traffic objectForKey:@"traffic_type"];
+                if (type == (NSString *)[NSNull null])
+                    continue;
                 
-                [tblTraffic reloadData];
+                if ([type isEqualToString:@"requested"] == YES)
+                    [self.arrayRequestTrip addObject:traffic];
+                else
+                    [self.arrayOfferTrip addObject:traffic];
             }
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [tblTraffic reloadData];
         });
     }];
 }
@@ -199,8 +199,7 @@
     isSelectedRequest = YES;
     [self switchRequest:isSelectedRequest];
     
-//    [tblTraffic reloadData];
-    [self loadTrafficData];
+    [tblTraffic reloadData];
 }
 
 - (IBAction)clickOffer:(id)sender
@@ -208,8 +207,7 @@
     isSelectedRequest = NO;
     [self switchRequest:isSelectedRequest];
     
-//    [tblTraffic reloadData];
-    [self loadTrafficData];
+    [tblTraffic reloadData];
 }
 
 
@@ -222,9 +220,9 @@
             NSString *value2 = (NSString *)[obj2 objectForKey:@"num_passengers"];
             
             if (isAscPassenger == YES)
-                return [value1 compare:value2];
+                return [value1 compare:value2 options:NSNumericSearch];
             else
-                return [value2 compare:value1];
+                return [value2 compare:value1 options:NSNumericSearch];
         }];
         
         [tblTraffic reloadData];
@@ -236,9 +234,9 @@
             NSString *value2 = (NSString *)[obj2 objectForKey:@"num_passengers"];
 
             if (isAscPassenger == YES)
-                return [value1 compare:value2];
+                return [value1 compare:value2 options:NSNumericSearch];
             else
-                return [value2 compare:value1];
+                return [value2 compare:value1 options:NSNumericSearch];
 
         }];
         
@@ -513,7 +511,7 @@
     isSelectedRequest = isShowRequest;
     [self switchRequest:isSelectedRequest];
 
-    [self loadTrafficData];
+//    [self loadTrafficData];
 }
 
 @end
